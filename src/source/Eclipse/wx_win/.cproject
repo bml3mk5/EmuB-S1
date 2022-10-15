@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605" moduleId="org.eclipse.cdt.core.settings" name="DebugS1">
+				<macros>
+					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
+					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
+					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
+					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
+					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
+					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
+					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605" name="DebugS1" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.659679357" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.552117834" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
+							<builder buildPath="${workspace_loc:/mbs1}/DebugS1" id="cdt.managedbuild.tool.gnu.builder.mingw.base.2000503146" keepEnvironmentInBuildfile="false" name="CDT 内部ビルダー" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.1603383472" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1350357509" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.487314364" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.973303188" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.809528334" name="インクルード・パス (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1298991499" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.2044786720" name="最適化レベル" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.option.debugging.level.2075200371" name="デバッグ・レベル" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.169166334" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1035337092" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.24557555" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.495193188" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1142128897" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.714097078" name="インクルード・パス (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.562972517" name="言語標準" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.156815628" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.1246032321" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1655780549" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.1810730464" name="その他のオブジェクト" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_xrc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_stc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_richtext-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_ribbon-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_propgrid-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_aui-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_gl-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_qa-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_net-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_html-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_adv-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1513667325" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
+									<listOptionValue builtIn="false" value="${SDLLIBDIR}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.592218739" name="ライブラリー (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="SDL2"/>
+									<listOptionValue builtIn="false" value="mingw32"/>
+									<listOptionValue builtIn="false" value="rpcrt4"/>
+									<listOptionValue builtIn="false" value="oleaut32"/>
+									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="winspool"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="shell32"/>
+									<listOptionValue builtIn="false" value="shlwapi"/>
+									<listOptionValue builtIn="false" value="advapi32"/>
+									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="glu32"/>
+									<listOptionValue builtIn="false" value="vfw32"/>
+									<listOptionValue builtIn="false" value="gdiplus"/>
+									<listOptionValue builtIn="false" value="iphlpapi"/>
+									<listOptionValue builtIn="false" value="wxpng-${WX_VER}"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="iconv"/>
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="ole32"/>
+									<listOptionValue builtIn="false" value="user32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="comctl32"/>
+									<listOptionValue builtIn="false" value="comdlg32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="dxguid"/>
+									<listOptionValue builtIn="false" value="imm32"/>
+									<listOptionValue builtIn="false" value="version"/>
+									<listOptionValue builtIn="false" value="setupapi"/>
+									<listOptionValue builtIn="false" value="SDL2main"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.1380591591" name="リンカー・フラグ" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-mwindows -static" valueType="string"/>
+								<option id="gnu.cpp.link.option.strip.1195718048" name="シンボル情報の除去 (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2061504348" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="osd/SDL/sdl_timer.cpp|osd/windows/win_screen.cpp|osd/simple_clocale.cpp|osd/gnu_clocale.cpp|video/windows|video/qt|video/mmf|video/libpng|video/cocoa|osd/windows/win_vkeyboardbase.cpp|osd/windows/win_timer.cpp|osd/windows/win_sound.cpp|osd/windows/win_socket.cpp|osd/windows/win_screenmode.cpp|osd/windows/win_parseopt.cpp|osd/windows/win_msgboard.cpp|osd/windows/win_main.cpp|osd/windows/win_ledboxbase.cpp|osd/windows/win_input.cpp|osd/windows/win_input_keysym.cpp|osd/windows/win_emu.cpp|osd/windows/win_debugger_console.cpp|osd/windows/win_d3d.cpp|osd/windows/win_csurface.cpp|osd/windows/win_ccolor.cpp|osd/windows/win_cbitmap.cpp|osd/SDL/sdl_vkeyboardbase.cpp|osd/SDL/sdl_socket.cpp|osd/SDL/sdl_screenmode.cpp|osd/SDL/sdl_screen.cpp|osd/SDL/sdl_parseopt.cpp|osd/SDL/sdl_msgboard.cpp|osd/SDL/sdl_main.cpp|osd/SDL/sdl_ledboxbase.cpp|osd/SDL/sdl_input.cpp|osd/SDL/sdl_input_keysym.cpp|osd/SDL/sdl_debugger_console.cpp|osd/SDL/sdl_csurface.cpp|osd/SDL/sdl_ccolor.cpp|osd/SDL/sdl_cbitmap.cpp|osd/qt|osd/mac|osd/linux|osd/gtk|gui/windows|gui/qt|gui/gtk_x11|gui/cocoa|gui/agar|video/wxwidgets|video/qtkit|video/avkit|osd/SDL/sdl_emu.cpp|osd/SDL/sdl_emu.h" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053" moduleId="org.eclipse.cdt.core.settings" name="ReleaseS1">
+				<macros>
+					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
+					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
+					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
+					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
+					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
+					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
+					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_release_static_unicode_x64"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053" name="ReleaseS1" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.126424289" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.1603280670" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
+							<builder buildPath="${workspace_loc:/mbs1}/DebugS1" id="cdt.managedbuild.tool.gnu.builder.mingw.base.2134515813" keepEnvironmentInBuildfile="false" name="CDT 内部ビルダー" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.1792327095" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1864530289" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1705710332" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1816499094" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1190818676" name="インクルード・パス (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1941844679" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="WINVER=0x0500"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="wxDEBUG_LEVEL=0"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.860130404" name="最適化レベル" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.more" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.option.debugging.level.2010742823" name="デバッグ・レベル" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.872671015" name="言語標準" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1400410552" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.578724935" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1632137163" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.more" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.274305340" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.137567945" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="WINVER=0x0500"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="wxDEBUG_LEVEL=0"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1825477677" name="インクルード・パス (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.39112745" name="言語標準" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1053298070" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.1633434008" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1605900017" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.1462484212" name="その他のオブジェクト" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_xrc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_webview-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_stc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_richtext-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_ribbon-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_propgrid-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_aui-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_gl-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_qa-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_net-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_html-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_adv-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1387264864" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
+									<listOptionValue builtIn="false" value="${SDLLIBDIR}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1150997499" name="ライブラリー (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="SDL2"/>
+									<listOptionValue builtIn="false" value="mingw32"/>
+									<listOptionValue builtIn="false" value="rpcrt4"/>
+									<listOptionValue builtIn="false" value="oleaut32"/>
+									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="winspool"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="shell32"/>
+									<listOptionValue builtIn="false" value="shlwapi"/>
+									<listOptionValue builtIn="false" value="advapi32"/>
+									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="glu32"/>
+									<listOptionValue builtIn="false" value="vfw32"/>
+									<listOptionValue builtIn="false" value="gdiplus"/>
+									<listOptionValue builtIn="false" value="iphlpapi"/>
+									<listOptionValue builtIn="false" value="wxpng-${WX_VER}"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="iconv"/>
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="ole32"/>
+									<listOptionValue builtIn="false" value="user32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="comctl32"/>
+									<listOptionValue builtIn="false" value="comdlg32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="dxguid"/>
+									<listOptionValue builtIn="false" value="imm32"/>
+									<listOptionValue builtIn="false" value="version"/>
+									<listOptionValue builtIn="false" value="setupapi"/>
+									<listOptionValue builtIn="false" value="SDL2main"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.184805314" name="リンカー・フラグ" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-mwindows -static" valueType="string"/>
+								<option id="gnu.cpp.link.option.strip.385457958" name="シンボル情報の除去 (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.390268660" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="osd/SDL/sdl_timer.cpp|osd/windows/win_screen.cpp|osd/simple_clocale.cpp|osd/gnu_clocale.cpp|video/windows|video/qt|video/mmf|video/libpng|video/cocoa|osd/windows/win_vkeyboardbase.cpp|osd/windows/win_timer.cpp|osd/windows/win_sound.cpp|osd/windows/win_socket.cpp|osd/windows/win_screenmode.cpp|osd/windows/win_parseopt.cpp|osd/windows/win_msgboard.cpp|osd/windows/win_main.cpp|osd/windows/win_ledboxbase.cpp|osd/windows/win_input.cpp|osd/windows/win_input_keysym.cpp|osd/windows/win_emu.cpp|osd/windows/win_debugger_console.cpp|osd/windows/win_d3d.cpp|osd/windows/win_csurface.cpp|osd/windows/win_ccolor.cpp|osd/windows/win_cbitmap.cpp|osd/SDL/sdl_vkeyboardbase.cpp|osd/SDL/sdl_socket.cpp|osd/SDL/sdl_screenmode.cpp|osd/SDL/sdl_screen.cpp|osd/SDL/sdl_parseopt.cpp|osd/SDL/sdl_msgboard.cpp|osd/SDL/sdl_main.cpp|osd/SDL/sdl_ledboxbase.cpp|osd/SDL/sdl_input.cpp|osd/SDL/sdl_input_keysym.cpp|osd/SDL/sdl_debugger_console.cpp|osd/SDL/sdl_csurface.cpp|osd/SDL/sdl_ccolor.cpp|osd/SDL/sdl_cbitmap.cpp|osd/qt|osd/mac|osd/linux|osd/gtk|gui/windows|gui/qt|gui/gtk_x11|gui/cocoa|gui/agar|video/wxwidgets|video/qtkit|video/avkit|osd/SDL/sdl_emu.cpp|osd/SDL/sdl_emu.h" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514" moduleId="org.eclipse.cdt.core.settings" name="DebugS1_Z80B_Dbgr">
+				<macros>
+					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
+					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
+					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
+					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
+					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
+					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
+					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX with Z80B Card and Debugger" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514" name="DebugS1_Z80B_Dbgr" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.1113595220" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.284383627" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
+							<builder buildPath="${workspace_loc:/mbs1}/DebugS1" id="cdt.managedbuild.tool.gnu.builder.mingw.base.326844657" keepEnvironmentInBuildfile="false" name="CDT 内部ビルダー" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.1945933672" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.6104788" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1664937996" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1221867553" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1463343342" name="インクルード・パス (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.569941886" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="USE_DEBUGGER"/>
+									<listOptionValue builtIn="false" value="USE_Z80B_CARD"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1461727350" name="最適化レベル" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.option.debugging.level.1440361416" name="デバッグ・レベル" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1464919546" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1026652832" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1859868925" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.296989350" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.2039778837" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="USE_DEBUGGER"/>
+									<listOptionValue builtIn="false" value="USE_Z80B_CARD"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.19819453" name="インクルード・パス (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.1168394399" name="言語標準" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1608070572" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.1016453623" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1195955172" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.1903488484" name="その他のオブジェクト" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_xrc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_stc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_richtext-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_ribbon-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_propgrid-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_aui-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_gl-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_qa-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_net-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_html-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_adv-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.956914269" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
+									<listOptionValue builtIn="false" value="${SDLLIBDIR}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.567478047" name="ライブラリー (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="SDL2"/>
+									<listOptionValue builtIn="false" value="mingw32"/>
+									<listOptionValue builtIn="false" value="rpcrt4"/>
+									<listOptionValue builtIn="false" value="oleaut32"/>
+									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="winspool"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="shell32"/>
+									<listOptionValue builtIn="false" value="shlwapi"/>
+									<listOptionValue builtIn="false" value="advapi32"/>
+									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="glu32"/>
+									<listOptionValue builtIn="false" value="vfw32"/>
+									<listOptionValue builtIn="false" value="gdiplus"/>
+									<listOptionValue builtIn="false" value="iphlpapi"/>
+									<listOptionValue builtIn="false" value="wxpng-${WX_VER}"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="iconv"/>
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="ole32"/>
+									<listOptionValue builtIn="false" value="user32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="comctl32"/>
+									<listOptionValue builtIn="false" value="comdlg32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="dxguid"/>
+									<listOptionValue builtIn="false" value="imm32"/>
+									<listOptionValue builtIn="false" value="version"/>
+									<listOptionValue builtIn="false" value="setupapi"/>
+									<listOptionValue builtIn="false" value="SDL2main"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.1585306791" name="リンカー・フラグ" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-mwindows -static" valueType="string"/>
+								<option id="gnu.cpp.link.option.strip.1922491078" name="シンボル情報の除去 (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.511486209" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="osd/SDL/sdl_timer.cpp|osd/windows/win_screen.cpp|osd/simple_clocale.cpp|osd/gnu_clocale.cpp|video/windows|video/qt|video/mmf|video/libpng|video/cocoa|osd/windows/win_vkeyboardbase.cpp|osd/windows/win_timer.cpp|osd/windows/win_sound.cpp|osd/windows/win_socket.cpp|osd/windows/win_screenmode.cpp|osd/windows/win_parseopt.cpp|osd/windows/win_msgboard.cpp|osd/windows/win_main.cpp|osd/windows/win_ledboxbase.cpp|osd/windows/win_input.cpp|osd/windows/win_input_keysym.cpp|osd/windows/win_emu.cpp|osd/windows/win_debugger_console.cpp|osd/windows/win_d3d.cpp|osd/windows/win_csurface.cpp|osd/windows/win_ccolor.cpp|osd/windows/win_cbitmap.cpp|osd/SDL/sdl_vkeyboardbase.cpp|osd/SDL/sdl_socket.cpp|osd/SDL/sdl_screenmode.cpp|osd/SDL/sdl_screen.cpp|osd/SDL/sdl_parseopt.cpp|osd/SDL/sdl_msgboard.cpp|osd/SDL/sdl_main.cpp|osd/SDL/sdl_ledboxbase.cpp|osd/SDL/sdl_input.cpp|osd/SDL/sdl_input_keysym.cpp|osd/SDL/sdl_debugger_console.cpp|osd/SDL/sdl_csurface.cpp|osd/SDL/sdl_ccolor.cpp|osd/SDL/sdl_cbitmap.cpp|osd/qt|osd/mac|osd/linux|osd/gtk|gui/windows|gui/qt|gui/gtk_x11|gui/cocoa|gui/agar|video/wxwidgets|video/qtkit|video/avkit|osd/SDL/sdl_emu.cpp|osd/SDL/sdl_emu.h" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322" moduleId="org.eclipse.cdt.core.settings" name="DebugS1_Dbgr">
+				<macros>
+					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
+					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
+					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
+					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
+					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
+					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
+					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX with Debugger" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322" name="DebugS1_Dbgr" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.1827308676" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.2143859860" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
+							<builder buildPath="${workspace_loc:/mbs1}/DebugS1" id="cdt.managedbuild.tool.gnu.builder.mingw.base.766344460" keepEnvironmentInBuildfile="false" name="CDT 内部ビルダー" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.367763124" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2045523531" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.519452446" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.839380831" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1246745727" name="インクルード・パス (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1102693592" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="USE_DEBUGGER"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1945163281" name="最適化レベル" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.option.debugging.level.434672088" name="デバッグ・レベル" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.559005299" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.391994759" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1629893431" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.1138949379" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1047341140" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="USE_WX"/>
+									<listOptionValue builtIn="false" value="USE_DEBUGGER"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.937040981" name="インクルード・パス (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.1093376431" name="言語標準" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1860848461" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.1417399310" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1410419718" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.1341996574" name="その他のオブジェクト" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_xrc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_stc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_richtext-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_ribbon-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_propgrid-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_aui-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_gl-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_qa-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_net-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_html-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_adv-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1404360342" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
+									<listOptionValue builtIn="false" value="${SDLLIBDIR}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1157703703" name="ライブラリー (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="SDL2"/>
+									<listOptionValue builtIn="false" value="mingw32"/>
+									<listOptionValue builtIn="false" value="rpcrt4"/>
+									<listOptionValue builtIn="false" value="oleaut32"/>
+									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="winspool"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="shell32"/>
+									<listOptionValue builtIn="false" value="shlwapi"/>
+									<listOptionValue builtIn="false" value="advapi32"/>
+									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="glu32"/>
+									<listOptionValue builtIn="false" value="vfw32"/>
+									<listOptionValue builtIn="false" value="gdiplus"/>
+									<listOptionValue builtIn="false" value="iphlpapi"/>
+									<listOptionValue builtIn="false" value="wxpng-${WX_VER}"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="iconv"/>
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="ole32"/>
+									<listOptionValue builtIn="false" value="user32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="comctl32"/>
+									<listOptionValue builtIn="false" value="comdlg32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="dxguid"/>
+									<listOptionValue builtIn="false" value="imm32"/>
+									<listOptionValue builtIn="false" value="version"/>
+									<listOptionValue builtIn="false" value="setupapi"/>
+									<listOptionValue builtIn="false" value="SDL2main"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.1201950242" name="リンカー・フラグ" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-mwindows -static" valueType="string"/>
+								<option id="gnu.cpp.link.option.strip.2026456432" name="シンボル情報の除去 (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.812359127" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="osd/SDL/sdl_timer.cpp|osd/windows/win_screen.cpp|osd/simple_clocale.cpp|osd/gnu_clocale.cpp|video/windows|video/qt|video/mmf|video/libpng|video/cocoa|osd/windows/win_vkeyboardbase.cpp|osd/windows/win_timer.cpp|osd/windows/win_sound.cpp|osd/windows/win_socket.cpp|osd/windows/win_screenmode.cpp|osd/windows/win_parseopt.cpp|osd/windows/win_msgboard.cpp|osd/windows/win_main.cpp|osd/windows/win_ledboxbase.cpp|osd/windows/win_input.cpp|osd/windows/win_input_keysym.cpp|osd/windows/win_emu.cpp|osd/windows/win_debugger_console.cpp|osd/windows/win_d3d.cpp|osd/windows/win_csurface.cpp|osd/windows/win_ccolor.cpp|osd/windows/win_cbitmap.cpp|osd/SDL/sdl_vkeyboardbase.cpp|osd/SDL/sdl_socket.cpp|osd/SDL/sdl_screenmode.cpp|osd/SDL/sdl_screen.cpp|osd/SDL/sdl_parseopt.cpp|osd/SDL/sdl_msgboard.cpp|osd/SDL/sdl_main.cpp|osd/SDL/sdl_ledboxbase.cpp|osd/SDL/sdl_input.cpp|osd/SDL/sdl_input_keysym.cpp|osd/SDL/sdl_debugger_console.cpp|osd/SDL/sdl_csurface.cpp|osd/SDL/sdl_ccolor.cpp|osd/SDL/sdl_cbitmap.cpp|osd/qt|osd/mac|osd/linux|osd/gtk|gui/windows|gui/qt|gui/gtk_x11|gui/cocoa|gui/agar|video/wxwidgets|video/qtkit|video/avkit|osd/SDL/sdl_emu.cpp|osd/SDL/sdl_emu.h" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368" moduleId="org.eclipse.cdt.core.settings" name="DebugS2">
+				<macros>
+					<stringMacro name="SDL2DIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
+					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
+					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
+					<stringMacro name="SDL2INCLUDE" type="VALUE_PATH_DIR" value="${SDL2DIR}/include/SDL2"/>
+					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
+					<stringMacro name="SDL2LIBDIR" type="VALUE_PATH_DIR" value="${SDL2DIR}/lib"/>
+					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.PE" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL2 and WX" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368" name="DebugS2" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.enablement=null,org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.image=null,org.eclipse.cdt.docker.launcher.containerbuild.property.connection=null" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.275864925" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.1778567520" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
+							<builder buildPath="${workspace_loc:/mbs1}/DebugS1" id="cdt.managedbuild.tool.gnu.builder.mingw.base.220246843" keepEnvironmentInBuildfile="false" name="CDT 内部ビルダー" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.1832549586" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.153035868" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.660565047" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1113725651" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.2063047209" name="インクルード・パス (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDL2INCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1246603617" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="USE_WX2"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.optimization.level.1308580973" name="最適化レベル" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.option.debugging.level.1764384204" name="デバッグ・レベル" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.1816247402" name="言語標準" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2057547570" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1855693454" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2124312049" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.1800326364" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.911108429" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="_MBS1"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="USE_WX2"/>
+									<listOptionValue builtIn="false" value="USE_OPENGL"/>
+									<listOptionValue builtIn="false" value="_UNICODE"/>
+									<listOptionValue builtIn="false" value="UNICODE"/>
+									<listOptionValue builtIn="false" value="GUI_TYPE_WXWIDGETS"/>
+									<listOptionValue builtIn="false" value="__WXMSW__"/>
+									<listOptionValue builtIn="false" value="_FILE_OFFSET_BITS=64"/>
+									<listOptionValue builtIn="false" value="_GNU_SOURCE=1"/>
+									<listOptionValue builtIn="false" value="main=SDL_main"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.161662967" name="インクルード・パス (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${WXBUILDINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXINCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${SDL2INCLUDE}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.dialect.std.1678018935" name="言語標準" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.858615507" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.457887662" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1701292761" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.880854709" name="その他のオブジェクト" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_xrc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_stc-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_richtext-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_ribbon-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_propgrid-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_aui-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_gl-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_qa-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_net-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_html-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_adv-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
+									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1072944480" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
+									<listOptionValue builtIn="false" value="${SDL2LIBDIR}"/>
+								</option>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.842740515" name="ライブラリー (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="SDL2"/>
+									<listOptionValue builtIn="false" value="mingw32"/>
+									<listOptionValue builtIn="false" value="rpcrt4"/>
+									<listOptionValue builtIn="false" value="oleaut32"/>
+									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="winspool"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="shell32"/>
+									<listOptionValue builtIn="false" value="shlwapi"/>
+									<listOptionValue builtIn="false" value="advapi32"/>
+									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="opengl32"/>
+									<listOptionValue builtIn="false" value="glu32"/>
+									<listOptionValue builtIn="false" value="vfw32"/>
+									<listOptionValue builtIn="false" value="gdiplus"/>
+									<listOptionValue builtIn="false" value="iphlpapi"/>
+									<listOptionValue builtIn="false" value="wxpng-${WX_VER}"/>
+									<listOptionValue builtIn="false" value="z"/>
+									<listOptionValue builtIn="false" value="iconv"/>
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="ole32"/>
+									<listOptionValue builtIn="false" value="user32"/>
+									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="comctl32"/>
+									<listOptionValue builtIn="false" value="comdlg32"/>
+									<listOptionValue builtIn="false" value="winmm"/>
+									<listOptionValue builtIn="false" value="dxguid"/>
+									<listOptionValue builtIn="false" value="imm32"/>
+									<listOptionValue builtIn="false" value="version"/>
+									<listOptionValue builtIn="false" value="setupapi"/>
+									<listOptionValue builtIn="false" value="SDL2main"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.1756644743" name="リンカー・フラグ" superClass="gnu.cpp.link.option.flags" useByScannerDiscovery="false" value="-mwindows -static" valueType="string"/>
+								<option id="gnu.cpp.link.option.strip.493704804" name="シンボル情報の除去 (-s)" superClass="gnu.cpp.link.option.strip" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1265276974" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="osd/SDL/sdl_timer.cpp|osd/windows/win_screen.cpp|osd/simple_clocale.cpp|osd/gnu_clocale.cpp|video/windows|video/qt|video/mmf|video/libpng|video/cocoa|osd/windows/win_vkeyboardbase.cpp|osd/windows/win_timer.cpp|osd/windows/win_sound.cpp|osd/windows/win_socket.cpp|osd/windows/win_screenmode.cpp|osd/windows/win_parseopt.cpp|osd/windows/win_msgboard.cpp|osd/windows/win_main.cpp|osd/windows/win_ledboxbase.cpp|osd/windows/win_input.cpp|osd/windows/win_input_keysym.cpp|osd/windows/win_emu.cpp|osd/windows/win_debugger_console.cpp|osd/windows/win_d3d.cpp|osd/windows/win_csurface.cpp|osd/windows/win_ccolor.cpp|osd/windows/win_cbitmap.cpp|osd/SDL/sdl_vkeyboardbase.cpp|osd/SDL/sdl_socket.cpp|osd/SDL/sdl_screenmode.cpp|osd/SDL/sdl_screen.cpp|osd/SDL/sdl_parseopt.cpp|osd/SDL/sdl_msgboard.cpp|osd/SDL/sdl_main.cpp|osd/SDL/sdl_ledboxbase.cpp|osd/SDL/sdl_input.cpp|osd/SDL/sdl_input_keysym.cpp|osd/SDL/sdl_debugger_console.cpp|osd/SDL/sdl_csurface.cpp|osd/SDL/sdl_ccolor.cpp|osd/SDL/sdl_cbitmap.cpp|osd/qt|osd/mac|osd/linux|osd/gtk|gui/windows|gui/qt|gui/gtk_x11|gui/cocoa|gui/agar|video/wxwidgets|video/qtkit|video/avkit|osd/SDL/sdl_emu.cpp|osd/SDL/sdl_emu.h" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="mbs1.cdt.managedbuild.target.gnu.cross.exe.1311337294" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="DebugS2G3"/>
+		<configuration configurationName="DebugS1_Dbgr"/>
+		<configuration configurationName="DebugS1G3"/>
+		<configuration configurationName="Debug2">
+			<resource resourceType="PROJECT" workspacePath="/mbs1"/>
+		</configuration>
+		<configuration configurationName="ReleaseS1">
+			<resource resourceType="PROJECT" workspacePath="/mbs1"/>
+		</configuration>
+		<configuration configurationName="DebugS1G3S"/>
+		<configuration configurationName="DebugS1">
+			<resource resourceType="PROJECT" workspacePath="/mbs1"/>
+		</configuration>
+		<configuration configurationName="DebugS1G2S"/>
+		<configuration configurationName="DebugS2"/>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/mbs1"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/mbs1"/>
+		</configuration>
+		<configuration configurationName="DebugS1_Z80B_Dbgr">
+			<resource resourceType="PROJECT" workspacePath="/mbs1"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.282474607;cdt.managedbuild.config.gnu.cross.exe.release.282474607.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.979180788;cdt.managedbuild.tool.gnu.cpp.compiler.input.1756937178">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1426482576;cdt.managedbuild.tool.gnu.cpp.compiler.input.756091988">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1221867553;cdt.managedbuild.tool.gnu.cpp.compiler.input.1464919546">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.839380831;cdt.managedbuild.tool.gnu.cpp.compiler.input.559005299">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.973303188;cdt.managedbuild.tool.gnu.cpp.compiler.input.169166334">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.282474607;cdt.managedbuild.config.gnu.cross.exe.release.282474607.;cdt.managedbuild.tool.gnu.cross.c.compiler.614092752;cdt.managedbuild.tool.gnu.c.compiler.input.1022749329">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.298081838;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.298081838.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1177331949;cdt.managedbuild.tool.gnu.cpp.compiler.input.703841504">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322.;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.391994759;cdt.managedbuild.tool.gnu.c.compiler.input.1860848461">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1035337092;cdt.managedbuild.tool.gnu.c.compiler.input.156815628">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053.;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.578724935;cdt.managedbuild.tool.gnu.c.compiler.input.1053298070">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1816499094;cdt.managedbuild.tool.gnu.cpp.compiler.input.1400410552">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.;cdt.managedbuild.tool.gnu.cross.c.compiler.844485337;cdt.managedbuild.tool.gnu.c.compiler.input.724259268">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.298081838;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.298081838.;cdt.managedbuild.tool.gnu.cross.c.compiler.3302595;cdt.managedbuild.tool.gnu.c.compiler.input.309246292">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514;cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1026652832;cdt.managedbuild.tool.gnu.c.compiler.input.1608070572">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+</cproject>

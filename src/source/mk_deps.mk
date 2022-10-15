@@ -1,0 +1,4 @@
+export
+
+VMTARGET:=_MBS1
+VMNAME:=mbs1
