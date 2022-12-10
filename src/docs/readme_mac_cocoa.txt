@@ -1,8 +1,8 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         SDL2 + Mac Cocoa edition
-                                                             Version 0.7.0
-                                                                2022/10/16
+                                                             Version 0.7.1
+                                                                2022/12/10
 
 Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
 ==============================================================================
@@ -220,18 +220,6 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
      のあるフォルダを指定した後、操作(Control) -> パワーオン(PowerOn) を
      おこなうか、このソフトを再起動してください。
 
-  ※「開発元が未確認のため開けません。」と出る場合は、Controlキーを押しながら
-    マウスをクリックし「開く」を選んだあと、さらに「開く」をクリックします。
-  ※ 上記操作で開けない場合は、  システム環境設定→セキュリティーとプライバシー
-    を開き、「Mac App Store と確認済みの開発元からのアプリケーションを許可」を
-    選択して再度行ってください。
-
-  ※ Sierra (10.12)以降で設定ファイルなどが保存されない場合：
-     App Store以外からダウンロードしたアプリはファイル保存ができないことが
-    あります。
-     こういう場合は、一度appフォルダを別のフォルダに移動してから、再度元の
-    フォルダに戻します。
-
   5. FDDを使用する場合は、メニューのFDDタイプ(FDD Type)、または、左option+Fで
      どのFDDを使用するか選択した後、操作(Control) -> パワーオン(PowerOn) を
      おこなうか、このソフトを再起動してください。
@@ -246,10 +234,23 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
     ・コマンドラインで設定ファイルを指定すると、そのファイルがあるフォルダ下に
       作成されます。
 
-     起動しない場合：
-       mbs1.logを開いてエラーメッセージを確認してください。
-       ターミナル/コマンドプロンプトから実行して出力されるメッセージを確認
-       して下さい。
+  起動しない場合：
+
+  ※「開発元が未確認のため開けません。」と出る場合は、Controlキーを押しながら
+    マウスをクリックし「開く」を選んだあと、さらに「開く」をクリックします。
+  ※ 上記操作で開けない場合は、  システム環境設定→セキュリティーとプライバシー
+    を開き、「Mac App Store と確認済みの開発元からのアプリケーションを許可」を
+    選択して再度行ってください。
+
+  ※ Sierra (10.12)以降で設定ファイルなどが保存されない場合：
+     App Store以外からダウンロードしたアプリはファイル保存ができないことが
+    あります。
+     こういう場合は、一度appフォルダを別のフォルダに移動してから、再度元の
+    フォルダに戻します。
+
+    上記以外の場合、mbs1.logを開いてエラーメッセージを確認してください。
+    ターミナル/コマンドプロンプトから実行して出力されるメッセージを確認
+    して下さい。
 
 
 ● アンインストール
@@ -1003,6 +1004,11 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
    ●拡張PSGポート(Extended PSG port)
      拡張PSGポート($FFE6,$FFE7,$FFEE,$FFEF)で使用する音源チップを選択します。
 
+     BASICのPLAY文で演奏する場合、以下のいずれかを選択してください。
+       PSG(AY-3-8910相当) クロック:1MHz
+       OPN(YM2203相当) クロック:2MHz
+       OPNA(YM2608相当) クロック:4MHz
+
    ●FM音源の割り込み信号接続先(Connect interrupt signal of FM Synthesis to)
      FM音源のタイマー機能を使用する場合、割り込み信号を接続する必要があります。
 
@@ -1243,7 +1249,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
   MacOSX版: (Mac Mini CPU: Corei5 / Mem: 8GB)
     Mac OS X High Sierra (10.13.6 Intel x86_64)
     Xcode 7.3.1
-      SDL-2.0.8, SDL2_ttf-2.0.12 SDL2_net-2.0.0
+      SDL-2.0.8, SDL2_ttf-2.0.12
 
 
 ● 参考文献
@@ -1259,6 +1265,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
   レベル3BASIC入門 - アスキー出版 1981
   マイクロコンピュータMC6809の考え方 - オーム社 1982
   図解マイクロコンピュータZ-80の使い方 - オーム社 1981
+  M68000 8-/16-/32-Bit Microprocessors User's Manual - Motorola 1993
+  68000プログラマーズハンドブック - 技術評論社 1986
+  68000ファミリハンドブック - 啓学出版 1987
 
 
 ● 謝辞
@@ -1272,18 +1281,14 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
 ● クレジット
 
   SDL:
-  Simple DirectMedia Layer is a cross-platform development library designed
-  to provide low level access to audio, keyboard, mouse, joystick, and graphics
-  hardware via OpenGL and Direct3D. It is used by video playback software,
-  emulators, and popular games.
+  The Simple DirectMedia Layer (SDL for short) is a cross-platform library
+  designed to make it easy to write multi-media software, such as games and
+  emulators.
     http://www.libsdl.org/
 
   SDL_ttf:
   This library allows you to use TrueType fonts to render text in SDL
   applications.
-
-  SDL_net:
-  This is an example portable network library for use with SDL.
 
   freetype2:
   FreeType 2 is a software font engine that is designed to be small, efficient,

@@ -1,7 +1,7 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
-                                                             Version 0.7.0
-                                                                2022/10/16
+                                                             Version 0.7.1
+                                                                2022/12/10
 
 Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
 ==============================================================================
@@ -79,16 +79,6 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
   Direct3D(DirectX9以上)が正常に動作すること。
 
   使用デバイス：キーボード、マウス、ジョイスティック
-
- 「msvcp100.dllが見つからなかったため、アプリケーションを開始できませんでした。
-  ～」と表示され起動できないときは、
-  Visual C++ 2010 SP1 再頒布可能パッケージのインストールが必要です。
-    マイクロソフトのページよりインストールしてください。
-
-  32ビット版(x86):
-    http://www.microsoft.com/ja-jp/download/details.aspx?id=8328
-  64ビット版(x64):
-    http://www.microsoft.com/ja-jp/download/details.aspx?id=13523
 
 
 ● 動作に必要なもの
@@ -238,6 +228,22 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
       keybind.ini ... キー設定ファイル
     ・コマンドラインで設定ファイルを指定すると、そのファイルがあるフォルダ下に
       作成されます。
+
+  起動しない場合：
+
+  ※「msvcp100.dllが見つからなかったため、アプリケーションを開始できませんでした。
+    ～」と表示され起動できないときは、
+    Visual C++ 2010 SP1 再頒布可能パッケージのインストールが必要です。
+    マイクロソフトのページよりインストールしてください。
+
+    32ビット版(x86):
+      http://www.microsoft.com/ja-jp/download/details.aspx?id=8328
+    64ビット版(x64):
+      http://www.microsoft.com/ja-jp/download/details.aspx?id=13523
+
+    上記以外の場合、mbs1.logを開いてエラーメッセージを確認してください。
+    ターミナル/コマンドプロンプトから実行して出力されるメッセージを確認
+    して下さい。
 
 
 ● アンインストール
@@ -993,6 +999,11 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
    ●拡張PSGポート(Extended PSG port)
      拡張PSGポート($FFE6,$FFE7,$FFEE,$FFEF)で使用する音源チップを選択します。
 
+     BASICのPLAY文で演奏する場合、以下のいずれかを選択してください。
+       PSG(AY-3-8910相当) クロック:1MHz
+       OPN(YM2203相当) クロック:2MHz
+       OPNA(YM2608相当) クロック:4MHz
+
    ●FM音源の割り込み信号接続先(Connect interrupt signal of FM Synthesis to)
      FM音源のタイマー機能を使用する場合、割り込み信号を接続する必要があります。
 
@@ -1254,6 +1265,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
   レベル3BASIC入門 - アスキー出版 1981
   マイクロコンピュータMC6809の考え方 - オーム社 1982
   図解マイクロコンピュータZ-80の使い方 - オーム社 1981
+  M68000 8-/16-/32-Bit Microprocessors User's Manual - Motorola 1993
+  68000プログラマーズハンドブック - 技術評論社 1986
+  68000ファミリハンドブック - 啓学出版 1987
 
 
 ● 謝辞
