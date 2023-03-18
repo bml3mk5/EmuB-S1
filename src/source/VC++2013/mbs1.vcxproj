@@ -312,7 +312,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -341,7 +341,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -370,7 +370,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -399,7 +399,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -423,7 +423,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -452,7 +452,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -481,7 +481,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -505,7 +505,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -529,7 +529,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -554,7 +554,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Dbgr|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -579,7 +579,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Z80B|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -604,7 +604,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Z80B|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -628,7 +628,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Z80B_Dbgr|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -653,7 +653,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_M68K_Dbgr|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -678,7 +678,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Z80B_Dbgr|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -702,7 +702,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_M68K_Dbgr|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -726,7 +726,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -752,7 +752,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
@@ -777,7 +777,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
@@ -801,7 +801,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Dbgr|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;\Devel\include\ffmpeg341;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
@@ -1105,11 +1105,11 @@
     <ClInclude Include="..\src\vm\mbs1\timer.h" />
     <ClInclude Include="..\src\vm\mbs1\z80b_card.h" />
     <ClInclude Include="..\src\vm\mc68000.h" />
+    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc68000dasm.h" />
     <ClInclude Include="..\src\vm\mc68000fpu.h" />
     <ClInclude Include="..\src\vm\mc68000mmu.h" />
     <ClInclude Include="..\src\vm\mc68000ops.h" />
-    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc6809.h" />
     <ClInclude Include="..\src\vm\mc6809_consts.h" />
     <ClInclude Include="..\src\vm\mc6809dasm.h" />

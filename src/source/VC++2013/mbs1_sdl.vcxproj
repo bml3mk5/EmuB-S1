@@ -676,7 +676,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -689,8 +689,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -703,7 +703,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -712,7 +712,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -725,8 +725,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -739,7 +739,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -748,7 +748,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -761,8 +761,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -775,7 +775,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -784,7 +784,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -797,8 +797,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -811,7 +811,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -820,7 +820,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL2|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -833,8 +833,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -847,7 +847,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -856,7 +856,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL2_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -869,8 +869,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -883,7 +883,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -892,7 +892,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL2_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -905,8 +905,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -919,7 +919,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -928,7 +928,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL2_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -941,8 +941,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -955,7 +955,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -964,7 +964,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL2_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -977,8 +977,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -991,7 +991,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1000,7 +1000,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1014,7 +1014,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype255d.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeType25DebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeType25DebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1027,7 +1027,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1039,7 +1039,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1052,8 +1052,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1065,7 +1065,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1077,7 +1077,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1090,8 +1090,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1103,7 +1103,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1115,7 +1115,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1128,8 +1128,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1141,7 +1141,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1153,7 +1153,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1166,8 +1166,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248_D.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1179,7 +1179,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1191,7 +1191,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1204,8 +1204,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1218,7 +1218,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1230,7 +1230,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1243,8 +1243,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1257,7 +1257,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1269,7 +1269,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1282,8 +1282,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1296,7 +1296,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1305,7 +1305,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1318,8 +1318,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1332,7 +1332,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1344,7 +1344,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1357,8 +1357,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255d.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(SDL2NetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(FreeType25DebugLibDir);$(SDL2TtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1371,7 +1371,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1383,7 +1383,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -1397,7 +1397,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype255d.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeType25DebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(FreeType25DebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -1410,7 +1410,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1419,7 +1419,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1429,8 +1429,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1442,7 +1442,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1451,7 +1451,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1461,8 +1461,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1474,7 +1474,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1483,7 +1483,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1493,8 +1493,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1506,7 +1506,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1515,7 +1515,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1525,8 +1525,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1538,7 +1538,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1547,7 +1547,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1557,8 +1557,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1570,7 +1570,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1579,7 +1579,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL2|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1589,8 +1589,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1602,7 +1602,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1611,7 +1611,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL2_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1621,8 +1621,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1634,7 +1634,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1643,7 +1643,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL2_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1653,8 +1653,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1666,7 +1666,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1675,7 +1675,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL2_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1685,8 +1685,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1698,7 +1698,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1707,7 +1707,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL2_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1717,8 +1717,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1730,7 +1730,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1742,7 +1742,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1752,8 +1752,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1765,7 +1765,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1777,7 +1777,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1787,8 +1787,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1800,7 +1800,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1812,7 +1812,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1822,8 +1822,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1835,7 +1835,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1847,7 +1847,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1857,8 +1857,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1870,7 +1870,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1882,7 +1882,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1892,8 +1892,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;freetype248.lib;SDL_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDLReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1905,7 +1905,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1917,7 +1917,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1927,8 +1927,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1940,7 +1940,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1952,7 +1952,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1962,8 +1962,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -1975,7 +1975,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -1987,7 +1987,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -1997,8 +1997,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -2010,7 +2010,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -2022,7 +2022,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -2032,8 +2032,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -2045,7 +2045,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -2057,7 +2057,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(SDL2TtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -2067,8 +2067,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;freetype255.lib;SDL2_ttf.lib;winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(SDL2NetReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SDL2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;version.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(FreeType25ReleaseLibDir);$(SDL2TtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -2080,7 +2080,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(SDLTtfDir);$(LibIntlDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_SDL2;GUI_TYPE_WINDOWS;USE_OPENGL;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
@@ -2123,8 +2123,6 @@
     <ClCompile Include="..\src\gui\windows\winfont.cpp" />
     <ClCompile Include="..\src\labels.cpp" />
     <ClCompile Include="..\src\msgs.cpp" />
-    <ClCompile Include="..\src\osd\opengl.cpp" />
-    <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_cbitmap.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_ccolor.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_csurface.cpp" />
@@ -2151,6 +2149,8 @@
     <ClCompile Include="..\src\osd\emu_screen.cpp" />
     <ClCompile Include="..\src\osd\emu_sound.cpp" />
     <ClCompile Include="..\src\osd\logging.cpp" />
+    <ClCompile Include="..\src\osd\opengl.cpp" />
+    <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\simple_clocale.cpp" />
     <ClCompile Include="..\src\osd\windowmode.cpp" />
     <ClCompile Include="..\src\osd\windows\win_uart.cpp" />
@@ -2283,7 +2283,6 @@
     <ClInclude Include="..\src\main.h" />
     <ClInclude Include="..\src\msgboard.h" />
     <ClInclude Include="..\src\msgs.h" />
-    <ClInclude Include="..\src\osd\opengl.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_cbitmap.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_ccolor.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_common.h" />
@@ -2302,6 +2301,7 @@
     <ClInclude Include="..\src\osd\debugger_console.h" />
     <ClInclude Include="..\src\osd\disk_parser.h" />
     <ClInclude Include="..\src\osd\emu_input.h" />
+    <ClInclude Include="..\src\osd\opengl.h" />
     <ClInclude Include="..\src\osd\screenmode.h" />
     <ClInclude Include="..\src\osd\simple_clocale.h" />
     <ClInclude Include="..\src\osd\windowmode.h" />
@@ -2369,11 +2369,11 @@
     <ClInclude Include="..\src\vm\mbs1\timer.h" />
     <ClInclude Include="..\src\vm\mbs1\z80b_card.h" />
     <ClInclude Include="..\src\vm\mc68000.h" />
+    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc68000dasm.h" />
     <ClInclude Include="..\src\vm\mc68000fpu.h" />
     <ClInclude Include="..\src\vm\mc68000mmu.h" />
     <ClInclude Include="..\src\vm\mc68000ops.h" />
-    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc6809.h" />
     <ClInclude Include="..\src\vm\mc6809_consts.h" />
     <ClInclude Include="..\src\vm\mc6809dasm.h" />

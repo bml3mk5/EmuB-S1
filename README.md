@@ -1,6 +1,6 @@
 # HITACHI MB-S1 model05 Emulator
 
-#### Copyright(C) Common Source Code Project, Sasaji 2011-2023 All Rights Reserved.
+#### Copyright(C) Common Source Code Project, Sasaji 2011-2022 All Rights Reserved.
 
 ## ファイル構成
 
@@ -66,12 +66,25 @@
         mbs1_wx.vcxproj ...... wxWidgets版 VC++2010用プロジェクトファイル
         mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       VC++2013/
-        mbs1.vcxproj ....... Windows版 VC++2013用プロジェクトファイル
-        mmf_loader.vcxproj.. Media Foundationを動的にロードするためのDLL作成
+        mbs1.vcxproj ......... Windows版 VC++2013用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2013用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2013用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       VC++2015/
-        mbs1.vcxproj ....... Windows版 VC++2015用プロジェクトファイル
+        mbs1.vcxproj ......... Windows版 VC++2015用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2015用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2015用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       VC++2017/
-        mbs1.vcxproj ....... Windows版 VC++2017用プロジェクトファイル
+        mbs1.vcxproj ......... Windows版 VC++2017用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2017用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2017用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
+      VC++2019/
+        mbs1.vcxproj ......... Windows版 VC++2019用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2019用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2019用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       Xcode/ ............... Xcode用プロジェクトファイル
       Makefile.xxx ......... 各OSごとのmakeファイル
       README.md ............ このファイル
@@ -79,13 +92,13 @@
 
 ## コンパイル方法
 
- * [Windows(VC++)版](README_WIN.md)
+ * [Windows(VC++)版](src/source/README_WIN.md)
 
- * [SDL版](README_SDL.md)
+ * [SDL版](src/source/README_SDL.md)
 
- * [wxWidgets版](README_WX.md)
+ * [wxWidgets版](src/source/README_WX.md)
 
- * [Qt版](README_QT.md)
+ * [Qt版](src/source/README_QT.md)
 
 
 ## 免責事項

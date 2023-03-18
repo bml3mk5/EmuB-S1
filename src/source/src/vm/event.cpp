@@ -993,11 +993,8 @@ void EVENT::update_config()
 	}
 #endif
 
-	if(cpu_power != config.cpu_power) {
-		cpu_power = config.cpu_power;
-		cpu_accum = 0;
-	}
 #endif
+
 //	sound_rate_f = ((sound_rate << 5) >> event_power);
 //	update_sound_rate_f = sound_rate_f;
 }

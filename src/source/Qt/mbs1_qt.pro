@@ -36,6 +36,7 @@ m68k {
 }
 
 INCLUDEPATH += include
+win32:INCLUDEPATH += /Devel/include/ffmpeg341
 win32:INCLUDEPATH += /Devel/include
 !win32:INCLUDEPATH += /usr/local/include
 !win32:INCLUDEPATH += $(HOME)/Devel/ffmpeg

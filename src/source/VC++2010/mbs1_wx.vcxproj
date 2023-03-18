@@ -637,7 +637,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -650,7 +650,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -664,13 +664,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -683,7 +683,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -697,13 +697,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -716,7 +716,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -730,13 +730,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -749,7 +749,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -763,13 +763,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -782,7 +782,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -796,13 +796,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx2|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -815,7 +815,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -829,13 +829,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx2_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -848,7 +848,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -862,13 +862,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -881,7 +881,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -895,13 +895,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx2_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -914,7 +914,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -928,13 +928,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx2_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -947,7 +947,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -961,13 +961,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Wx2_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -980,7 +980,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebugLibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -994,7 +994,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1003,7 +1003,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1015,7 +1015,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1029,7 +1029,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1038,7 +1038,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1050,7 +1050,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1064,7 +1064,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1073,7 +1073,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1085,7 +1085,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1099,7 +1099,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1108,7 +1108,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1120,7 +1120,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1134,7 +1134,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1143,7 +1143,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1155,7 +1155,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1169,7 +1169,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1178,7 +1178,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1190,7 +1190,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1204,7 +1204,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1213,7 +1213,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1225,7 +1225,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1239,7 +1239,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1248,7 +1248,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1260,7 +1260,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1274,7 +1274,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1283,7 +1283,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1295,7 +1295,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1309,7 +1309,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1318,7 +1318,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1330,7 +1330,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1344,7 +1344,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2DebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1353,7 +1353,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -1365,7 +1365,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2DebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2DebugLibDir);$(WxWidgetsDebug64LibDir);$(GLEWDebugLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
@@ -1379,13 +1379,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1397,7 +1397,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1410,13 +1410,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1428,7 +1428,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1441,13 +1441,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1459,7 +1459,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1472,13 +1472,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1490,7 +1490,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1503,13 +1503,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx2|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1521,7 +1521,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1534,13 +1534,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx2_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1552,7 +1552,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1565,13 +1565,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx2_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1583,7 +1583,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1596,13 +1596,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx2_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1614,7 +1614,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1627,13 +1627,13 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Wx2_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1645,7 +1645,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsReleaseLibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1658,7 +1658,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2ReleaseDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1667,7 +1667,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1679,7 +1679,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1692,7 +1692,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1701,7 +1701,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1713,7 +1713,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1726,7 +1726,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1735,7 +1735,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1747,7 +1747,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1760,7 +1760,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1769,7 +1769,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1781,7 +1781,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1794,7 +1794,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1803,7 +1803,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1815,7 +1815,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1828,7 +1828,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1837,7 +1837,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1849,7 +1849,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1862,7 +1862,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1871,7 +1871,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1883,7 +1883,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1896,7 +1896,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1905,7 +1905,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1917,7 +1917,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1930,7 +1930,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1939,7 +1939,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDL2Dir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -1951,7 +1951,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(Local2ReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;imm32.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDL2ReleaseLibDir);$(WxWidgetsRelease64LibDir);$(GLEWReleaseLibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1964,7 +1964,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(SDLDebugDir)include;$(WxWidgetsDir)include\msvc;$(WxWidgetsDir)include;$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBS1;USE_WX2;GUI_TYPE_WXWIDGETS;USE_OPENGL;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
@@ -1999,8 +1999,6 @@
     <ClCompile Include="..\src\gui\wxwidgets\wx_volume_dlg.cpp" />
     <ClCompile Include="..\src\labels.cpp" />
     <ClCompile Include="..\src\msgs.cpp" />
-    <ClCompile Include="..\src\osd\opengl.cpp" />
-    <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_sound.cpp" />
     <ClCompile Include="..\src\osd\d88_files.cpp" />
     <ClCompile Include="..\src\osd\debugger_console.cpp" />
@@ -2011,6 +2009,8 @@
     <ClCompile Include="..\src\osd\emu_screen.cpp" />
     <ClCompile Include="..\src\osd\emu_sound.cpp" />
     <ClCompile Include="..\src\osd\logging.cpp" />
+    <ClCompile Include="..\src\osd\opengl.cpp" />
+    <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\windowmode.cpp" />
     <ClCompile Include="..\src\osd\windows\win_uart.cpp" />
     <ClCompile Include="..\src\osd\wxwidgets\wxw_cbitmap.cpp" />
@@ -2233,11 +2233,11 @@
     <ClInclude Include="..\src\vm\mbs1\timer.h" />
     <ClInclude Include="..\src\vm\mbs1\z80b_card.h" />
     <ClInclude Include="..\src\vm\mc68000.h" />
+    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc68000dasm.h" />
     <ClInclude Include="..\src\vm\mc68000fpu.h" />
     <ClInclude Include="..\src\vm\mc68000mmu.h" />
     <ClInclude Include="..\src\vm\mc68000ops.h" />
-    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc6809.h" />
     <ClInclude Include="..\src\vm\mc6809_consts.h" />
     <ClInclude Include="..\src\vm\mc6809dasm.h" />
