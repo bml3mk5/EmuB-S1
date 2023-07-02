@@ -136,7 +136,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2023 All Rights Reserved.
   書式: RD <device name> [<regno> <value>]
   <device name> - 以下のデバイス名を指定
     PIA,ACIA,CRTC,KB,CMT,TIMER,FDC3,FDC5,FDC5EX,FDDUNIT,PSG0,PSG1,PSG60,PSG61,
-    PSG90,PSG91,PSG92,FMOPN,PIAEX,ACIAEX,VIA,RTC,MSM58321,BOARD
+    PSG90,PSG91,PSG92,FMOPN,PIAEX,ACIAEX,VIA,RTC,MSM58321,BOARD,EVENT
   <regno> - レジスタ番号を指定
     レジスタ番号は各デバイスのレジスタを表示させたときのインデックス番号です。
   <value> - 書き込む値を指定

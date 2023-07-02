@@ -1236,6 +1236,7 @@ public:
 	virtual void initialize();
 	virtual void release();
 	virtual void reset();
+	virtual void warm_reset(bool por);
 	int run(int clock);
 #ifdef USE_CPU_REAL_MACHINE_CYCLE
 	int run(int clock, int accum, int cycle);
@@ -1276,7 +1277,7 @@ public:
 #endif /* USE_DEBUGGER */
 	}
 #endif
-	void set_context_res(DEVICE* device, int id, uint32_t mask) {
+	void set_context_reset(DEVICE* device, int id, uint32_t mask) {
 		register_output_signal(&outputs_res, device, id, mask);
 	}
 	void set_context_halt(DEVICE* device, int id, uint32_t mask) {

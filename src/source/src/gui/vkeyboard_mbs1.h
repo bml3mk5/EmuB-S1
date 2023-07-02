@@ -32,12 +32,13 @@ const struct stLedPos_t cLedPos[] = {
 	{ BITMAPPARTS_LED_GH, 457, 277 },	// HIRAGANA Led
 	{ BITMAPPARTS_LED_RV,  18, 230 },	// CAPSLOCK Led
 	{ BITMAPPARTS_MODE,   507,  11 },	// MODE Switch
+	{ BITMAPPARTS_RESET,  455,  11 },	// RESET Switch
 	{ BITMAPPARTS_POWER,  622,  10 },	// POWER Switch
 	{ -1, 0, 0 }
 };
 
 const Hori_t cvKeyHori0[] = {
-	{455, 16, 0x7f, 0, -1, BITMAPPARTS_RESET},	// RESET
+	{455, 16, 0x7f, KEYKIND_NOANIME, -1, -1},	// RESET
 	{507, 16, 0x7d, KEYKIND_NOANIME, -1, -1},	// MODE
 	{623, 18, 0x7e, KEYKIND_NOANIME, -1, -1},	// POWER
 	{  0,  0,    0, 0, -1, -1}
@@ -157,7 +158,7 @@ const Hori_t cvKeyHori7[] = {
 };
 
 const Hori_t cvKeyHori8[] = {
-	{615, 32, 0x2f, 0, -1, -1},	// num RETURN
+	{615, 32, 0x2f, KEYKIND_ARRAY, ARRAYKEYS_RETURN, -1},	// num RETURN
 	{  0,  0,    0, 0, -1, -1}
 };
 

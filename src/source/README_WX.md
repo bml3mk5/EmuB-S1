@@ -1,5 +1,4 @@
-# HITACHI MB-S1 model05 Emulator
-#       wxWidgets edition
+# HITACHI MB-S1 model05 Emulator wxWidgets edition
 
 #### Copyright(C) Common Source Code Project, Sasaji 2012-2023 All Rights Reserved.
 

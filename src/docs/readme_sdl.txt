@@ -1,8 +1,8 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         SDL edition
-                                                             Version 0.7.2
-                                                                2023/03/19
+                                                             Version 0.7.3
+                                                                2023/07/03
 
 Copyright(C) Common Source Code Project, Sasaji 2011-2023 All Rights Reserved.
 ==============================================================================
@@ -1047,10 +1047,13 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2023 All Rights Reserved.
 
    ●Z80Bカードの割り込み信号接続先(Connect interrupt signal of Z80B Card to)
 
-   ●MC68008でアドレスエラーが発生した時にメッセージを表示する。(Show message when
-     the address error occured in MC68008.)
+   ●MC68008でアドレスエラーが発生した時にメッセージを表示する。(Show message
+     when the address error occured in MC68008.)
       MC68008でアドレスエラー例外が発生した時に画面およびログにメッセージを表示
      するかどうかを指定します。
+
+   ●パワーオン時にCPUのレジスタをクリアする。(Clear CPU registers at power on.)
+     チェックを入れるとパワーオン時にCPUのレジスタをゼロクリアします。
 
   ■サウンド(Sound)タブ
 

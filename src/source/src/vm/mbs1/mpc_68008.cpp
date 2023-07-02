@@ -92,6 +92,9 @@ void MPC_68008::warm_reset(bool por)
 	}
 	m_haltoff_register_id = -1;
 
+	// degate HALT signal
+	d_board->write_signal(SIG_CPU_HALT, 0, SIG_HALT_MPC68008_MASK);
+
 	// mc68008 is reset and halt at boot
 	update_reset_signal();
 	update_busreq();
@@ -164,10 +167,11 @@ uint32_t MPC_68008::read_data8w(uint32_t addr, int *wait)
 /// degate interrupt
 void MPC_68008::update_intr_condition()
 {
-	if (m_assert_intr & 0x07) {
+	if (m_assert_intr & 0x05) {
 		// degate interrupt
-		m_assert_intr &= ~0x07;
+		m_assert_intr &= ~0x05;
 		update_intr();
+		m_pro_reg &= ~PRO_REG_INT;
 	}
 }
 
@@ -191,6 +195,10 @@ void MPC_68008::write_signal(int id, uint32_t data, uint32_t mask)
 			if ((data & mask) != 0 && (data & SIG_NMI_TRAP_MASK) == 0) {
 				// assert interrupt level 2
 				m_assert_intr |= 0x02;
+				update_intr();
+			} else if ((data & mask) == 0) {
+				// degate interrupt level 2
+				m_assert_intr &= ~0x02;
 				update_intr();
 			}
 			break;
@@ -236,14 +244,28 @@ void MPC_68008::write_memory_mapped_io8(uint32_t addr, uint32_t data)
 //			update_intr();
 //		}
 		// update register with clearing reset flag
-		m_pro_reg = (data & PRO_REG_MASK) | (m_pro_reg & ~(PRO_REG_RESET | PRO_REG_MASK));
+		m_pro_reg = (data & PRO_REG_MASK) | (m_pro_reg & ~(PRO_REG_MASK));
+		if (data & PRO_REG_R68) {
+			m_pro_reg &= ~PRO_REG_RESET;
+		}
 		update_reset_signal();
 		update_busreq();
 		break;
 	case 0xefe1b:
 		// ACC CONTROL
-		m_acc_reg = (data & ACC_REG_MASK);
-		assert_halt_to_6809();
+		if ((m_acc_reg & ACC_REG_BS) == 0 && (data & ACC_REG_BS) != 0) {
+			// assert HALT signal to 6809
+			m_acc_reg = (data & ACC_REG_MASK);
+			assert_halt_to_6809();
+		} else if ((m_acc_reg & ACC_REG_BS) != 0 && (data & ACC_REG_BS) == 0) { 
+			m_acc_reg = (data & ACC_REG_MASK);
+			if ((REG_BUSCTRL & BUSCTRL_SIGNAL) == 0) {
+				// degate HALT signal to 6809 if MC68008 is stopping by busreq
+				degate_halt_to_6809();
+			}
+		} else {
+			m_acc_reg = (data & ACC_REG_MASK);
+		}
 		break;
 	}
 }
@@ -278,7 +300,13 @@ uint32_t MPC_68008::address_mapping(uint32_t addr)
 /// reset to MC68008
 void MPC_68008::update_reset_signal()
 {
-	d_mc68k->write_signal(SIG_CPU_RESET, (now_reset || (m_pro_reg & PRO_REG_RESET) != 0) ? 1 : 0, 1);
+	if (now_reset || (m_pro_reg & PRO_REG_RESET) != 0) {
+		d_mc68k->write_signal(SIG_CPU_HALT, 1, 1);
+		d_mc68k->write_signal(SIG_CPU_RESET, 1, 1);
+	} else {
+		d_mc68k->write_signal(SIG_CPU_RESET, 0, 1);
+		d_mc68k->write_signal(SIG_CPU_HALT, 0, 1);
+	}
 }
 
 /// bus request to MC68008
@@ -290,7 +318,9 @@ void MPC_68008::update_busreq()
 /// send interruput to MC68008
 void MPC_68008::update_intr()
 {
-	d_mc68k->write_signal(SIG_CPU_IRQ, 1 << m_assert_intr, 0xfe);
+	uint32_t intr = m_assert_intr;
+	if ((intr & 0x05) == 0x05) intr = 0x05;
+	d_mc68k->write_signal(SIG_CPU_IRQ, 1 << intr, 0xfe);
 }
 
 /// Multi Bus Control
@@ -302,7 +332,7 @@ void MPC_68008::set_multibus(bool onoff)
 /// assert halt signal to stop 6809
 void MPC_68008::assert_halt_to_6809()
 {
-	if (m_6809_halt == 0 || (m_acc_reg & ACC_REG_BS) != 0) {
+	if (m_6809_halt == 0) {
 		d_board->write_signal(SIG_CPU_HALT, SIG_HALT_MPC68008_MASK, SIG_HALT_MPC68008_MASK);
 		set_multibus(false);
 		m_6809_halt = 1;
@@ -333,7 +363,7 @@ void MPC_68008::event_callback(int event_id, int err)
 {
 	if (event_id == SIG_HALTOFF) {
 		d_board->write_signal(SIG_CPU_HALT, 0, SIG_HALT_MPC68008_MASK);
-		set_multibus(true);
+		set_multibus((REG_BUSCTRL & BUSCTRL_SIGNAL) != 0);
 		m_6809_halt = 0;
 		m_haltoff_register_id = -1;
 	}
@@ -472,6 +502,55 @@ uint32_t MPC_68008::debug_read_memory_mapped_io8(uint32_t addr)
 {
 	return read_memory_mapped_io8(addr);
 }
+
+static const _TCHAR *c_reg_names[] = {
+	_T("BUS_CTRL"),
+	_T("PRO_CTRL"),
+	_T("ACC_CTRL"),
+	NULL
+};
+
+bool MPC_68008::debug_write_reg(uint32_t reg_num, uint32_t data)
+{
+	switch(reg_num) {
+	case 0:
+	case 0xfe19:
+	case 0xefe19:
+		write_signal(SIG_CPU_BUSREQ, data, 0x80);
+		break;
+	case 1:
+	case 2:
+		write_memory_mapped_io8(reg_num + 0xefe19, data);
+		break;
+	case 0xfe1a:
+	case 0xfe1b:
+		write_memory_mapped_io8(reg_num + 0xe0000, data);
+		break;
+	case 0xefe1a:
+	case 0xefe1b:
+		write_memory_mapped_io8(reg_num, data);
+		break;
+	default:
+		return false;
+	}
+	return true;
+}
+
+bool MPC_68008::debug_write_reg(const _TCHAR *reg, uint32_t data)
+{
+	uint32_t num = find_debug_reg_name(c_reg_names, reg);
+	return debug_write_reg(num, data);
+}
+
+void MPC_68008::debug_regs_info(_TCHAR *buffer, size_t buffer_len)
+{
+	buffer[0] = _T('\0');
+
+	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE19:%s):rdata:%02X\n"), 0, c_reg_names[0], REG_BUSCTRL);
+	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE1A:%s):wdata:%02X\n"), 1, c_reg_names[1], m_pro_reg & PRO_REG_MASK);
+	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE1B:%s):wdata:%02X\n"), 2, c_reg_names[2], m_acc_reg);
+}
+
 #endif
 
 #endif /* USE_MPC_68008 */

@@ -306,6 +306,25 @@ void MC68000BASE::release()
 ///
 void MC68000BASE::reset()
 {
+	warm_reset(true);
+}
+
+/// asserted reset signal
+///
+///
+void MC68000BASE::warm_reset(bool por)
+{
+	if (por) {
+		/* Clear registers */
+		for (int i=0;i<16;i++)
+			m_dar[i] = FLG_CLEAR_CPUREG ? 0 : M68KI_REG_DEFAULT_VAL;
+		for (int i=0;i<4;i++)
+			m_sp[i] = FLG_CLEAR_CPUREG ? 0 : M68KI_REG_DEFAULT_VAL;
+#ifdef USE_DEBUGGER
+		dasm.update_reg(get_sr());
+#endif
+	}
+
 	/* Disable the PMMU/HMMU on reset, if any */
 #ifdef USE_MC68000MMU
 	m_pmmu_enabled = 0;
@@ -317,7 +336,7 @@ void MC68000BASE::reset()
 #endif
 
 	/* Clear all stop levels and eat up all remaining cycles */
-	m_stopped = STOP_LEVEL_NONE;
+	m_stopped &= (STOP_LEVEL_OUTER_HALT | STOP_LEVEL_BUSREQ);
 	m_signals &= ~SIG_MASK_M68K_SOFTALL;
 #ifndef USE_MEM_REAL_MACHINE_CYCLE
 	m_initial_count = 0;
@@ -367,8 +386,8 @@ void MC68000BASE::write_signal(int id, uint32_t data, uint32_t mask)
 {
 #ifdef USE_DEBUGGER
 	int int_flags_id = -1;
-#endif
 	uint32_t old_signals = m_signals;
+#endif
 
 	switch(id) {
 #ifdef USE_MC68000_IRQ_LEVEL
@@ -438,7 +457,7 @@ void MC68000BASE::write_signal(int id, uint32_t data, uint32_t mask)
 			m_signals &= ~SIG_MASK_M68K_RESET;
 			if (now_reset) {
 				now_reset = false;
-				reset();
+				warm_reset(false);
 			}
 		}
 #ifdef USE_DEBUGGER
@@ -992,6 +1011,8 @@ void MC68000BASE::prefetch_irq_line(uint32_t data, uint32_t mask)
 #ifdef USE_DEBUGGER
 	m_signals &= ~SIG_MASK_M68K_DEBUG_INTR; 
 	m_signals |= ((data & mask) << 16);
+
+	dasm.set_signals(m_signals);
 #endif
 	OUT_DEBUG_EX_INTR(_T("clk:%d MC68000 PREF INT Pref:%04X Now:%04X Msk:%04X PROC:%04X")
 		, (int)get_current_clock()
@@ -1011,6 +1032,8 @@ void MC68000BASE::prefetch_irq_line(uint32_t id, bool onoff)
 #ifdef USE_DEBUGGER
 	m_signals &= ~SIG_MASK_M68K_DEBUG_INTR; 
 	m_signals |= (1 << (m_int_level >> 8)); 
+
+	dasm.set_signals(m_signals);
 #endif
 }
 
@@ -1074,6 +1097,7 @@ void MC68000BASE::set_irq_line(uint32_t id, bool onoff)
 void MC68000BASE::reset_peripherals()
 {
 	write_signals(&outputs_res, 1);
+	write_signals(&outputs_res, 0);
 }
 
 // ----------------------------------------------------------------------------
@@ -1385,43 +1409,59 @@ uint32_t MC68000BASE::DEBUG_RM16(uint32_t addr, uint32_t fc)
 }
 
 #define DEBUG_WRITE_REG(reg_name, reg_variable) \
-	if(_tcsicmp(reg, reg_name) == 0) { \
+	if(!wrote && _tcsicmp(reg, reg_name) == 0) { \
 		reg_variable = data; \
-		return true; \
+		wrote = true; \
 	}
 #define DEBUG_WRITE_A7_REG() \
-	if(_tcsicmp(reg, _T("A7")) == 0) { \
+	if(!wrote && _tcsicmp(reg, _T("A7")) == 0) { \
 		m_dar[15] = data; \
 		m_sp[(m_s_flag | ((m_s_flag >> 1) & m_m_flag)) >> 1] = data; \
-		return true; \
+		wrote = true; \
 	}
 #define DEBUG_WRITE_SR_REG() \
-	if(_tcsicmp(reg, _T("SR")) == 0) { \
+	if(!wrote && _tcsicmp(reg, _T("SR")) == 0) { \
 		m_debug_sr = data; \
 		set_sr_noint(m_debug_sr); \
 		dasm.update_reg(get_sr()); \
-		return true; \
+		wrote = true; \
 	}
 #define DEBUG_WRITE_SP_REG(reg_name, num) \
-	if(_tcsicmp(reg, reg_name) == 0) { \
+	if(!wrote && _tcsicmp(reg, reg_name) == 0) { \
 		m_sp[num] = data; \
 		if (((m_s_flag | ((m_s_flag >> 1) & m_m_flag)) >> 1) == num) m_dar[15] = data; \
-		return true; \
+		wrote = true; \
 	}
 
 bool MC68000BASE::debug_write_reg(const _TCHAR *reg, uint32_t data)
 {
 	_TCHAR name[4];
+	bool wrote = false;
+
 	DEBUG_WRITE_REG(_T("PC"), m_pc)
 	name[0] = _T('D'); name[2] = 0;
-	for(int i=0; i<8; i++) {
+	for(int i=0; !wrote && i<8; i++) {
 		name[1] = i + 0x30;
 		DEBUG_WRITE_REG(name, m_dar[i])
 	}
+	name[1] = '*';
+	if(!wrote && _tcsicmp(reg, name) == 0) {
+		for(int i=0; !wrote && i<8; i++) {
+			m_dar[i] = data;
+		}
+		wrote = true;
+	}
 	name[0] = _T('A');
-	for(int i=0; i<7; i++) {
+	for(int i=0; !wrote && i<7; i++) {
 		name[1] = i + 0x30;
 		DEBUG_WRITE_REG(name, m_dar[i + 8])
+	}
+	name[1] = '*';
+	if(!wrote && _tcsicmp(reg, name) == 0) {
+		for(int i=0; !wrote && i<7; i++) {
+			m_dar[i + 8] = data;
+		}
+		wrote = true;
 	}
 	DEBUG_WRITE_A7_REG()
 	DEBUG_WRITE_SP_REG(_T("USP"), 0)
@@ -1445,7 +1485,12 @@ bool MC68000BASE::debug_write_reg(const _TCHAR *reg, uint32_t data)
 		DEBUG_WRITE_REG(_T("CAAR"), m_caar)
 	}
 #endif
-	return false;
+
+	if (wrote) {
+		dasm.update_reg(get_sr());
+	}
+
+	return wrote;
 }
 
 void MC68000BASE::debug_regs_info(_TCHAR *buffer, size_t buffer_len)

@@ -87,7 +87,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2023 All Rights Reserved.
   $FE10         FUSE            ○対応
   $FE11         SEGMENT         ○対応
   $FE18         TRAP            ○対応
-  $FE19         BUS CTRL        Z80Bカード使用時のみ対応
+  $FE19         BUS CTRL        Z80Bカード、68008カード使用時のみ対応
+  $FE1A         PRO CTRL        68008カード使用時のみ対応
+  $FE1B         ACC CTRL        68008カード使用時B/S(BIT0)のみ対応、AS(BIT3)は未対応
   $FE20         BMSK COLOR      ○対応
   $FE21         ACTIVE PLANE    ○対応
   $FE23         DISP PAGE       ○対応

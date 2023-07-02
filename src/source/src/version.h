@@ -16,11 +16,11 @@
 #define APP_FILENAME	"mbs1.exe"
 #define APP_INTERNAME	"EmuB-S1"
 #define APP_COPYRIGHT	"Copyright (C) 2011,2012-2023 Common Source Code Project, Sasaji"
-#define APP_VERSION		"0.7.2.1110"
+#define APP_VERSION		"0.7.3.1118"
 #define APP_VER_MAJOR	0
 #define APP_VER_MINOR	7
-#define APP_VER_REV		2
-#define APP_VER_BUILD	1110
+#define APP_VER_REV		3
+#define APP_VER_BUILD	1118
 
 #if defined(__MINGW32__)
 #if defined(x86_64) || defined(__x86_64)

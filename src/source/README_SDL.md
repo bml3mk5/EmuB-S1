@@ -1,5 +1,4 @@
-# HITACHI MB-S1 model05 Emulator
-#       SDL edition
+# HITACHI MB-S1 model05 Emulator SDL edition
 
 #### Copyright(C) Common Source Code Project, Sasaji 2012-2023 All Rights Reserved.
 
@@ -45,6 +44,8 @@
         SDL-1.2.15-mac-keyboard.patch ...
                              SDL macでfnキーを使えるようにするパッチファイル
         SDL_net-1.2.8.patch ... SDL_net-1.2.8用パッチファイル
+        SDL-2.0.8-mac-keyboard.patch ...
+                             SDL2 macでfnキーを使えるようにするパッチファイル
         SDL2_net-2.0.0.patch .. SDL_net-2.0.0用パッチファイル
       Eclipse/ ............. Eclipseプロジェクトファイル
         sdl_linux/ ......... SDL linux用

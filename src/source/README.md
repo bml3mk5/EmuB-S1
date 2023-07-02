@@ -66,12 +66,25 @@
         mbs1_wx.vcxproj ...... wxWidgets版 VC++2010用プロジェクトファイル
         mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       VC++2013/
-        mbs1.vcxproj ....... Windows版 VC++2013用プロジェクトファイル
-        mmf_loader.vcxproj.. Media Foundationを動的にロードするためのDLL作成
+        mbs1.vcxproj ......... Windows版 VC++2013用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2013用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2013用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       VC++2015/
-        mbs1.vcxproj ....... Windows版 VC++2015用プロジェクトファイル
+        mbs1.vcxproj ......... Windows版 VC++2015用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2015用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2015用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       VC++2017/
-        mbs1.vcxproj ....... Windows版 VC++2017用プロジェクトファイル
+        mbs1.vcxproj ......... Windows版 VC++2017用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2017用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2017用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
+      VC++2019/
+        mbs1.vcxproj ......... Windows版 VC++2019用プロジェクトファイル
+        mbs1_sdl.vcxproj ..... SDL版 VC++2019用プロジェクトファイル
+        mbs1_wx.vcxproj ...... wxWidgets版 VC++2019用プロジェクトファイル
+        mmf_loader.vcxproj ... Media Foundationを動的にロードするためのDLL作成
       Xcode/ ............... Xcode用プロジェクトファイル
       Makefile.xxx ......... 各OSごとのmakeファイル
       README.md ............ このファイル

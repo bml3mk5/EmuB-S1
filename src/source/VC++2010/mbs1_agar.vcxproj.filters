@@ -20,6 +20,9 @@
     <Filter Include="Header Files\OSD Header Files\SDL">
       <UniqueIdentifier>{2f9dfd90-9c15-4920-a9d4-c30b8d64d905}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\OSD Header Files\windows">
+      <UniqueIdentifier>{bfb93e75-5944-44c3-b7c1-0753df46ec63}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\VIDEO Header Files">
       <UniqueIdentifier>{8b1e2d4c-4a9d-4a61-907d-0620a8391076}</UniqueIdentifier>
     </Filter>
@@ -67,6 +70,9 @@
     <Filter Include="Source Files\OSD Source Files\SDL">
       <UniqueIdentifier>{19ac4d0d-5ae9-4f9f-a72b-660a2bdd875f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\OSD Source Files\windows">
+      <UniqueIdentifier>{c52665b7-fd18-4f71-a4db-014fded57e6a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\VIDEO Source Files">
       <UniqueIdentifier>{92cb596f-6ae6-411f-b83d-5cbe136563af}</UniqueIdentifier>
     </Filter>
@@ -90,12 +96,6 @@
     </Filter>
     <Filter Include="Source Files\VM Driver Source Files">
       <UniqueIdentifier>{6b2c1421-7e2e-427b-86d2-28fe5900333f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OSD Header Files\windows">
-      <UniqueIdentifier>{bfb93e75-5944-44c3-b7c1-0753df46ec63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\OSD Source Files\windows">
-      <UniqueIdentifier>{c52665b7-fd18-4f71-a4db-014fded57e6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,32 +129,14 @@
     <ClCompile Include="..\src\depend.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\emumsg.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\fifo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\fileio.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\labels.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\msgs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\simple_ini.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\utility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gui\gui_base.cpp">
-      <Filter>Source Files\GUI Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gui\gui_keybinddata.cpp">
-      <Filter>Source Files\GUI Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\gui\sdl2_ledbox.cpp">
-      <Filter>Source Files\GUI Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\gui\agar\ag_config_dlg.cpp">
       <Filter>Source Files\GUI Source Files\Agar</Filter>
@@ -192,6 +174,15 @@
     <ClCompile Include="..\src\gui\agar\ag_volume_dlg.cpp">
       <Filter>Source Files\GUI Source Files\Agar</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\gui\gui_base.cpp">
+      <Filter>Source Files\GUI Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\gui_keybinddata.cpp">
+      <Filter>Source Files\GUI Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\sdl2_ledbox.cpp">
+      <Filter>Source Files\GUI Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\gui\windows\win_gui.cpp">
       <Filter>Source Files\GUI Source Files\windows</Filter>
     </ClCompile>
@@ -201,41 +192,11 @@
     <ClCompile Include="..\src\gui\windows\win_vkeyboard.cpp">
       <Filter>Source Files\GUI Source Files\windows</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\emumsg.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
+    <ClCompile Include="..\src\labels.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\osd\d88_files.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\debugger_console.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\disk_parser.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\emu.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\emu_input.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\emu_input_keysym.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\emu_screen.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\emu_sound.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\logging.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\simple_clocale.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\windowmode.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
+    <ClCompile Include="..\src\msgs.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\osd\SDL\sdl_cbitmap.cpp">
       <Filter>Source Files\OSD Source Files\SDL</Filter>
@@ -288,11 +249,56 @@
     <ClCompile Include="..\src\osd\SDL\sdl_vkeyboardbase.cpp">
       <Filter>Source Files\OSD Source Files\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\video\rec_audio.cpp">
-      <Filter>Source Files\VIDEO Source Files</Filter>
+    <ClCompile Include="..\src\osd\d88_files.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\video\rec_video.cpp">
-      <Filter>Source Files\VIDEO Source Files</Filter>
+    <ClCompile Include="..\src\osd\debugger_console.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\disk_parser.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\emu.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\emu_input.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\emu_input_keysym.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\emu_screen.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\emu_sound.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\logging.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\opengl.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\screenmode.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\simple_clocale.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\vkeyboardbase.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\windowmode.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\windows\win_uart.cpp">
+      <Filter>Source Files\OSD Source Files\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\simple_ini.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utility.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\video\ffmpeg\ffm_loadlib.cpp">
       <Filter>Source Files\VIDEO Source Files\ffmpeg</Filter>
@@ -302,6 +308,12 @@
     </ClCompile>
     <ClCompile Include="..\src\video\ffmpeg\ffm_rec_video.cpp">
       <Filter>Source Files\VIDEO Source Files\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\rec_audio.cpp">
+      <Filter>Source Files\VIDEO Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\rec_video.cpp">
+      <Filter>Source Files\VIDEO Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\video\vfw\vfw_rec_video.cpp">
       <Filter>Source Files\VIDEO Source Files\vfw</Filter>
@@ -336,10 +348,106 @@
     <ClCompile Include="..\src\vm\event.cpp">
       <Filter>Source Files\VM Common Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\vm\fmgen\fmgen.cpp">
+      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\fmgen\fmtimer.cpp">
+      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\fmgen\opm.cpp">
+      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\fmgen\opna.cpp">
+      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\fmgen\psg.cpp">
+      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\vm\hd46505.cpp">
       <Filter>Source Files\VM Common Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\vm\mb8866.cpp">
+      <Filter>Source Files\VM Common Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\board.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\cmt.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\comm.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\display.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\floppy.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\kanji.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\keyboard.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\keyrecord.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\l3basic.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\mbs1.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\memory.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\mouse.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\mpc_68008.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\printer.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\psg9c.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\psgc.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\registers.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\rtc.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\sound.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\timer.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mbs1\z80b_card.cpp">
+      <Filter>Source Files\VM Driver Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mc68000.cpp">
+      <Filter>Source Files\VM Common Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mc68000cycs.cpp">
+      <Filter>Source Files\VM Common Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mc68000dasm.cpp">
+      <Filter>Source Files\VM Common Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mc68000fpu.cpp">
+      <Filter>Source Files\VM Common Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mc68000mmu.cpp">
+      <Filter>Source Files\VM Common Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vm\mc68000ops.cpp">
       <Filter>Source Files\VM Common Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\vm\mc6809.cpp">
@@ -405,111 +513,6 @@
     <ClCompile Include="..\src\vm\z80dasm.cpp">
       <Filter>Source Files\VM Common Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\vm\fmgen\fmgen.cpp">
-      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\fmgen\fmtimer.cpp">
-      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\fmgen\opm.cpp">
-      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\fmgen\opna.cpp">
-      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\fmgen\psg.cpp">
-      <Filter>Source Files\VM Common Source Files\fmgen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\board.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\cmt.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\comm.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\display.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\floppy.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\kanji.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\keyboard.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\keyrecord.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\l3basic.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\mbs1.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\memory.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\mouse.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\printer.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\psg9c.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\psgc.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\registers.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\rtc.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\sound.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\timer.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\z80b_card.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\opengl.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\screenmode.cpp">
-      <Filter>Source Files\OSD Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\osd\windows\win_uart.cpp">
-      <Filter>Source Files\OSD Source Files\windows</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mc68000.cpp">
-      <Filter>Source Files\VM Common Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mc68000cycs.cpp">
-      <Filter>Source Files\VM Common Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mc68000dasm.cpp">
-      <Filter>Source Files\VM Common Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mc68000fpu.cpp">
-      <Filter>Source Files\VM Common Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mc68000mmu.cpp">
-      <Filter>Source Files\VM Common Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mc68000ops.cpp">
-      <Filter>Source Files\VM Common Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\vm\mbs1\mpc_68008.cpp">
-      <Filter>Source Files\VM Driver Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\cbitmap.h">
@@ -563,65 +566,20 @@
     <ClInclude Include="..\src\depend.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\emu.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\emu_osd.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\emumsg.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\fifo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\fileio.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\keycode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\labels.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\loadlibrary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\msgs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\parseopt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\rec_video_defs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\simple_ini.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\utility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\version.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\gui.h">
-      <Filter>Header Files\GUI Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\gui_base.h">
-      <Filter>Header Files\GUI Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\gui_keybinddata.h">
-      <Filter>Header Files\GUI Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\ledbox.h">
-      <Filter>Header Files\GUI Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\sdl2_ledbox.h">
-      <Filter>Header Files\GUI Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\vkeyboard.h">
-      <Filter>Header Files\GUI Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\gui\vkeyboard_mbs1.h">
-      <Filter>Header Files\GUI Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\gui\agar\ag_config_dlg.h">
       <Filter>Header Files\GUI Header Files\Agar</Filter>
@@ -656,6 +614,27 @@
     <ClInclude Include="..\src\gui\agar\ag_volume_dlg.h">
       <Filter>Header Files\GUI Header Files\Agar</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\gui\gui.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\gui_base.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\gui_keybinddata.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\ledbox.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\sdl2_ledbox.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\vkeyboard.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\vkeyboard_mbs1.h">
+      <Filter>Header Files\GUI Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\gui\windows\win_gui.h">
       <Filter>Header Files\GUI Header Files\windows</Filter>
     </ClInclude>
@@ -665,41 +644,26 @@
     <ClInclude Include="..\src\gui\windows\win_vkeyboard.h">
       <Filter>Header Files\GUI Header Files\windows</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\emu.h">
-      <Filter>Header Files\OSD Header Files</Filter>
+    <ClInclude Include="..\src\keycode.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\emu_osd.h">
-      <Filter>Header Files\OSD Header Files</Filter>
+    <ClInclude Include="..\src\labels.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\emumsg.h">
-      <Filter>Header Files\OSD Header Files</Filter>
+    <ClInclude Include="..\src\loadlibrary.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\logging.h">
       <Filter>Header Files\OSD Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\msgboard.h">
       <Filter>Header Files\OSD Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\osd\d88_files.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\debugger_console.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\disk_parser.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\emu_input.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\screenmode.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\simple_clocale.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\windowmode.h">
-      <Filter>Header Files\OSD Header Files</Filter>
+    <ClInclude Include="..\src\msgs.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\osd\SDL\sdl_cbitmap.h">
       <Filter>Header Files\OSD Header Files\SDL</Filter>
@@ -740,14 +704,56 @@
     <ClInclude Include="..\src\osd\SDL\sdl_vkeyboardbase.h">
       <Filter>Header Files\OSD Header Files\SDL</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\osd\d88_files.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\debugger_console.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\disk_parser.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\emu_input.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\opengl.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\screenmode.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\simple_clocale.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\vkeyboardbase.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\windowmode.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\osd\windows\win_uart.h">
       <Filter>Header Files\OSD Header Files\windows</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\video\rec_audio.h">
-      <Filter>Header Files\VIDEO Header Files</Filter>
+    <ClInclude Include="..\src\parseopt.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\video\rec_video.h">
-      <Filter>Header Files\VIDEO Header Files</Filter>
+    <ClInclude Include="..\src\rec_video_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\res\resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\simple_ini.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\version.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\video\ffmpeg\ffm_loadlib.h">
       <Filter>Header Files\VIDEO Header Files\ffmpeg</Filter>
@@ -757,6 +763,12 @@
     </ClInclude>
     <ClInclude Include="..\src\video\ffmpeg\ffm_rec_video.h">
       <Filter>Header Files\VIDEO Header Files\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\rec_audio.h">
+      <Filter>Header Files\VIDEO Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\rec_video.h">
+      <Filter>Header Files\VIDEO Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\video\vfw\vfw_rec_video.h">
       <Filter>Header Files\VIDEO Header Files\vfw</Filter>
@@ -794,10 +806,136 @@
     <ClInclude Include="..\src\vm\floppy_defs.h">
       <Filter>Header Files\VM Common Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\diag.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\fmgen.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\fmgeninl.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\fmtimer.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\headers.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\misc.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\opm.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\opna.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\psg.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\fmgen\types.h">
+      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\vm\hd46505.h">
       <Filter>Header Files\VM Common Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\vm\mb8866.h">
+      <Filter>Header Files\VM Common Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\board.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\cmt.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\comm.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\display.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\displaysub.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\floppy.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\kanji.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\keyboard.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\keyboard_bind.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\keyrecord.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\l3basic.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\mbs1.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\mbs1_defs.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\memory.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\memory_readio.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\memory_writeio.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\mouse.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\mpc_68008.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\printer.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\psg9c.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\psgc.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\registers.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\rtc.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\sound.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\timer.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mbs1\z80b_card.h">
+      <Filter>Header Files\VM Driver Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mc68000.h">
+      <Filter>Header Files\VM Common Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mc68000_consts.h">
+      <Filter>Header Files\VM Common Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mc68000dasm.h">
+      <Filter>Header Files\VM Common Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mc68000fpu.h">
+      <Filter>Header Files\VM Common Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mc68000mmu.h">
+      <Filter>Header Files\VM Common Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vm\mc68000ops.h">
       <Filter>Header Files\VM Common Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\vm\mc6809.h">
@@ -874,138 +1012,6 @@
     </ClInclude>
     <ClInclude Include="..\src\vm\z80dasm.h">
       <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\diag.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\fmgen.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\fmgeninl.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\fmtimer.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\headers.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\misc.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\opm.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\opna.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\psg.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\fmgen\types.h">
-      <Filter>Header Files\VM Common Header Files\fmgen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\board.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\cmt.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\comm.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\display.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\displaysub.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\floppy.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\kanji.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\keyboard.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\keyboard_bind.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\keyrecord.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\l3basic.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\mbs1.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\mbs1_defs.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\memory.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\memory_readio.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\memory_writeio.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\mouse.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\printer.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\psg9c.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\psgc.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\registers.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\rtc.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\sound.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\timer.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\z80b_card.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\res\resource.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\osd\opengl.h">
-      <Filter>Header Files\OSD Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mc68000.h">
-      <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mc68000_consts.h">
-      <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mc68000dasm.h">
-      <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mc68000fpu.h">
-      <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mc68000mmu.h">
-      <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mc68000ops.h">
-      <Filter>Header Files\VM Common Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\vm\mbs1\mpc_68008.h">
-      <Filter>Header Files\VM Driver Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -329,8 +329,7 @@
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -366,8 +365,7 @@
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -402,8 +400,7 @@
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -439,8 +436,7 @@
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -476,8 +472,7 @@
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -514,8 +509,7 @@
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
@@ -552,8 +546,7 @@
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
@@ -589,8 +582,7 @@
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
@@ -627,8 +619,7 @@
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
@@ -665,8 +656,7 @@
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
+      <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
@@ -992,8 +982,6 @@
     <ClCompile Include="..\src\gui\windows\win_vkeyboard.cpp" />
     <ClCompile Include="..\src\labels.cpp" />
     <ClCompile Include="..\src\msgs.cpp" />
-    <ClCompile Include="..\src\osd\opengl.cpp" />
-    <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_cbitmap.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_ccolor.cpp" />
     <ClCompile Include="..\src\osd\SDL\sdl_csurface.cpp" />
@@ -1020,7 +1008,10 @@
     <ClCompile Include="..\src\osd\emu_screen.cpp" />
     <ClCompile Include="..\src\osd\emu_sound.cpp" />
     <ClCompile Include="..\src\osd\logging.cpp" />
+    <ClCompile Include="..\src\osd\opengl.cpp" />
+    <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\simple_clocale.cpp" />
+    <ClCompile Include="..\src\osd\vkeyboardbase.cpp" />
     <ClCompile Include="..\src\osd\windowmode.cpp" />
     <ClCompile Include="..\src\osd\windows\win_uart.cpp" />
     <ClCompile Include="..\src\simple_ini.cpp" />
@@ -1148,7 +1139,6 @@
     <ClInclude Include="..\src\main.h" />
     <ClInclude Include="..\src\msgboard.h" />
     <ClInclude Include="..\src\msgs.h" />
-    <ClInclude Include="..\src\osd\opengl.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_cbitmap.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_ccolor.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_common.h" />
@@ -1166,8 +1156,10 @@
     <ClInclude Include="..\src\osd\debugger_console.h" />
     <ClInclude Include="..\src\osd\disk_parser.h" />
     <ClInclude Include="..\src\osd\emu_input.h" />
+    <ClInclude Include="..\src\osd\opengl.h" />
     <ClInclude Include="..\src\osd\screenmode.h" />
     <ClInclude Include="..\src\osd\simple_clocale.h" />
+    <ClInclude Include="..\src\osd\vkeyboardbase.h" />
     <ClInclude Include="..\src\osd\windowmode.h" />
     <ClInclude Include="..\src\osd\windows\win_uart.h" />
     <ClInclude Include="..\src\parseopt.h" />
@@ -1233,11 +1225,11 @@
     <ClInclude Include="..\src\vm\mbs1\timer.h" />
     <ClInclude Include="..\src\vm\mbs1\z80b_card.h" />
     <ClInclude Include="..\src\vm\mc68000.h" />
+    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc68000dasm.h" />
     <ClInclude Include="..\src\vm\mc68000fpu.h" />
     <ClInclude Include="..\src\vm\mc68000mmu.h" />
     <ClInclude Include="..\src\vm\mc68000ops.h" />
-    <ClInclude Include="..\src\vm\mc68000_consts.h" />
     <ClInclude Include="..\src\vm\mc6809.h" />
     <ClInclude Include="..\src\vm\mc6809_consts.h" />
     <ClInclude Include="..\src\vm\mc6809dasm.h" />

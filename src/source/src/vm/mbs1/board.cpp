@@ -168,6 +168,11 @@ void BOARD::event_callback(int event_id, int err)
 	}
 }
 
+uint32_t BOARD::update_led()
+{
+	return now_wreset ? 0x80 : 0;
+}
+
 // ----------------------------------------------------------------------------
 
 void BOARD::save_state(FILEIO *fio)
