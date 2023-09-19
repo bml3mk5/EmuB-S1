@@ -1310,7 +1310,7 @@ void DISPLAY::update_display(int v, int clock)
 			} else {
 				addr_offset = (((*crtc_ra) >> REG_INTERLACE_SEL) & 0x7) << (10 + gwidth_sel);	// 0x400 or 0x800 
 			}
-			crt_mon_s1vtaddr = ((*crtc_ma) >> (1 - width_sel)) + (width_sel & crt_mon_col_st);
+			crt_mon_s1vtaddr = (((*crtc_ma) & 0x7ff) >> (1 - width_sel)) + (width_sel & crt_mon_col_st);
 			crt_mon_s1vgaddr = ((*crtc_ma) >> (1 - gwidth_sel)) + (gwidth_sel & crt_mon_col_st);
 			crt_mon_s1vgaddr += addr_offset;
 			crt_mon_s1vtaddr += addr_left;
@@ -1434,7 +1434,7 @@ void DISPLAY::update_display(int v, int clock)
 						} else {
 							addr_offset += (1 << (10 + gwidth_sel));	// 0x400 or 0x800 
 						}
-						crt_mon_s1vtaddr = ((*crtc_ma) >> (1 - width_sel)) + (width_sel & crt_mon_col_st);
+						crt_mon_s1vtaddr = (((*crtc_ma) & 0x7ff) >> (1 - width_sel)) + (width_sel & crt_mon_col_st);
 						crt_mon_s1vgaddr = ((*crtc_ma) >> (1 - gwidth_sel)) + (gwidth_sel & crt_mon_col_st);
 						crt_mon_s1vgaddr += addr_offset;
 

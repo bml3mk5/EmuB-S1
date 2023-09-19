@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="DebugAgar_Dbgr|Win32">
+    <ProjectConfiguration Include="Debug_Agar_Dbgr|Win32">
       <Configuration>Debug_Agar_Dbgr</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
@@ -313,7 +313,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -328,7 +328,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
@@ -348,7 +348,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -363,7 +363,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -384,7 +384,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -399,7 +399,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
@@ -419,7 +419,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -434,7 +434,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -455,7 +455,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -470,7 +470,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -494,7 +494,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -508,7 +508,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -530,7 +530,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -544,7 +544,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -567,7 +567,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -581,7 +581,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -603,7 +603,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -617,7 +617,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -640,7 +640,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -654,7 +654,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(SDLNetDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -674,7 +674,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -686,7 +686,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -706,7 +706,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -719,7 +719,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -740,7 +740,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -752,7 +752,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -772,7 +772,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -785,7 +785,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -809,7 +809,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -821,7 +821,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -844,7 +844,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -857,7 +857,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -881,7 +881,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -893,7 +893,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -916,7 +916,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(SDLNetDir);$(LibIntlDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -929,7 +929,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(SDLNetReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -1001,7 +1001,6 @@
     <ClCompile Include="..\src\osd\SDL\sdl_vkeyboardbase.cpp" />
     <ClCompile Include="..\src\osd\d88_files.cpp" />
     <ClCompile Include="..\src\osd\debugger_console.cpp" />
-    <ClCompile Include="..\src\osd\disk_parser.cpp" />
     <ClCompile Include="..\src\osd\emu.cpp" />
     <ClCompile Include="..\src\osd\emu_input.cpp" />
     <ClCompile Include="..\src\osd\emu_input_keysym.cpp" />
@@ -1031,6 +1030,7 @@
     <ClCompile Include="..\src\vm\debugger_base.cpp" />
     <ClCompile Include="..\src\vm\device.cpp" />
     <ClCompile Include="..\src\vm\disk.cpp" />
+    <ClCompile Include="..\src\vm\disk_parser.cpp" />
     <ClCompile Include="..\src\vm\event.cpp" />
     <ClCompile Include="..\src\vm\fmgen\fmgen.cpp" />
     <ClCompile Include="..\src\vm\fmgen\fmtimer.cpp" />
@@ -1154,7 +1154,6 @@
     <ClInclude Include="..\src\osd\SDL\sdl_vkeyboardbase.h" />
     <ClInclude Include="..\src\osd\d88_files.h" />
     <ClInclude Include="..\src\osd\debugger_console.h" />
-    <ClInclude Include="..\src\osd\disk_parser.h" />
     <ClInclude Include="..\src\osd\emu_input.h" />
     <ClInclude Include="..\src\osd\opengl.h" />
     <ClInclude Include="..\src\osd\screenmode.h" />
@@ -1184,6 +1183,7 @@
     <ClInclude Include="..\src\vm\debugger_base.h" />
     <ClInclude Include="..\src\vm\device.h" />
     <ClInclude Include="..\src\vm\disk.h" />
+    <ClInclude Include="..\src\vm\disk_parser.h" />
     <ClInclude Include="..\src\vm\event.h" />
     <ClInclude Include="..\src\vm\floppy_defs.h" />
     <ClInclude Include="..\src\vm\fmgen\diag.h" />

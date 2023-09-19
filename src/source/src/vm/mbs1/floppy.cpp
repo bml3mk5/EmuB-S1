@@ -728,7 +728,7 @@ uint32_t FLOPPY::read_signal(int id)
 			break;
 #endif
 		case SIG_FLOPPY_SECTOR_NUM:
-			data = disk[ndrv_num]->sector_num;
+			data = disk[ndrv_num]->sector_nums;
 			break;
 		case SIG_FLOPPY_SECTOR_SIZE:
 			data = disk[ndrv_num]->sector_size;
@@ -1054,7 +1054,7 @@ int FLOPPY::get_current_track_number(int channel)
 {
 	int fdcnum = (channel >> 16);
 	int drvnum = drv_num[fdcnum];
-	return disk[drvnum]->verify[0];
+	return disk[drvnum]->id_c_in_track[0];
 }
 
 /// search sector
@@ -1115,7 +1115,7 @@ int FLOPPY::search_sector(int channel)
 	int fdcnum = (channel >> 16);
 	int drvnum = drv_num[fdcnum];
 
-	int sector_num = disk[drvnum]->sector_num;
+	int sector_num = disk[drvnum]->sector_nums;
 	if (sector_num <= 0) sector_num = 16;
 	sectorcnt = (sectorcnt % sector_num);
 
@@ -1139,7 +1139,7 @@ int FLOPPY::search_sector(int channel, int track, int sect, bool compare_side, i
 {
 	int fdcnum = (channel >> 16);
 	int drvnum = drv_num[fdcnum];
-	int sector_num = disk[drvnum]->sector_num;
+	int sector_num = disk[drvnum]->sector_nums;
 	if (sector_num <= 0) sector_num = 16;
 	if (sect < 256) {
 		sectorcnt = disk[drvnum]->sector_pos[sect];
@@ -1222,7 +1222,7 @@ int FLOPPY::calc_index_hole_search_clock(int channel)
 int FLOPPY::get_clock_arrival_sector(int channel, int sect, int delay)
 {
 	int fdcnum = (channel >> 16);
-	int sector_num = disk[drv_num[fdcnum]]->sector_num;
+	int sector_num = disk[drv_num[fdcnum]]->sector_nums;
 	if (sector_num <= 0) sector_num = 16;
 	int sector_pos = 0;
 	if (sect < 256) {
@@ -1243,7 +1243,7 @@ int FLOPPY::get_clock_arrival_sector(int channel, int sect, int delay)
 int FLOPPY::get_clock_next_sector(int channel, int delay)
 {
 	int fdcnum = (channel >> 16);
-	int sector_num = disk[drv_num[fdcnum]]->sector_num;
+	int sector_num = disk[drv_num[fdcnum]]->sector_nums;
 	if (sector_num <= 0) sector_num = 16;
 
 	int sect_sum = (delay_index_hole - delay_index_mark) / sector_num;
@@ -1399,14 +1399,14 @@ bool FLOPPY::disk_inserted(int drv)
 void FLOPPY::set_drive_type(int drv, uint8_t type)
 {
 	if(drv < MAX_DRIVE) {
-		disk[drv]->drive_type = type;
+		disk[drv]->set_drive_type(type);
 	}
 }
 
 uint8_t FLOPPY::get_drive_type(int drv)
 {
 	if(drv < MAX_DRIVE) {
-		return disk[drv]->drive_type;
+		return disk[drv]->get_drive_type();
 	}
 	return DRIVE_TYPE_UNK;
 }
