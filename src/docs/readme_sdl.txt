@@ -1,10 +1,10 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         SDL edition
-                                                             Version 0.7.4
-                                                                2023/09/20
+                                                             Version 0.7.5
+                                                                2024/01/22
 
-Copyright(C) Common Source Code Project, Sasaji 2011-2023 All Rights Reserved.
+Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 ==============================================================================
 
 ● はじめに

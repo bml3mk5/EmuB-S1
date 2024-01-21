@@ -208,8 +208,8 @@ void MEMORY::reset()
 	// clear color ram
 	srand((unsigned int)time(NULL));
 	int co = (rand() % 3) * 3 + 1;	// 1 4 7
-	int cg = (rand() % 5);
-	color_reg = co + (cg == 0 ? 24 : 0); // + (co == 7 ? cg : 0);
+//	int cg = (rand() % 5);
+	color_reg = co + (co == 7 ? 24 : 0);
 
 	// clear address map
 	memset(addr_map, 0, sizeof(addr_map));
@@ -678,11 +678,11 @@ void MEMORY::write_data8w(uint32_t addr, uint32_t data, int *wait)
 		// vram area
 		if (mem_vram_sel && NOW_L3_MODE && L3_ADDR_VRAM_START <= addr_64kb && addr_64kb < L3_ADDR_VRAM_END) {
 #ifdef _DEBUG_CRAM
-//			if ((addr - ADDR_VRAM_START) < 0x0400) {
+			{
 				uint8_t ch=data;
-				ch = (ch < 0x20 || ch > 0x7f) ? 0x20 : ch;
-				logging->out_debugf("mw %04x=%02x->%02x %c c%02x->%02x",addr,ram[addr],data,ch,color_reg,vgram[addr]);
-//			}
+				ch = (ch < 0x20 || ch > 0x7f) ? '.' : ch;
+				logging->out_debugf("mw %05x=%02x->%02x %c creg:%02x cram:%02x",addr,ram[addr],data,ch,color_reg,vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1]);
+			}
 #endif
 			vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1] = (color_reg & 0x3f);
 		}
@@ -1266,6 +1266,20 @@ void MEMORY::latch_address(uint32_t addr, int *wait)
 		addr_64kb = (addr & 0xffff);
 		addr_bank = (addr_64kb >> L3_BANK_SIZE);
 		set_l3_cpu_wait(addr, addr_bank, addr_comio, 0x02, 0x04, wait);
+
+		// vram area
+		if (mem_vram_sel && NOW_L3_MODE && L3_ADDR_VRAM_START <= addr_64kb && addr_64kb < L3_ADDR_VRAM_END) {
+#ifdef _DEBUG_CRAM
+			{
+				logging->out_debugf("la %05x cram:%02x creg:%02x",addr,vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1],color_reg);
+			}
+#endif
+			// 6bit
+			// if MK bit is set, do not read from color ram.
+			if ((color_reg & 0x80) == 0) {
+				color_reg = (vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1] & 0x3f);
+			}
+		}
 	}
 }
 
