@@ -1,4 +1,4 @@
-# HITACHI MB-S1 model05 Emulator
+# ![icon](src/mbs1_icon.png) HITACHI MB-S1 model05 Emulator
 
 #### Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
@@ -9,7 +9,10 @@
 ### このソフトは、日立MB-S1のような動きをするエミュレータです。
 
 
-## [Documents(Japanese) ドキュメント](../../tree/master/src/docs)
+### [Downloads ダウンロード](https://github.com/bml3mk5/EmuB-S1/releases)
+
+
+### [Documents(Japanese) ドキュメント](../../tree/master/src/docs)
 
 
 ## Disclaimer 免責事項
@@ -37,7 +40,7 @@
 
   http://s-sasaji.ddo.jp/bml3mk5/
 
-  (Twitter: http://twitter.com/bml3mk5)
+  (X(Twitter): http://twitter.com/bml3mk5)
 
 ------------------------------------------------------------------------------
 

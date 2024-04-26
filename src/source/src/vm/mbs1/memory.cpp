@@ -122,16 +122,16 @@ void MEMORY::SET_BANK(int s, int e, uint8_t* w, uint8_t* r, uint8_t** wbank, uin
 
 void MEMORY::initialize()
 {
-	l3rom_loaded = false;
-	s1rom1_loaded = false;
-	s1rom2_loaded = false;
-	s1dicrom_loaded = false;
-	rom1802_loaded = false;
-	rom1805_loaded = false;
+	l3rom_loaded = 0;
+	s1rom1_loaded = 0;
+	s1rom2_loaded = 0;
+	s1dicrom_loaded = 0;
+	rom1802_loaded = 0;
+	rom1805_loaded = 0;
 	rom_loaded_at_first = false;
 
-	cm01rom_loaded = false;
-	cm01eeprom_loaded = false;
+	cm01rom_loaded = 0;
+	cm01eeprom_loaded = 0;
 
 	bfxxx_access = false;
 
@@ -244,7 +244,7 @@ void MEMORY::load_rom_files()
 	// load rom
 	const _TCHAR *app_path, *rom_path[2];
 
-	rom_path[0] = config.rom_path;
+	rom_path[0] = pConfig->rom_path.Get();
 	rom_path[1] = vm->application_path();
 
 	for(int i=0; i<2; i++) {
@@ -305,7 +305,7 @@ void MEMORY::load_rom_files()
 			delete [] cm01eeprom;
 			cm01eeprom = NULL;
 		}
-		cm01eeprom_loaded = false;
+		cm01eeprom_loaded = 0;
 	}
 
 	if (!rom_loaded_at_first) {
@@ -488,7 +488,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* dram refresh */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(addr_1 >= 0xefe25 && addr_1 <= 0xefe27) \
 				 || (s1wait[addr_bank_1] & ref_mask) \
 				 || (addr_seg04_1 == S1_ADDR_TRAP) \
@@ -501,7 +501,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* type A wait */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(addr_1 >= 0xefe25 && addr_1 <= 0xefe27) \
 				 || (DISPTMG_ON && DISP_PAGE_GRAPHIC_BRG && (s1wait[addr_bank_1] & disp_mask)) \
 				 || (addr_seg04_1 == S1_ADDR_TRAP) \
@@ -514,7 +514,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* type B wait */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(addr_1 >= 0xefe25 && addr_1 <= 0xefe27) \
 				   )) \
 			) { \
@@ -532,7 +532,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* dram refresh */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(addr_1 >= 0xefe25 && addr_1 <= 0xefe27) \
 				 || (s1wait[addr_bank_1] & ref_mask) \
 				 || (addr_seg04_1 == S1_ADDR_TRAP) \
@@ -544,7 +544,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* type A wait */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(addr_1 >= 0xefe25 && addr_1 <= 0xefe27) \
 				 || (DISPTMG_ON && DISP_PAGE_GRAPHIC_BRG && (s1wait[addr_bank_1] & disp_mask)) \
 				 || (addr_seg04_1 == S1_ADDR_TRAP) \
@@ -556,7 +556,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* type B wait */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(addr_1 >= 0xefe25 && addr_1 <= 0xefe27) \
 				   )) \
 			) { \
@@ -573,7 +573,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* dram refresh */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(l3wait[addr_bank_1] & ref_mask) \
 				   )) \
 			) { \
@@ -584,7 +584,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* type A wait */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(DISPTMG_ON && (l3wait[addr_bank_1] & disp_mask)) \
 				   )) \
 			) { \
@@ -610,7 +610,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* dram refresh */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(l3wait[addr_bank_1] & ref_mask) \
 				   )) \
 			) { \
@@ -620,7 +620,7 @@ void MEMORY::set_igmode(uint32_t data)
 			/* type A wait */ \
 			if ( \
 				(0xeff00 <= addr_comio_1 && addr_comio_1 <= 0xeffef) \
-				|| (!config.mem_nowait && ( \
+				|| (!pConfig->mem_nowait && ( \
 					(DISPTMG_ON && (l3wait[addr_bank_1] & disp_mask)) \
 				   )) \
 			) { \
@@ -900,11 +900,11 @@ void MEMORY::write_data8_68kw(uint32_t addr, uint32_t data, int *wait)
 		// vram area
 		if (mem_vram_sel && NOW_L3_MODE && L3_ADDR_VRAM_START <= addr_64kb && addr_64kb < L3_ADDR_VRAM_END) {
 #ifdef _DEBUG_CRAM
-//			if ((addr - ADDR_VRAM_START) < 0x0400) {
+			{
 				uint8_t ch=data;
-				ch = (ch < 0x20 || ch > 0x7f) ? 0x20 : ch;
-				logging->out_debugf("mw %04x=%02x->%02x %c c%02x->%02x",addr,ram[addr],data,ch,color_reg,vgram[addr]);
-//			}
+				ch = (ch < 0x20 || ch > 0x7f) ? '.' : ch;
+				logging->out_debugf("mw %05x=%02x->%02x %c creg:%02x cram:%02x",addr,ram[addr],data,ch,color_reg,vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1]);
+			}
 #endif
 			vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1] = (color_reg & 0x3f);
 		}
@@ -996,11 +996,11 @@ uint32_t MEMORY::read_data8w(uint32_t addr, int *wait)
 		// vram area
 		if (mem_vram_sel && NOW_L3_MODE && L3_ADDR_VRAM_START <= addr_64kb && addr_64kb < L3_ADDR_VRAM_END) {
 #ifdef _DEBUG_CRAM
-//			if ((addr - ADDR_VRAM_START) < 0x0400) {
+			{
 				uint8_t ch=ram[addr];
-				ch = (ch < 0x20 || ch > 0x7f) ? 0x20 : ch;
-				logging->out_debugf("mr %04x=%02x %c c%02x r%02x",addr,ram[addr],ch,vgram[addr],color_reg);
-//			}
+				ch = (ch < 0x20 || ch > 0x7f) ? '.' : ch;
+				logging->out_debugf("mr %05x=%02x %c cram:%02x creg:%02x",addr,ram[addr],ch,vgram[addr],color_reg);
+			}
 #endif
 			// 6bit
 			// if MK bit is set, do not read from color ram.
@@ -1206,11 +1206,11 @@ uint32_t MEMORY::read_data8_68kw(uint32_t addr, int *wait)
 		// vram area
 		if (mem_vram_sel && NOW_L3_MODE && L3_ADDR_VRAM_START <= addr_64kb && addr_64kb < L3_ADDR_VRAM_END) {
 #ifdef _DEBUG_CRAM
-//			if ((addr - ADDR_VRAM_START) < 0x0400) {
+			{
 				uint8_t ch=ram[addr];
-				ch = (ch < 0x20 || ch > 0x7f) ? 0x20 : ch;
-				logging->out_debugf("mr %04x=%02x %c c%02x r%02x",addr,ram[addr],ch,vgram[addr],color_reg);
-//			}
+				ch = (ch < 0x20 || ch > 0x7f) ? '.' : ch;
+				logging->out_debugf("mr %05x=%02x %c cram:%02x creg:%02x",addr,ram[addr],ch,vgram[(addr_64kb - L3_ADDR_VRAM_START) & L3_VRAM_SIZE_1],color_reg);
+			}
 #endif
 			// 6bit
 			// if MK bit is set, do not read from color ram.
@@ -1666,7 +1666,7 @@ void MEMORY::set_cpu_speed(uint8_t data)
 void MEMORY::set_extended_ram()
 {
 	// 0:0KB 1:64KB 2:128KB 3:256KB 4:512KB
-	int size = (config.exram_size_num ? ((1 << config.exram_size_num) * 32) : 0);
+	int size = (pConfig->exram_size_num ? ((1 << pConfig->exram_size_num) * 32) : 0);
 	if (exram != NULL) {
 		delete [] exram;
 		exram_size = 0;
@@ -1767,10 +1767,10 @@ void MEMORY::save_state(FILEIO *fio)
 	fio->Fsets(0, sizeof(vm_state->reserved1));
 
 	// save config
-	fio->FputUint8(config.dipswitch);
+	fio->FputUint8(pConfig->dipswitch);
 	fio->FputUint8(REG_SYS_MODE);
-	fio->FputInt32_LE(config.fdd_type);
-	fio->FputInt32_LE(config.io_port);
+	fio->FputInt32_LE(pConfig->fdd_type);
+	fio->FputInt32_LE(pConfig->io_port);
 	fio->FputUint8(REG_MODE_SEL);
 	fio->FputUint8(color_reg);
 	fio->FputUint8(ig_enreg);
@@ -1813,7 +1813,7 @@ bool MEMORY::load_state(FILEIO *fio)
 		fio->Fread(&ram,  sizeof(ram), 1);
 		// load extended memory
 		exram_size = 64;	// 64KB constant
-		config.exram_size_num = 1;
+		pConfig->exram_size_num = 1;
 		set_extended_ram();
 		fio->Fread(exram, sizeof(vm_state_l3->ram2), 1);
 
@@ -1835,9 +1835,9 @@ bool MEMORY::load_state(FILEIO *fio)
 		prev_trace_clock = 0;
 
 		// load config
-		config.dipswitch = fio->FgetUint8();
-		config.fdd_type = fio->FgetInt32_LE();
-		config.io_port = fio->FgetInt32_LE();
+		pConfig->dipswitch = fio->FgetUint8();
+		pConfig->fdd_type = fio->FgetInt32_LE();
+		pConfig->io_port = fio->FgetInt32_LE();
 
 		fio->Fseek(sizeof(vm_state_l3->reserved), FILEIO::SEEKCUR);
 
@@ -1884,12 +1884,12 @@ bool MEMORY::load_state(FILEIO *fio)
 		mem_bank_mask = (fio->FgetUint8() != 0);
 		fio->Fseek(sizeof(vm_state_s1->reserved1), FILEIO::SEEKCUR);
 
-		config.dipswitch = fio->FgetUint8();
+		pConfig->dipswitch = fio->FgetUint8();
 		REG_SYS_MODE = fio->FgetUint8();
 		set_cpu_speed(REG_SYS_MODE);
 
-		config.fdd_type = fio->FgetInt32_LE();
-		config.io_port = fio->FgetInt32_LE();
+		pConfig->fdd_type = fio->FgetInt32_LE();
+		pConfig->io_port = fio->FgetInt32_LE();
 
 		REG_MODE_SEL = fio->FgetUint8();	// mode sel
 		color_reg = fio->FgetUint8();	// color reg
@@ -1925,10 +1925,10 @@ bool MEMORY::load_state(FILEIO *fio)
 		}
 
 		if (exram_size > 512) exram_size = 64;
-		config.exram_size_num = 0;
+		pConfig->exram_size_num = 0;
 		for(int i=1; i<=4; i++) {
 			if (exram_size == (1 << i) * 32) {
-				config.exram_size_num = i;
+				pConfig->exram_size_num = i;
 				break;
 			}
 		}
@@ -1943,7 +1943,7 @@ bool MEMORY::load_state(FILEIO *fio)
 
 	if (Uint16_LE(vm_state_i.version) < 0x44) {
 		// enable keyboard and mouse
-		config.io_port |= (IOPORT_MSK_KEYBD | IOPORT_MSK_MOUSE);
+		pConfig->io_port |= (IOPORT_MSK_KEYBD | IOPORT_MSK_MOUSE);
 	}
 
 	// now trap ?
@@ -2594,9 +2594,9 @@ void MEMORY::debug_regs_info(_TCHAR *buffer, size_t buffer_len)
 {
 }
 
-int MEMORY::get_debug_graphic_memory_size(int type, int *width, int *height)
+int MEMORY::get_debug_graphic_memory_size(int num, int type, int *width, int *height)
 {
-	return d_disp->get_debug_graphic_memory_size(type, width, height);
+	return d_disp->get_debug_graphic_memory_size(num, type, width, height);
 }
 
 bool MEMORY::debug_graphic_type_name(int type, _TCHAR *buffer, size_t buffer_len)
@@ -2607,6 +2607,11 @@ bool MEMORY::debug_graphic_type_name(int type, _TCHAR *buffer, size_t buffer_len
 bool MEMORY::debug_draw_graphic(int type, int width, int height, scrntype *buffer)
 {
 	return d_disp->debug_draw_graphic(type, width, height, buffer);
+}
+
+bool MEMORY::debug_dump_graphic(int type, int width, int height, uint16_t *buffer)
+{
+	return d_disp->debug_dump_graphic(type, width, height, buffer);
 }
 
 bool MEMORY::debug_basic_is_supported()

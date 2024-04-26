@@ -25,10 +25,10 @@ if [ "$UNAME" = "Linux" ]; then
 #	make_all linux_gtk_sdl st $1
 #	make_all linux_gtk_sdl_dbgr st $1
 #	make_all linux_gtk_sdl_z80b_dbgr st $1
-	make_all linux_gtk_sdl2 st $1
-	make_all linux_gtk_sdl2_dbgr st $1
-	make_all linux_gtk_sdl2_z80b_dbgr st $1
-	make_all linux_gtk_sdl2_m68k_dbgr st $1
+	make_all linux_gtk_sdl2 sh $1
+	make_all linux_gtk_sdl2_dbgr sh $1
+	make_all linux_gtk_sdl2_z80b_dbgr sh $1
+	make_all linux_gtk_sdl2_m68k_dbgr sh $1
 #	make_all linux_sdl_gtk st $1
 #	make_all linux_agar st $1
 fi

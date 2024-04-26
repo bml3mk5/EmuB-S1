@@ -10,8 +10,8 @@
 */
 
 #include "mbs1.h"
-#include "../../emu.h"
 #include "../../config.h"
+#include "../../emu.h"
 #include "../device.h"
 #include "../event.h"
 
@@ -77,12 +77,12 @@
 VM::VM(EMU* parent_emu) : emu(parent_emu)
 {
 	//
-	emu->set_parami(ParamFddType, config.fdd_type);
-	emu->set_parami(ParamIOPort, config.io_port);
-	emu->set_parami(ParamSysMode, config.sys_mode);
-	emu->set_parami(ParamExMemNum, config.exram_size_num);
-	emu->set_parami(ParamChipTypeOnFmOpn, config.type_of_fmopn);
-	emu->set_parami(ParamChipTypeOnExPsg, config.type_of_expsg);
+	emu->set_parami(ParamFddType, pConfig->fdd_type);
+	emu->set_parami(ParamIOPort, pConfig->io_port);
+	emu->set_parami(ParamSysMode, pConfig->sys_mode);
+	emu->set_parami(ParamExMemNum, pConfig->exram_size_num);
+	emu->set_parami(ParamChipTypeOnFmOpn, pConfig->type_of_fmopn);
+	emu->set_parami(ParamChipTypeOnExPsg, pConfig->type_of_expsg);
 
 	// create devices
 	first_device = last_device = NULL;
@@ -343,10 +343,10 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	psg9c->set_context_via(psg9_via);
 
 	// fm opn
-	fmopn->set_chiptype(config.c_type_of_sound[config.type_of_fmopn].chip_type == Config::CHIP_YM2608);
-	psgex->set_chiptype(config.c_type_of_sound[config.type_of_expsg].chip_type == Config::CHIP_YM2608);
-	if (config.opn_irq > 0) {
-		int id = (config.opn_irq == 2 ? SIG_CPU_FIRQ : SIG_CPU_IRQ);
+	fmopn->set_chiptype(pConfig->c_type_of_sound[pConfig->type_of_fmopn].chip_type == Config::CHIP_YM2608);
+	psgex->set_chiptype(pConfig->c_type_of_sound[pConfig->type_of_expsg].chip_type == Config::CHIP_YM2608);
+	if (pConfig->opn_irq > 0) {
+		int id = (pConfig->opn_irq == 2 ? SIG_CPU_FIRQ : SIG_CPU_IRQ);
 		fmopn->set_context_irq(board, id, SIG_IRQ_FMOPN_MASK);
 		psgex->set_context_irq(board, id, SIG_IRQ_FMOPNEX_MASK);
 	}
@@ -491,7 +491,7 @@ DEVICE* VM::get_device(char *name, char *identifier)
 void VM::reset()
 {
 	// power on / off
-	emu->out_info_x(config.now_power_off ? CMsg::PowerOff : CMsg::PowerOn);
+	emu->out_info_x(pConfig->now_power_off ? CMsg::PowerOff : CMsg::PowerOn);
 
 	// reset all devices
 	for(DEVICE* device = first_device; device; device = device->get_next_device()) {
@@ -534,7 +534,7 @@ double VM::get_frame_rate()
 
 void VM::change_dipswitch(int num)
 {
-	emu->out_infoc_x(CMsg::MODE_Switch_, (config.dipswitch & 4) ? CMsg::ON : CMsg::OFF, NULL);
+	emu->out_infoc_x(CMsg::MODE_Switch_, (pConfig->dipswitch & 4) ? CMsg::ON : CMsg::OFF, NULL);
 }
 
 bool VM::now_skip()
@@ -546,9 +546,9 @@ void VM::update_params()
 {
 	change_fdd_type(emu->get_parami(ParamFddType), true);
 	change_sys_mode(emu->get_parami(ParamSysMode) & SYS_MODE_S1L3, true);
-	config.exram_size_num = emu->get_parami(ParamExMemNum);
-	config.type_of_fmopn = emu->get_parami(ParamChipTypeOnFmOpn);
-	config.type_of_expsg = emu->get_parami(ParamChipTypeOnExPsg);
+	pConfig->exram_size_num = emu->get_parami(ParamExMemNum);
+	pConfig->type_of_fmopn = emu->get_parami(ParamChipTypeOnFmOpn);
+	pConfig->type_of_expsg = emu->get_parami(ParamChipTypeOnExPsg);
 
 	set_volume();
 }
@@ -1076,12 +1076,12 @@ uint64_t VM::update_led()
 	uint64_t status = 0;
 
 	// b0: power on/off
-	status |= (config.now_power_off ? 0 : 1);
+	status |= (pConfig->now_power_off ? 0 : 1);
 	// b1: mode
 	status |= ((1 - (emu->get_parami(ParamSysMode) & SYS_MODE_S1L3)) << 1);
 #ifdef USE_FD1
 	// b2-b3: fdd type
-	status |= ((config.fdd_type & MSK_FDD_TYPE) << 2);
+	status |= ((pConfig->fdd_type & MSK_FDD_TYPE) << 2);
 #endif
 	// b4-b6: kbd led
 	status |= ((key->get_kb_mode()) << 4);
@@ -1114,7 +1114,7 @@ void VM::initialize_sound(int rate, int samples)
 	sound->initialize_sound(rate, 0);
 	psgst->initialize_sound(rate, CLOCKS_1MHZ, samples, 0, 3);
 //	psgex->initialize_sound(rate, CLOCKS_1MHZ, samples, 0, 3);
-	psgex->initialize_sound(rate, config.c_type_of_sound[config.type_of_expsg].clock, samples, 0, 0, config.c_type_of_sound[config.type_of_expsg].chip_type != Config::CHIP_AY38910 ? 0 : 3);
+	psgex->initialize_sound(rate, pConfig->c_type_of_sound[pConfig->type_of_expsg].clock, samples, 0, 0, pConfig->c_type_of_sound[pConfig->type_of_expsg].chip_type != Config::CHIP_AY38910 ? 0 : 3);
 	psg3[0]->initialize_sound(rate, CLOCKS_1MHZ, samples, 0, 0);
 	psg3[1]->initialize_sound(rate, CLOCKS_1MHZ, samples, 0, 0);
 	psg9[0]->initialize_sound(rate, CLOCKS_1MHZ * 2, samples, 0, 0);
@@ -1124,7 +1124,7 @@ void VM::initialize_sound(int rate, int samples)
 #ifdef USE_FD1
 	fdd->initialize_sound(rate, 0);
 #endif
-	fmopn->initialize_sound(rate, config.c_type_of_sound[config.type_of_fmopn].clock, samples, 0, 0, config.c_type_of_sound[config.type_of_fmopn].chip_type != Config::CHIP_AY38910 ? 0 : 3);
+	fmopn->initialize_sound(rate, pConfig->c_type_of_sound[pConfig->type_of_fmopn].clock, samples, 0, 0, pConfig->c_type_of_sound[pConfig->type_of_fmopn].chip_type != Config::CHIP_AY38910 ? 0 : 3);
 
 	//
 	set_volume();
@@ -1137,12 +1137,12 @@ void VM::reset_sound(int rate, int samples)
 {
 	psgex->init_context_irq();
 	fmopn->init_context_irq();
-	psgex->set_chiptype(config.c_type_of_sound[config.type_of_expsg].chip_type == Config::CHIP_YM2608);
-	fmopn->set_chiptype(config.c_type_of_sound[config.type_of_fmopn].chip_type == Config::CHIP_YM2608);
-	psgex->initialize_sound(rate, config.c_type_of_sound[config.type_of_expsg].clock, samples, 0, 0, config.c_type_of_sound[config.type_of_expsg].chip_type != Config::CHIP_AY38910 ? 0 : 3);
-	fmopn->initialize_sound(rate, config.c_type_of_sound[config.type_of_fmopn].clock, samples, 0, 0, config.c_type_of_sound[config.type_of_fmopn].chip_type != Config::CHIP_AY38910 ? 0 : 3);
-	if (config.opn_irq > 0) {
-		int id = (config.opn_irq == 2 ? SIG_CPU_FIRQ : SIG_CPU_IRQ);
+	psgex->set_chiptype(pConfig->c_type_of_sound[pConfig->type_of_expsg].chip_type == Config::CHIP_YM2608);
+	fmopn->set_chiptype(pConfig->c_type_of_sound[pConfig->type_of_fmopn].chip_type == Config::CHIP_YM2608);
+	psgex->initialize_sound(rate, pConfig->c_type_of_sound[pConfig->type_of_expsg].clock, samples, 0, 0, pConfig->c_type_of_sound[pConfig->type_of_expsg].chip_type != Config::CHIP_AY38910 ? 0 : 3);
+	fmopn->initialize_sound(rate, pConfig->c_type_of_sound[pConfig->type_of_fmopn].clock, samples, 0, 0, pConfig->c_type_of_sound[pConfig->type_of_fmopn].chip_type != Config::CHIP_AY38910 ? 0 : 3);
+	if (pConfig->opn_irq > 0) {
+		int id = (pConfig->opn_irq == 2 ? SIG_CPU_FIRQ : SIG_CPU_IRQ);
 		fmopn->set_context_irq(board, id, SIG_IRQ_FMOPN_MASK);
 		psgex->set_context_irq(board, id, SIG_IRQ_FMOPNEX_MASK);
 	}
@@ -1160,40 +1160,40 @@ void VM::set_volume()
 {
 	int vol = 0;
 	bool is_psg;
-	event->set_volume(config.volume - 81, config.mute);
-	sound->set_volume(config.beep_volume - 81, config.beep_mute);
-	vol = config.psg_volume - 81;
-	psgst->set_volume(vol, vol, config.psg_mute, 3);
-//	psgex->set_volume(vol, vol, config.psg_mute || (IOPORT_USE_EXPSG == 0), 3);
-	is_psg = (config.c_type_of_sound[config.type_of_expsg].chip_type == Config::CHIP_AY38910);
-	vol = config.psgexfm_volume - 81;
-	psgex->set_volume(0, vol, vol, config.psgexfm_mute || (IOPORT_USE_EXPSG == 0) || is_psg, 0);
-	vol = config.psgexssg_volume - 81;
-	psgex->set_volume(1, vol, vol, config.psgexssg_mute || (IOPORT_USE_EXPSG == 0), is_psg ? 3 : 0);
-	vol = config.psgexpcm_volume - 81;
-	psgex->set_volume(2, vol, vol, config.psgexpcm_mute || (IOPORT_USE_EXPSG == 0) || is_psg, 0);
-	vol = config.psgexrhy_volume - 81;
-	psgex->set_volume(3, vol, vol, config.psgexrhy_mute || (IOPORT_USE_EXPSG == 0) || is_psg, 0);
-	vol = config.psg6_volume - 81;
-	psg3[0]->set_volume(vol, vol, config.psg6_mute || (IOPORT_USE_PSG6 == 0), 0);
-	psg3[1]->set_volume(vol, vol, config.psg6_mute || (IOPORT_USE_PSG6 == 0), 0);
-	vol = config.psg9_volume - 81;
-	psg9[0]->set_volume(vol, vol, config.psg9_mute || (IOPORT_USE_PSG9 == 0), 0);
-	psg9[1]->set_volume(vol, vol, config.psg9_mute || (IOPORT_USE_PSG9 == 0), 0);
-	psg9[2]->set_volume(vol, vol, config.psg9_mute || (IOPORT_USE_PSG9 == 0), 0);
-	cmt->set_volume(config.relay_volume - 81, config.cmt_volume - 81, config.relay_mute, config.cmt_mute);
+	event->set_volume(pConfig->volume - 81, pConfig->mute);
+	sound->set_volume(pConfig->beep_volume - 81, pConfig->beep_mute);
+	vol = pConfig->psg_volume - 81;
+	psgst->set_volume(vol, vol, pConfig->psg_mute, 3);
+//	psgex->set_volume(vol, vol, pConfig->psg_mute || (IOPORT_USE_EXPSG == 0), 3);
+	is_psg = (pConfig->c_type_of_sound[pConfig->type_of_expsg].chip_type == Config::CHIP_AY38910);
+	vol = pConfig->psgexfm_volume - 81;
+	psgex->set_volume(0, vol, vol, pConfig->psgexfm_mute || (IOPORT_USE_EXPSG == 0) || is_psg, 0);
+	vol = pConfig->psgexssg_volume - 81;
+	psgex->set_volume(1, vol, vol, pConfig->psgexssg_mute || (IOPORT_USE_EXPSG == 0), is_psg ? 3 : 0);
+	vol = pConfig->psgexpcm_volume - 81;
+	psgex->set_volume(2, vol, vol, pConfig->psgexpcm_mute || (IOPORT_USE_EXPSG == 0) || is_psg, 0);
+	vol = pConfig->psgexrhy_volume - 81;
+	psgex->set_volume(3, vol, vol, pConfig->psgexrhy_mute || (IOPORT_USE_EXPSG == 0) || is_psg, 0);
+	vol = pConfig->psg6_volume - 81;
+	psg3[0]->set_volume(vol, vol, pConfig->psg6_mute || (IOPORT_USE_PSG6 == 0), 0);
+	psg3[1]->set_volume(vol, vol, pConfig->psg6_mute || (IOPORT_USE_PSG6 == 0), 0);
+	vol = pConfig->psg9_volume - 81;
+	psg9[0]->set_volume(vol, vol, pConfig->psg9_mute || (IOPORT_USE_PSG9 == 0), 0);
+	psg9[1]->set_volume(vol, vol, pConfig->psg9_mute || (IOPORT_USE_PSG9 == 0), 0);
+	psg9[2]->set_volume(vol, vol, pConfig->psg9_mute || (IOPORT_USE_PSG9 == 0), 0);
+	cmt->set_volume(pConfig->relay_volume - 81, pConfig->cmt_volume - 81, pConfig->relay_mute, pConfig->cmt_mute);
 #ifdef USE_FD1
-	fdd->set_volume(config.fdd_volume - 81, config.fdd_mute);
+	fdd->set_volume(pConfig->fdd_volume - 81, pConfig->fdd_mute);
 #endif
-	is_psg = (config.c_type_of_sound[config.type_of_fmopn].chip_type == Config::CHIP_AY38910);
-	vol = config.opnfm_volume - 81;
-	fmopn->set_volume(0, vol, vol, config.opnfm_mute || (IOPORT_USE_FMOPN == 0) || is_psg, 0);
-	vol = config.opnssg_volume - 81;
-	fmopn->set_volume(1, vol, vol, config.opnssg_mute || (IOPORT_USE_FMOPN == 0), is_psg ? 3 : 0);
-	vol = config.opnpcm_volume - 81;
-	fmopn->set_volume(2, vol, vol, config.opnpcm_mute || (IOPORT_USE_FMOPN == 0) || is_psg, 0);
-	vol = config.opnrhy_volume - 81;
-	fmopn->set_volume(3, vol, vol, config.opnrhy_mute || (IOPORT_USE_FMOPN == 0) || is_psg, 0);
+	is_psg = (pConfig->c_type_of_sound[pConfig->type_of_fmopn].chip_type == Config::CHIP_AY38910);
+	vol = pConfig->opnfm_volume - 81;
+	fmopn->set_volume(0, vol, vol, pConfig->opnfm_mute || (IOPORT_USE_FMOPN == 0) || is_psg, 0);
+	vol = pConfig->opnssg_volume - 81;
+	fmopn->set_volume(1, vol, vol, pConfig->opnssg_mute || (IOPORT_USE_FMOPN == 0), is_psg ? 3 : 0);
+	vol = pConfig->opnpcm_volume - 81;
+	fmopn->set_volume(2, vol, vol, pConfig->opnpcm_mute || (IOPORT_USE_FMOPN == 0) || is_psg, 0);
+	vol = pConfig->opnrhy_volume - 81;
+	fmopn->set_volume(3, vol, vol, pConfig->opnrhy_mute || (IOPORT_USE_FMOPN == 0) || is_psg, 0);
 }
 
 // ----------------------------------------------------------------------------
@@ -1270,19 +1270,30 @@ bool VM::datarec_opened(bool play_mode)
 // ----------------------------------------------------------------------------
 
 #ifdef USE_FD1
-bool VM::open_disk(int drv, const _TCHAR* file_path, int offset, uint32_t flags)
+bool VM::open_floppy_disk(int drv, const _TCHAR* file_path, int offset, uint32_t flags)
 {
-	return fdd->open_disk(drv, file_path, offset, flags);
+	bool rc = fdd->open_disk(drv, file_path, offset, flags);
+	if (rc) {
+		if (!(flags & OPEN_DISK_FLAGS_FORCELY)) {
+			int sdrv = fdd->inserted_disk_another_drive(drv, file_path, offset);
+			if (sdrv >= 0) {
+				int drvmin = MIN(drv, sdrv);
+				int drvmax = MAX(drv, sdrv);
+				logging->out_logf_x(LOG_WARN, CMsg::There_is_the_same_floppy_disk_in_drive_VDIGIT_and_VDIGIT, drvmin, drvmax);
+			}
+		}
+	}
+	return rc;
 }
 
-bool VM::close_disk(int drv, uint32_t flags)
+bool VM::close_floppy_disk(int drv, uint32_t flags)
 {
 	return fdd->close_disk(drv, flags);
 }
 
-int VM::change_disk(int drv)
+int VM::change_floppy_disk(int drv)
 {
-	switch(config.fdd_type) {
+	switch(pConfig->fdd_type) {
 		case FDD_TYPE_3FDD:
 			return fdd->change_disk(drv);
 			break;
@@ -1290,27 +1301,27 @@ int VM::change_disk(int drv)
 	return 0;
 }
 
-bool VM::disk_inserted(int drv)
+bool VM::floppy_disk_inserted(int drv)
 {
 	return fdd->disk_inserted(drv);
 }
 
-int VM::get_disk_side(int drv)
+int VM::get_floppy_disk_side(int drv)
 {
 	return fdd->get_disk_side(drv);
 }
 
-void VM::toggle_disk_write_protect(int drv)
+void VM::toggle_floppy_disk_write_protect(int drv)
 {
 	fdd->toggle_disk_write_protect(drv);
 }
 
-bool VM::disk_write_protected(int drv)
+bool VM::floppy_disk_write_protected(int drv)
 {
 	return fdd->disk_write_protected(drv);
 }
 
-bool VM::is_same_disk(int drv, const _TCHAR *file_path, int offset)
+bool VM::is_same_floppy_disk(int drv, const _TCHAR *file_path, int offset)
 {
 	return fdd->is_same_disk(drv, file_path, offset);
 }
@@ -1385,9 +1396,21 @@ void VM::send_comm_telnet_command(int dev, int num)
 }
 
 // ----------------------------------------------------------------------------
+void VM::modify_joytype()
+{
+}
+
 void VM::save_keybind()
 {
 	key->save_keybind();
+}
+
+void VM::clear_joy2joyk_map()
+{
+}
+
+void VM::set_joy2joyk_map(int num, int idx, uint32_t joy_code)
+{
 }
 
 // ----------------------------------------------------------------------------
@@ -1444,14 +1467,14 @@ void VM::change_fdd_type(int num, bool reset)
 		break;
 	}
 	CMsg::Id need = CMsg::Null;
-	if (config.fdd_type != num && !reset) {
-		if(!config.now_power_off) need = CMsg::LB_Need_PowerOn_RB;
+	if (pConfig->fdd_type != num && !reset) {
+		if(!pConfig->now_power_off) need = CMsg::LB_Need_PowerOn_RB;
 	}
 	emu->set_parami(ParamIOPort, io_port);
 	if (reset) {
-		config.fdd_type = num;
-		config.io_port = io_port;
-		if(!config.now_power_off) logging->out_log_x(LOG_INFO, list[num]);
+		pConfig->fdd_type = num;
+		pConfig->io_port = io_port;
+		if(!pConfig->now_power_off) logging->out_log_x(LOG_INFO, list[num]);
 	} else {
 		emu->out_infoc_x(list[num], need, 0);
 	}
@@ -1473,12 +1496,12 @@ void VM::change_sys_mode(int num, bool reset)
 	sys_mode = (num != 0 ? (sys_mode | SYS_MODE_S1L3) : (sys_mode & ~SYS_MODE_S1L3));
 	emu->set_parami(ParamSysMode, sys_mode);
 	CMsg::Id need = CMsg::Null;
-	if ((config.sys_mode & SYS_MODE_S1L3) != (sys_mode & SYS_MODE_S1L3) && !reset) {
-		if(!config.now_power_off) need = CMsg::LB_Need_PowerOn_RB;
+	if ((pConfig->sys_mode & SYS_MODE_S1L3) != (sys_mode & SYS_MODE_S1L3) && !reset) {
+		if(!pConfig->now_power_off) need = CMsg::LB_Need_PowerOn_RB;
 	}
 	if (reset) {
-		config.sys_mode = sys_mode;
-		if(!config.now_power_off) logging->out_log_x(LOG_INFO, list[num]);
+		pConfig->sys_mode = sys_mode;
+		if(!pConfig->now_power_off) logging->out_log_x(LOG_INFO, list[num]);
 	} else {
 		emu->out_infoc_x(list[num], need, 0);
 	}
@@ -1493,17 +1516,20 @@ void VM::change_sys_mode(int num, bool reset)
 /// @param[out] data      : loaded data
 /// @param[in]  size      : buffer size of data
 /// @param[in]  first_data      : (nullable) first pattern to compare to loaded data
-/// @param[in]  first_data_size :
+/// @param[in]  first_data_size : size of first_data
+/// @param[in]  first_data_pos  : comparing position in loaded data
 /// @param[in]  last_data       : (nullable) last pattern to compare to loaded data
-/// @param[in]  last_data_size  :
-/// @return successfully loaded
-bool VM::load_data_from_file(const _TCHAR *file_path, const _TCHAR *file_name
+/// @param[in]  last_data_size  : size of last_data
+/// @param[in]  last_data_pos   : comparing position in loaded data
+/// @return 1:successfully loaded  2:data loaded but unmatch pattern or size  0:unloaded
+int VM::load_data_from_file(const _TCHAR *file_path, const _TCHAR *file_name
 	, uint8_t *data, size_t size
-	, const uint8_t *first_data, size_t first_data_size
-	, const uint8_t *last_data,  size_t last_data_size)
+	, const uint8_t *first_data, size_t first_data_size, size_t first_data_pos
+	, const uint8_t *last_data,  size_t last_data_size, size_t last_data_pos)
 {
 	return EMU::load_data_from_file(file_path, file_name, data, size
-		, first_data, first_data_size, last_data, last_data_size);
+		, first_data, first_data_size, first_data_pos
+		, last_data, last_data_size, last_data_pos);
 }
 
 /// @brief get VM specific parameter
@@ -1587,7 +1613,7 @@ bool VM::save_state(const _TCHAR* filename)
 
 	// header
 	memset(&vm_state_h, 0, sizeof(vm_state_h));
-	strncpy(vm_state_h.header, RESUME_FILE_HEADER, 16);
+	UTILITY::strncpy(vm_state_h.header, sizeof(vm_state_h.header), RESUME_FILE_HEADER, 16);
 	vm_state_h.version = Uint16_LE(RESUME_FILE_VERSION);
 	vm_state_h.revision = Uint16_LE(RESUME_FILE_REVISION);
 	vm_state_h.param = Uint32_LE(0);

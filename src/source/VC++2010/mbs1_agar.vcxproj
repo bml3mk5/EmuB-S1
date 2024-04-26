@@ -313,7 +313,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -340,7 +340,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -348,7 +348,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -363,8 +363,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
@@ -376,7 +375,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -384,7 +383,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -399,7 +398,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
@@ -411,7 +410,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -419,7 +418,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -434,8 +433,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
@@ -447,7 +445,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -455,7 +453,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Agar_M68K_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>false</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -470,8 +468,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>MSVCRT</IgnoreSpecificDefaultLibraries>
@@ -483,7 +480,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -494,7 +491,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -508,7 +505,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -519,7 +516,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -530,7 +527,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -544,8 +541,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -556,7 +552,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -567,7 +563,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -581,7 +577,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -592,7 +588,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -603,7 +599,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -617,8 +613,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -629,7 +624,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -640,7 +635,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
@@ -654,8 +649,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalDebugLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLDebugLibDir);$(AgarDebugLibDir);$(FreeTypeDebugLibDir);$(SDLTtfDebugLibDir);$(GLEWDebugLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention></DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -666,7 +660,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_DEBUG_LOG;_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -674,7 +668,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -686,7 +680,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -698,7 +692,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -706,7 +700,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar_Z80B|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -719,8 +713,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -732,7 +725,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -740,7 +733,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -752,7 +745,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -764,7 +757,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -772,7 +765,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Agar_Z80B_Dbgr|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -785,8 +778,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLibDir);..\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -798,7 +790,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -809,7 +801,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -821,7 +813,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -833,7 +825,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -844,7 +836,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -857,8 +849,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -870,7 +861,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -881,7 +872,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -893,7 +884,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -905,7 +896,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -916,7 +907,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLDir)include;$(SDLTtfDir);$(GLEWDir)include;$(FFMpegDir)include;..\include;\Devel\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(IncludePath);$(AgarDir)include;$(SDLIncludeDir);$(SDLTtfDir);$(FFMpegIncludeDir);$(GLEWDir)include;..\include;$(DevelopBase)include</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -929,8 +920,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(LocalReleaseLibs);winmm.lib;opengl32.lib;dxguid.lib;ws2_32.lib;Iphlpapi.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalManifestDependencies>type=%27win32%27 name=%27Microsoft.Windows.Common-Controls%27 version=%276.0.0.0%27 processorArchitecture=%27*%27 publicKeyToken=%276595b64144ccf1df%27 language=%27*%27;%(AdditionalManifestDependencies)</AdditionalManifestDependencies>
+      <AdditionalLibraryDirectories>$(SDLReleaseLibDir);$(AgarReleaseLibDir);$(FreeTypeReleaseLibDir);$(SDLTtfReleaseLibDir);$(GLEWReleaseLibDir);$(LibIntlLib64Dir);..\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -942,7 +932,7 @@
       <Command>post_build.bat $(SolutionDir) $(Configuration)\$(Platform)</Command>
     </PostBuildEvent>
     <ResourceCompile>
-      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_MBS1;USE_SDL;GUI_TYPE_AGAR;USE_OPENGL;USE_OPENGL_WH_ORTHO;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -969,6 +959,7 @@
     <ClCompile Include="..\src\gui\agar\ag_gui.cpp" />
     <ClCompile Include="..\src\gui\agar\ag_gui_base.cpp" />
     <ClCompile Include="..\src\gui\agar\ag_gui_config.cpp" />
+    <ClCompile Include="..\src\gui\agar\ag_joyset_dlg.cpp" />
     <ClCompile Include="..\src\gui\agar\ag_keybind_dlg.cpp" />
     <ClCompile Include="..\src\gui\agar\ag_recaud_dlg.cpp" />
     <ClCompile Include="..\src\gui\agar\ag_recvid_dlg.cpp" />
@@ -1006,8 +997,10 @@
     <ClCompile Include="..\src\osd\emu_input_keysym.cpp" />
     <ClCompile Include="..\src\osd\emu_screen.cpp" />
     <ClCompile Include="..\src\osd\emu_sound.cpp" />
+    <ClCompile Include="..\src\osd\keybind.cpp" />
     <ClCompile Include="..\src\osd\logging.cpp" />
     <ClCompile Include="..\src\osd\opengl.cpp" />
+    <ClCompile Include="..\src\osd\parseopt.cpp" />
     <ClCompile Include="..\src\osd\screenmode.cpp" />
     <ClCompile Include="..\src\osd\simple_clocale.cpp" />
     <ClCompile Include="..\src\osd\vkeyboardbase.cpp" />
@@ -1017,6 +1010,7 @@
     <ClCompile Include="..\src\utility.cpp" />
     <ClCompile Include="..\src\video\ffmpeg\ffm_loadlib.cpp" />
     <ClCompile Include="..\src\video\ffmpeg\ffm_rec_audio.cpp" />
+    <ClCompile Include="..\src\video\ffmpeg\ffm_rec_base.cpp" />
     <ClCompile Include="..\src\video\ffmpeg\ffm_rec_video.cpp" />
     <ClCompile Include="..\src\video\rec_audio.cpp" />
     <ClCompile Include="..\src\video\rec_video.cpp" />
@@ -1117,6 +1111,7 @@
     <ClInclude Include="..\src\gui\agar\ag_file_dlg.h" />
     <ClInclude Include="..\src\gui\agar\ag_gui.h" />
     <ClInclude Include="..\src\gui\agar\ag_gui_base.h" />
+    <ClInclude Include="..\src\gui\agar\ag_joyset_dlg.h" />
     <ClInclude Include="..\src\gui\agar\ag_keybind_dlg.h" />
     <ClInclude Include="..\src\gui\agar\ag_recaud_dlg.h" />
     <ClInclude Include="..\src\gui\agar\ag_recvid_dlg.h" />
@@ -1151,17 +1146,19 @@
     <ClInclude Include="..\src\osd\SDL\sdl_msgboard.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_parseopt.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_screenmode.h" />
+    <ClInclude Include="..\src\osd\SDL\sdl_socket.h" />
     <ClInclude Include="..\src\osd\SDL\sdl_vkeyboardbase.h" />
     <ClInclude Include="..\src\osd\d88_files.h" />
     <ClInclude Include="..\src\osd\debugger_console.h" />
     <ClInclude Include="..\src\osd\emu_input.h" />
+    <ClInclude Include="..\src\osd\keybind.h" />
     <ClInclude Include="..\src\osd\opengl.h" />
+    <ClInclude Include="..\src\osd\parseopt.h" />
     <ClInclude Include="..\src\osd\screenmode.h" />
     <ClInclude Include="..\src\osd\simple_clocale.h" />
     <ClInclude Include="..\src\osd\vkeyboardbase.h" />
     <ClInclude Include="..\src\osd\windowmode.h" />
     <ClInclude Include="..\src\osd\windows\win_uart.h" />
-    <ClInclude Include="..\src\parseopt.h" />
     <ClInclude Include="..\src\rec_video_defs.h" />
     <ClInclude Include="..\src\res\resource.h" />
     <ClInclude Include="..\src\simple_ini.h" />
@@ -1170,6 +1167,7 @@
     <ClInclude Include="..\src\version.h" />
     <ClInclude Include="..\src\video\ffmpeg\ffm_loadlib.h" />
     <ClInclude Include="..\src\video\ffmpeg\ffm_rec_audio.h" />
+    <ClInclude Include="..\src\video\ffmpeg\ffm_rec_base.h" />
     <ClInclude Include="..\src\video\ffmpeg\ffm_rec_video.h" />
     <ClInclude Include="..\src\video\rec_audio.h" />
     <ClInclude Include="..\src\video\rec_video.h" />

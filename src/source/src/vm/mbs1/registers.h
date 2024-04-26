@@ -13,7 +13,7 @@
 #define REGISTERS_H
 
 #include "../../common.h"
-#include "../../config.h"
+//#include "../../config.h"
 
 /// @defgroup MACROS_REGISTERS Macros related to REGISTERS class
 /// Macros related to @ref REGISTERS class
@@ -94,7 +94,7 @@
 #define REG_INTERLACE_SEL	registers.reg_interlace_sel
 #define REG_BAUD_SEL		registers.reg_baud_sel
 
-#define REG_SYS_MODE		config.sys_mode
+#define REG_SYS_MODE		pConfig->sys_mode
 #define SYS_MODE_S1L3		1
 #define SYS_MODE_CLK		2
 #define SYS_MODE_SU			4
@@ -105,7 +105,7 @@
 #define NOW_SYSTEM_MODE		((REG_SYS_MODE & 4) != 0)
 #define NOW_USER_MODE		((REG_SYS_MODE & 4) == 0)
 
-#define REG_TVSUPER			config.tvsuper
+#define REG_TVSUPER			pConfig->tvsuper
 // 0x10:analog 0:digital
 #define TVSUPER_DIGITAL		((REG_TVSUPER & 0x10) == 0)
 #define TVSUPER_ANALOG		((REG_TVSUPER & 0x10) != 0)

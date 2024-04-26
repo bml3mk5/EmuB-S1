@@ -159,6 +159,9 @@
     <ClCompile Include="..\src\gui\agar\ag_gui_config.cpp">
       <Filter>Source Files\GUI Source Files\Agar</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\gui\agar\ag_joyset_dlg.cpp">
+      <Filter>Source Files\GUI Source Files\Agar</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\gui\agar\ag_keybind_dlg.cpp">
       <Filter>Source Files\GUI Source Files\Agar</Filter>
     </ClCompile>
@@ -270,10 +273,16 @@
     <ClCompile Include="..\src\osd\emu_sound.cpp">
       <Filter>Source Files\OSD Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\osd\keybind.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\osd\logging.cpp">
       <Filter>Source Files\OSD Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\osd\opengl.cpp">
+      <Filter>Source Files\OSD Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osd\parseopt.cpp">
       <Filter>Source Files\OSD Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\osd\screenmode.cpp">
@@ -301,6 +310,9 @@
       <Filter>Source Files\VIDEO Source Files\ffmpeg</Filter>
     </ClCompile>
     <ClCompile Include="..\src\video\ffmpeg\ffm_rec_audio.cpp">
+      <Filter>Source Files\VIDEO Source Files\ffmpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\video\ffmpeg\ffm_rec_base.cpp">
       <Filter>Source Files\VIDEO Source Files\ffmpeg</Filter>
     </ClCompile>
     <ClCompile Include="..\src\video\ffmpeg\ffm_rec_video.cpp">
@@ -599,6 +611,9 @@
     <ClInclude Include="..\src\gui\agar\ag_gui_base.h">
       <Filter>Header Files\GUI Header Files\Agar</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\gui\agar\ag_joyset_dlg.h">
+      <Filter>Header Files\GUI Header Files\Agar</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\gui\agar\ag_keybind_dlg.h">
       <Filter>Header Files\GUI Header Files\Agar</Filter>
     </ClInclude>
@@ -701,6 +716,9 @@
     <ClInclude Include="..\src\osd\SDL\sdl_screenmode.h">
       <Filter>Header Files\OSD Header Files\SDL</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\osd\SDL\sdl_socket.h">
+      <Filter>Header Files\OSD Header Files\SDL</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\osd\SDL\sdl_vkeyboardbase.h">
       <Filter>Header Files\OSD Header Files\SDL</Filter>
     </ClInclude>
@@ -713,7 +731,13 @@
     <ClInclude Include="..\src\osd\emu_input.h">
       <Filter>Header Files\OSD Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\osd\keybind.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\osd\opengl.h">
+      <Filter>Header Files\OSD Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osd\parseopt.h">
       <Filter>Header Files\OSD Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\osd\screenmode.h">
@@ -730,9 +754,6 @@
     </ClInclude>
     <ClInclude Include="..\src\osd\windows\win_uart.h">
       <Filter>Header Files\OSD Header Files\windows</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\parseopt.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\rec_video_defs.h">
       <Filter>Header Files</Filter>
@@ -756,6 +777,9 @@
       <Filter>Header Files\VIDEO Header Files\ffmpeg</Filter>
     </ClInclude>
     <ClInclude Include="..\src\video\ffmpeg\ffm_rec_audio.h">
+      <Filter>Header Files\VIDEO Header Files\ffmpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\video\ffmpeg\ffm_rec_base.h">
       <Filter>Header Files\VIDEO Header Files\ffmpeg</Filter>
     </ClInclude>
     <ClInclude Include="..\src\video\ffmpeg\ffm_rec_video.h">

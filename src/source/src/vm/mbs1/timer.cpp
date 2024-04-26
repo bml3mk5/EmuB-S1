@@ -12,6 +12,7 @@
 #include "timer.h"
 //#include "../../emu.h"
 #include "registers.h"
+#include "../../config.h"
 #include "../../fileio.h"
 #include "../../utility.h"
 

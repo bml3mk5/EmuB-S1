@@ -88,6 +88,7 @@
 //#define USE_MOUSE_ABSOLUTE
 #define USE_JOYSTICK
 #define USE_PIAJOYSTICK
+#define USE_KEY2JOYSTICK
 
 
 #define USE_FD1
@@ -95,8 +96,8 @@
 #define USE_FD3
 #define USE_FD4
 #define HAS_MB8876
-#define MAX_DRIVE		4
-#define USE_DRIVE		4
+#define MAX_FLOPPY_DISKS	4
+#define USE_FLOPPY_DISKS	4
 
 #define USE_SOCKET
 #define USE_UART
@@ -125,15 +126,12 @@
 #define RESUME_FILE_VERSION 1
 #define RESUME_FILE_REVISION 1
 
-#ifdef USE_PIAJOYSTICK
-#define KEYBIND_MAX_NUM	3
-#else
-#define KEYBIND_MAX_NUM	2
-#endif
 #define KEYBIND_KEYS	130
 #define KEYBIND_JOYS	24
 #define KEYBIND_ASSIGN	2
 #define KEYBIND_PRESETS	4
+
+#define KEYBIND_JOY_BUTTONS	2
 
 /// @ingroup Enums
 /// @brief device masks of NMI signal

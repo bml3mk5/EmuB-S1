@@ -1,8 +1,8 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         SDL edition
-                                                             Version 0.7.5
-                                                                2024/01/22
+                                                             Version 0.8.0
+                                                                2024/04/27
 
 Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 ==============================================================================
@@ -22,6 +22,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   ● 使い方
     ○ メニュー説明
     ○ キー操作説明
+    ○ ジョイパッド設定ダイアログ(Joypad Setting...)
     ○ キー割り当てダイアログ(Keybind...)
     ○ 設定ダイアログ(Configure...)
     ○ 音量設定ダイアログ(Volume...)
@@ -76,9 +77,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
 ● 動作確認環境
 
-  MacOSX版 : Mac OS X High Sierra (10.13.6)
-             ユニバーサルバイナリ(Intel 32/64bit)でビルドしています。
-  Linux版  : Ubuntu 18.04(64bit)
+  MacOS版  : Mac OS Ventura (13.5) / High Sierra (10.13.6)
+             Apple silicon / Intel 64bitでビルドしています。
+  Linux版  : Ubuntu 22.04(64bit)
   Windows版: Windows10(64bit)
 
   使用デバイス：キーボード、マウス、ジョイスティック
@@ -189,7 +190,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
 ● ファイル構成
 
-  MacOSX版:
+  MacOS版:
 
     mbs1/
       readme.txt      ... このファイル
@@ -197,7 +198,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
       spec.txt        ... 本ソフトの詳細仕様
       mbs1.app/       ... アプリケーションフォルダ
         Contents/
-          MacOSX/
+          MacOS/
             mbs1      ... ソフト本体
           Resources/  ... リソースフォルダ
             mbs1.icrn ... アイコン
@@ -338,7 +339,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
          :
     「CPU 16倍(CPU x16)」
 
-    「CPUスピードと同期(Sync With CPU Speed)」 ..........
+    「デバイスをCPUスピードと同期(Sync Devices With CPU Speed)」 ..........
           チェックすると全体のスピードをCPUスピードに合わせます。
           チェックを外すとCPUスピードのみ変化します。
 
@@ -654,20 +655,29 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
           ポップアップで表示するかを切り替えます。
   「メッセージ表示(Show Message)」 ... 画面内にメッセージを表示するかを
           切り替えます。
+  「ログ...(Log...)」 ................ ログダイアログを表示します。
+
+  「マウスを使用(Use Mouse)」......... マウス機能を有効にします。
+
   「ジョイパッドを使用(キー割当)」.... ジョイスティックの方向キーや各ボタンを
           キーボードのキーに割り当てて使用します。
   「ジョイパッドを使用(PIA接続)」 .... ジョイスティックをPIA Aポートに接続した
           ものとして使用します。
-  「マウスを使用(Use Mouse)」......... マウス機能を有効にします。
+  「キーtoジョイパッド有効」 ......... キー入力をジョイスティックとして使用
+          します。
+
   「キー入力を鈍くする(ゲーム用)」 ... BASICで作られたゲームでキャラクタが進み
           すぎるといった場合に、キーの押しすぎを抑制します。
-  「キー割り当て...(Keybind...)」 .... キー割り当てダイアログ(後述)を開きます。
   「仮想キーボード(Virtual Keyboard)」.. 仮想キーボードウィンドウを開きます。
+
+  「ジョイパッド設定...(Joypad Setting...)」.. ジョイパッドの設定ダイアログ
+          (後述)を開きます。
+  「キー割り当て...(Keybind...)」 .... キー割り当てダイアログ(後述)を開きます。
   「設定...(Configure...)」 .......... 設定ダイアログ(後述)を開きます。
 
-  「デバッガを開始(Start Debugger)」.. デバッガを開始します(搭載バージョンのみ)。
-  「デバッガを停止(Stop Debugger)」 .. デバッガを停止します(搭載バージョンのみ)。
-    ※デバッガの詳細はdebugger.txtを参照してください。
+  「デバッガを開始(Start Debugger)」.. デバッガを開始します。※
+  「デバッガを停止(Stop Debugger)」 .. デバッガを停止します。※
+    ※搭載バージョンのみ。デバッガの詳細はdebugger.txtを参照してください。
 
 
 「ヘルプ(Help)」メニュー
@@ -676,8 +686,8 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
 ○ キー操作説明
 
-  キーボードは日本語JISキーボードを前提としています。
-  特殊なキーの入力方法は以下のとおり。
+  キーボードは日本語キーボードを前提としています。
+  デフォルトの特殊なキーの入力方法は以下のとおり。
   ※キー割り当てダイアログにて変更できます。
 
   S1のキー         Mac側のキー         Linux側のキー    Windows側のキー
@@ -776,6 +786,53 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   戻ります。
 
 
+○ ジョイパッド設定ダイアログ(Joypad Setting...)
+
+    各ボタンの連射状態と割り当て、およびアナログスティックの感度を設定します。
+
+  ■連射スピード
+
+  各ボタンの連射状態を設定します。0で連射なし、3で最大スピード連射となります。
+
+  ■アナログ→デジタル感度
+
+  アナログスティックを十字キーとして使用する場合にその感度を設定します。
+
+  ■ジョイパッド(PIA接続)(Joypad (PIA Type))
+
+  ジョイスティックの十字キー、アナログスティックおよびボタン1～28を
+  PIA Aポート($FE40-$FE41)の信号に対応付けします。
+  ジョイパッド(キー割当)の場合と同様に操作してください。
+  ジョイスティック2台まで対応しています。
+
+  枠内の変更したい部分をクリックしてください。
+  割り当てたいボタンをジョイパッドから入力してください。
+  割り当てたキーを消去するにはマウスの左ボタンをダブルクリックしてください。
+
+  割り当てが終わったらダイアログ下側にある「プリセットxに保存(Save Preset x)」
+  ボタンで状態を保存することができます。
+
+  ダイアログ下側にある「デフォルトをロード(Load Default)」ボタンを押すと
+  初期状態に戻ります。
+  「プリセットxをロード(Load Preset x)」ボタンで保存した割り当てに変更できます。
+
+  【Z軸有効、R軸有効、U軸有効、V軸有効について】
+    ジョイスティックによっては、アナログスティックが押しっぱなしになり割当てが
+  できない場合があります。このような場合は該当する軸のチェックをはずすことで
+  一時的にその軸の入力を無効にすることができます。
+
+  【注意】このダイアログを開く前にメニューの「ジョイパッドを使用(PIA接続)」に
+          チェックを入れて使用する状態にしてください。
+
+  ■キーtoジョイパッド(Key to Joypad)
+
+  キー入力をジョイスティックの方向キーやボタンとして使用します。
+
+  枠内の変更したい部分をクリックしてください。
+  割り当てたいキーをキーボードから入力してください。
+  割り当てたキーを消去するにはマウスの左ボタンをダブルクリックしてください。
+
+
 ○ キー割り当てダイアログ(Keybind...)
 
   ■キーボード(Keyboard)
@@ -788,7 +845,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   割り当てたキーを消去するにはマウスの左ボタンをダブルクリックしてください。
 
   割り当てが終わったらダイアログ右側にある「プリセットxに保存(Save Preset x)」
-  ボタンで保存することができます。
+  ボタンで状態を保存することができます。
 
   ダイアログ右側にある「デフォルトをロード(Load Default)」ボタンを押すと
   初期状態に戻ります。
@@ -805,8 +862,8 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
   ■ジョイパッド(キー割当)(Joypad (Key Assigned))
 
-  ジョイスティックの十字キーおよびボタン1～28をS1のキーに割り当てることが
-  できます。
+  ジョイスティックの十字キー、アナログスティックおよびボタン1～28をS1のキーに
+  割り当てることができます。
   キーボードの場合と同様に操作してください。
   ジョイスティック2台まで対応しています。
 
@@ -814,18 +871,18 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   another key when pressed two buttons)」をチェックすると、ボタンの同時押しや
   十字キーを斜めに入れた場合に別のキーとして判定するようになります。
 
+  【Z軸有効、R軸有効、U軸有効、V軸有効について】
+    ジョイスティックによっては、アナログスティックが押しっぱなしになり割当てが
+  できない場合があります。このような場合は該当する軸のチェックをはずすことで
+  一時的にその軸の入力を無効にすることができます。
+
   【注意】このダイアログを開く前にメニューの「ジョイパッドを使用(キー割当)」に
           チェックを入れて使用する状態にしてください。
 
   ■ジョイパッド(PIA接続)(Joypad (PIA Type))
+  ■キーtoジョイパッド(Key to Joypad)
 
-  ジョイスティックの十字キーおよびボタン1～28をPIA Aポート($FE40-$FE41)の信号に
-  対応付けします。
-  キーボードの場合と同様に操作してください。
-  ジョイスティック2台まで対応しています。
-
-  【注意】このダイアログを開く前にメニューの「ジョイパッドを使用(PIA接続)」に
-          チェックを入れて使用する状態にしてください。
+  ジョイパッド設定ダイアログ(Joypad Setting...)を参照してください。
 
 
 ○ 設定ダイアログ(Configure...)
@@ -1110,7 +1167,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 ○ 録画設定ダイアログ(Record Screen...)
 
   録画時の設定を行います。タブを選択して使用するライブラリを決めてください。
-  Mac: avkit, qtkit (とても重い), ffmpeg
+  Mac: avkit, ffmpeg
   Linux: ffmpeg
   Windows: video for windows, ffmpeg
 
@@ -1141,14 +1198,15 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 ● 録画＆録音で使用するライブラリについて
 
   ffmpegを使用する場合は、別途以下の要領でライブラリを入手してください。
+  ffmpegのバージョンは4系列が必要です。
 
   Mac:
    方法1: Homebrewを使用してインストール。
      Homebrewのページ: http://brew.sh/index_ja.html
    ターミナルより以下のコマンドでインストールする。
-     $ sudo brew install ffmpeg
+     $ sudo brew install ffmpeg@4
 
-   方法2: ソースファイルからビルドします。ffmpeg-3.xを入手してください。
+   方法2: ソースファイルからビルドします。ffmpeg-4.xを入手してください。
      FFMpegのページ： http://www.ffmpeg.org/
    ビルド方法は以下を参考：
      CompilationGuide/MacOSX – FFmpeg:
@@ -1160,25 +1218,33 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   Linux:
 
    パッケージから以下のライブラリをインストールします。
-     libavcodec57, libavutil55, libavformat57, libswscale4, libswresample2
+     libavcodec58, libavutil56, libavformat58, libswscale5, libswresample3
 
    ソースファイルからビルドする場合、ビルド時のオプションは、--disable-static
    --enable-sharedを追加してsharedライブラリを作成します。
 
   Windows:
 
-  1. Zeranoe's FFmpeg Builds Home Page： http://ffmpeg.zeranoe.com/builds/
-     にアクセスします。
-  2. FFmpeg 3.x 32/64-bit Shared をダウンロードします。
-  3. ダウンロードしたファイルから、以下のdllファイルを本ソフトと同じフォルダに
-     入れるか、システムフォルダに入れてください。
-        avcodec-57.dll
-        avutil-55.dll
-        avformat-57.dll
-        swresample-2.dll
-        swscale-4.dll
+  1. DLLビルドを提供しているサイトからダウンロードします。
+     64ビットバージョンは、
+       https://www.gyan.dev/ffmpeg/builds/
+     にある
+       ffmpeg-4.4.1-full_build-shared.7z をダウンロードします。
 
-  （ソースファイルからビルドする場合は、ffmpeg-3.xを入手してください。）
+     32ビットバージョンは、
+       https://github.com/tsukumijima/DTV-Builds
+     にある
+       FFmpeg-4.3.1-32bit-Shared.7z をダウンロードします。
+
+  2. ダウンロードしたファイルから、以下のdllファイルを本ソフトと同じフォルダに
+     入れるか、システムフォルダに入れてください。
+        avcodec-58.dll
+        avutil-56.dll
+        avformat-58.dll
+        swresample-3.dll
+        swscale-5.dll
+
+  （ソースファイルからビルドする場合は、ffmpeg-4.x.xを入手してください。）
    FFMpegのページ： http://www.ffmpeg.org/
 
 
@@ -1201,7 +1267,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
                   ファイル種類は拡張子で判定します。
 
 
-● ドラッグ＆ドロップ (Windows, Macのみ対応)
+● ドラッグ＆ドロップ
 
     ウィンドウにファイルをドロップすると、拡張子から対応しているかを判定して
    対応しているファイルならそれをオープンします。
@@ -1339,22 +1405,19 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
 ● 開発環境
 
-  MacOSX版: (Mac Mini CPU: Corei5 / Mem: 8GB)
-    Mac OS X High Sierra (10.13.6 Intel x86_64)
-    Xcode 7.3.1
-      SDL-2.0.8, SDL2_ttf-2.0.12
+  MacOS版: (Mac Mini CPU: M2 / Mem: 8GB)
+    Mac OS Ventura (13.5 Apple silicon)
+    Xcode 14.3
+      SDL2-2.28.5, SDL2_ttf-2.20.2
 
-  Linux版: (VMwareです。)(CPU: Corei7 4770S 3.1GHz / Mem: 768KB)
-    Ubuntu 18.04 (amd64) + GNOME
-      SDL-2.0.8, SDL2_ttf-1.0.12
-      Agar-1.4.2beta(SVN r9049)
+  Linux版: (VMwareです。)(CPU: Corei7 4770S 3.1GHz / Mem: 2GB)
+    Ubuntu 22.04 (amd64) + GNOME
+      SDL2-2.28.5, SDL2_ttf-2.20.2
 
   Windows版: (CPU: Corei7 4770S 3.1GHz / Mem: 8GB)
     Microsoft Windows10 (64ビット環境)
     MinGW + MSYS
-      SDL-2.0.10, SDL2_ttf-2.0.12
-      Agar-1.4.2beta(SVN r9049)
-      freetype-2.5.5
+      SDL2-2.28.5, SDL2_ttf-2.20.2
 
 
 ● 参考文献

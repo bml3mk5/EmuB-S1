@@ -116,16 +116,16 @@ private:
 	int   trace_count_remain;
 	int   prev_trace_clock;
 
-	bool  l3rom_loaded;
-	bool  s1rom1_loaded;
-	bool  s1rom2_loaded;
-	bool  s1dicrom_loaded;
-	bool  rom1802_loaded;
-	bool  rom1805_loaded;
+	int   l3rom_loaded;
+	int   s1rom1_loaded;
+	int   s1rom2_loaded;
+	int   s1dicrom_loaded;
+	int   rom1802_loaded;
+	int   rom1805_loaded;
 	bool  rom_loaded_at_first;
 
-	bool  cm01rom_loaded;
-	bool  cm01eeprom_loaded;
+	int   cm01rom_loaded;
+	int   cm01eeprom_loaded;
 
 	bool  cm01rom_access_ok;
 	bool  cm01basic_enable;
@@ -422,9 +422,10 @@ public:
 	bool debug_write_reg(uint32_t reg_num, uint32_t data);
 	void debug_regs_info(_TCHAR *buffer, size_t buffer_len);
 
-	int  get_debug_graphic_memory_size(int type, int *width, int *height);
+	int  get_debug_graphic_memory_size(int num, int type, int *width, int *height);
 	bool debug_graphic_type_name(int type, _TCHAR *buffer, size_t buffer_len);
 	bool debug_draw_graphic(int type, int width, int height, scrntype *buffer);
+	bool debug_dump_graphic(int type, int width, int height, uint16_t *buffer);
 
 	uint32_t debug_basic_get_line_number_ptr();
 	uint32_t debug_basic_get_line_number();

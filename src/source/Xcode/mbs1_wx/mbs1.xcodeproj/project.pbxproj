@@ -65,10 +65,13 @@
 		D94A74141B0F56E3003DAF01 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94A74131B0F56E3003DAF01 /* QTKit.framework */; };
 		D94A741E1B0F571F003DAF01 /* qt_rec_video.mm in Sources */ = {isa = PBXBuildFile; fileRef = D94A741B1B0F571F003DAF01 /* qt_rec_video.mm */; };
 		D94A741F1B0F571F003DAF01 /* rec_video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94A741C1B0F571F003DAF01 /* rec_video.cpp */; };
+		D94EAF342B7BA125003E835D /* keybind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94EAF322B7BA125003E835D /* keybind.cpp */; };
 		D94F52E42234DB77008332AF /* cpixfmt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94F52E22234DB77008332AF /* cpixfmt.cpp */; };
+		D94F9DF32BD026C800F3DEC0 /* wx_logging_dlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94F9DF22BD026C800F3DEC0 /* wx_logging_dlg.cpp */; };
 		D950A8D42327E45200BE4ADE /* mbs1_keyboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = D950A8D32327E45200BE4ADE /* mbs1_keyboard2.png */; };
 		D95195121BC1630C0032D233 /* mouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D951950C1BC1630C0032D233 /* mouse.cpp */; };
 		D95239BA1C610F6F00BA9197 /* cchar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D95239B71C610F6F00BA9197 /* cchar.cpp */; };
+		D9576A572923562600B1F260 /* parseopt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9576A552923562600B1F260 /* parseopt.cpp */; };
 		D96173841E66B3930035D28D /* digit10.png in Resources */ = {isa = PBXBuildFile; fileRef = D961737C1E66B3930035D28D /* digit10.png */; };
 		D96173D51E66DB210035D28D /* ledbox_14.png in Resources */ = {isa = PBXBuildFile; fileRef = D96173CD1E66DB210035D28D /* ledbox_14.png */; };
 		D96173D61E66DB210035D28D /* ledparts4.png in Resources */ = {isa = PBXBuildFile; fileRef = D96173CE1E66DB210035D28D /* ledparts4.png */; };
@@ -76,6 +79,7 @@
 		D96173D81E66DB210035D28D /* mbs1_key_mode.png in Resources */ = {isa = PBXBuildFile; fileRef = D96173D01E66DB210035D28D /* mbs1_key_mode.png */; };
 		D96173D91E66DB210035D28D /* mbs1_key_power.png in Resources */ = {isa = PBXBuildFile; fileRef = D96173D11E66DB210035D28D /* mbs1_key_power.png */; };
 		D96173DA1E66DB210035D28D /* mbs1_key_reset.png in Resources */ = {isa = PBXBuildFile; fileRef = D96173D21E66DB210035D28D /* mbs1_key_reset.png */; };
+		D967368C2962CD2000DBFEB5 /* ffm_rec_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D967368A2962CD1F00DBFEB5 /* ffm_rec_base.cpp */; };
 		D967FC6A2350A177008A021A /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D967FC662350A177008A021A /* common.cpp */; };
 		D967FC7D2350A196008A021A /* d88_files.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D967FC6B2350A196008A021A /* d88_files.cpp */; };
 		D967FC7E2350A196008A021A /* debugger_console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D967FC6D2350A196008A021A /* debugger_console.cpp */; };
@@ -145,6 +149,8 @@
 		D998C5861FFFDDBF001FDCBC /* msm58321.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D998C5841FFFDDBF001FDCBC /* msm58321.cpp */; };
 		D998C5891FFFDDD3001FDCBC /* rtc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D998C5A21FFFE2F8001FDCBC /* rtc.cpp */; };
 		D9B0430B232CBA36001BA3C8 /* list.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9B04309232CBA1D001BA3C8 /* list.xml */; };
+		D9B8B6CA2B7904640061690A /* wx_joyset_dlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9B8B6C82B7904640061690A /* wx_joyset_dlg.cpp */; };
+		D9B8B6CB2B7904640061690A /* wx_keybind_ctrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9B8B6C92B7904640061690A /* wx_keybind_ctrl.cpp */; };
 		D9BBE16B223D4EEB007D7078 /* wx_dlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BBE16A223D4EEB007D7078 /* wx_dlg.cpp */; };
 		D9CF3D9B2969990C0031915E /* vkeyboardbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9CF3D992969990C0031915E /* vkeyboardbase.cpp */; };
 		D9D05D72283A2CBF008FED65 /* debugger_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D05D6E283A2CBF008FED65 /* debugger_base.cpp */; };
@@ -298,9 +304,12 @@
 		D94A741B1B0F571F003DAF01 /* qt_rec_video.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = qt_rec_video.mm; sourceTree = "<group>"; };
 		D94A741C1B0F571F003DAF01 /* rec_video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rec_video.cpp; sourceTree = "<group>"; };
 		D94A741D1B0F571F003DAF01 /* rec_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rec_video.h; sourceTree = "<group>"; };
-		D94A74211B0F5773003DAF01 /* parseopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseopt.h; sourceTree = "<group>"; };
+		D94EAF322B7BA125003E835D /* keybind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = keybind.cpp; sourceTree = "<group>"; };
+		D94EAF332B7BA125003E835D /* keybind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keybind.h; sourceTree = "<group>"; };
 		D94F52E22234DB77008332AF /* cpixfmt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpixfmt.cpp; sourceTree = "<group>"; };
 		D94F52E32234DB77008332AF /* cpixfmt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpixfmt.h; sourceTree = "<group>"; };
+		D94F9DF12BD026C800F3DEC0 /* wx_logging_dlg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wx_logging_dlg.h; sourceTree = "<group>"; };
+		D94F9DF22BD026C800F3DEC0 /* wx_logging_dlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wx_logging_dlg.cpp; sourceTree = "<group>"; };
 		D950A8D32327E45200BE4ADE /* mbs1_keyboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbs1_keyboard2.png; sourceTree = "<group>"; };
 		D951950A1BC1630C0032D233 /* keyrecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = keyrecord.cpp; sourceTree = "<group>"; };
 		D951950B1BC1630C0032D233 /* keyrecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyrecord.h; sourceTree = "<group>"; };
@@ -311,6 +320,8 @@
 		D95239B71C610F6F00BA9197 /* cchar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cchar.cpp; sourceTree = "<group>"; };
 		D95239B81C610F6F00BA9197 /* cchar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cchar.h; sourceTree = "<group>"; };
 		D95239B91C610F6F00BA9197 /* cptrlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cptrlist.h; sourceTree = "<group>"; };
+		D9576A552923562600B1F260 /* parseopt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parseopt.cpp; sourceTree = "<group>"; };
+		D9576A562923562600B1F260 /* parseopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseopt.h; sourceTree = "<group>"; };
 		D96173751E66AEB90035D28D /* cbitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cbitmap.h; sourceTree = "<group>"; };
 		D961737C1E66B3930035D28D /* digit10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = digit10.png; sourceTree = "<group>"; };
 		D96173CD1E66DB210035D28D /* ledbox_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ledbox_14.png; sourceTree = "<group>"; };
@@ -319,6 +330,8 @@
 		D96173D01E66DB210035D28D /* mbs1_key_mode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbs1_key_mode.png; sourceTree = "<group>"; };
 		D96173D11E66DB210035D28D /* mbs1_key_power.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbs1_key_power.png; sourceTree = "<group>"; };
 		D96173D21E66DB210035D28D /* mbs1_key_reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mbs1_key_reset.png; sourceTree = "<group>"; };
+		D967368A2962CD1F00DBFEB5 /* ffm_rec_base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ffm_rec_base.cpp; sourceTree = "<group>"; };
+		D967368B2962CD1F00DBFEB5 /* ffm_rec_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffm_rec_base.h; sourceTree = "<group>"; };
 		D967FC652350A177008A021A /* ccolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccolor.h; sourceTree = "<group>"; };
 		D967FC662350A177008A021A /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 		D967FC672350A177008A021A /* d88_defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = d88_defs.h; sourceTree = "<group>"; };
@@ -484,6 +497,10 @@
 		D9A4DF7D1E363E4B00C76DD6 /* vkeyboard_mbs1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vkeyboard_mbs1.h; sourceTree = "<group>"; };
 		D9A9AE431E229C6000D770D9 /* csurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csurface.h; sourceTree = "<group>"; };
 		D9B04309232CBA1D001BA3C8 /* list.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = list.xml; sourceTree = "<group>"; };
+		D9B8B6C62B7904640061690A /* wx_keybind_ctrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wx_keybind_ctrl.h; sourceTree = "<group>"; };
+		D9B8B6C72B7904640061690A /* wx_joyset_dlg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wx_joyset_dlg.h; sourceTree = "<group>"; };
+		D9B8B6C82B7904640061690A /* wx_joyset_dlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wx_joyset_dlg.cpp; sourceTree = "<group>"; };
+		D9B8B6C92B7904640061690A /* wx_keybind_ctrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wx_keybind_ctrl.cpp; sourceTree = "<group>"; };
 		D9BBE16A223D4EEB007D7078 /* wx_dlg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wx_dlg.cpp; sourceTree = "<group>"; };
 		D9CF3D992969990C0031915E /* vkeyboardbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vkeyboardbase.cpp; sourceTree = "<group>"; };
 		D9CF3D9A2969990C0031915E /* vkeyboardbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vkeyboardbase.h; sourceTree = "<group>"; };
@@ -694,6 +711,8 @@
 				D9388AE01DEEC6B700222B43 /* ffm_loadlib.h */,
 				D9388AE11DEEC6B700222B43 /* ffm_rec_audio.cpp */,
 				D9388AE21DEEC6B700222B43 /* ffm_rec_audio.h */,
+				D967368A2962CD1F00DBFEB5 /* ffm_rec_base.cpp */,
+				D967368B2962CD1F00DBFEB5 /* ffm_rec_base.h */,
 				D9D876B61B1CA7F6000A737E /* ffm_rec_video.cpp */,
 				D9D876B71B1CA7F6000A737E /* ffm_rec_video.h */,
 			);
@@ -843,10 +862,14 @@
 				D967FC712350A196008A021A /* emu_input_keysym.cpp */,
 				D984CB051FDD0E53000F5DC7 /* emu_screen.cpp */,
 				D967FC742350A196008A021A /* emu_sound.cpp */,
+				D94EAF322B7BA125003E835D /* keybind.cpp */,
+				D94EAF332B7BA125003E835D /* keybind.h */,
 				D967FC782350A196008A021A /* logging.cpp */,
 				D9E42C9D2646AA2100C6E06F /* mac */,
 				D9EFF8C5241E067E002F8BA1 /* opengl.cpp */,
 				D9EFF8C6241E067F002F8BA1 /* opengl.h */,
+				D9576A552923562600B1F260 /* parseopt.cpp */,
+				D9576A562923562600B1F260 /* parseopt.h */,
 				D946001F242C9ED5008F0B18 /* screenmode.cpp */,
 				D967FC792350A196008A021A /* screenmode.h */,
 				D9CF3D992969990C0031915E /* vkeyboardbase.cpp */,
@@ -930,7 +953,6 @@
 				D9FDD1EB223A4ADB0055E9C7 /* msgs.cpp */,
 				D9FDD1EC223A4ADC0055E9C7 /* msgs.h */,
 				D902B81C1FB331AC00EC8622 /* osd */,
-				D94A74211B0F5773003DAF01 /* parseopt.h */,
 				D967FC692350A177008A021A /* rec_video_defs.h */,
 				D971DA2A1AF0A6EE00896525 /* res */,
 				D9F141F3233CD5ED0025638D /* simple_ini.cpp */,
@@ -1089,10 +1111,16 @@
 				D94822E0222E8BE100FC45C4 /* wx_file_dlg.h */,
 				D94822E1222E8BE100FC45C4 /* wx_gui.cpp */,
 				D94822E2222E8BE100FC45C4 /* wx_gui.h */,
+				D9B8B6C82B7904640061690A /* wx_joyset_dlg.cpp */,
+				D9B8B6C72B7904640061690A /* wx_joyset_dlg.h */,
+				D9B8B6C92B7904640061690A /* wx_keybind_ctrl.cpp */,
+				D9B8B6C62B7904640061690A /* wx_keybind_ctrl.h */,
 				D94822E3222E8BE100FC45C4 /* wx_keybind_dlg.cpp */,
 				D94822E4222E8BE100FC45C4 /* wx_keybind_dlg.h */,
 				D94822E5222E8BE100FC45C4 /* wx_ledbox.cpp */,
 				D94822E6222E8BE100FC45C4 /* wx_ledbox.h */,
+				D94F9DF22BD026C800F3DEC0 /* wx_logging_dlg.cpp */,
+				D94F9DF12BD026C800F3DEC0 /* wx_logging_dlg.h */,
 				D9F14219233CEE4C0025638D /* wx_recaud_dlg.cpp */,
 				D9F1421A233CEE4C0025638D /* wx_recaud_dlg.h */,
 				D94822E9222E8BE100FC45C4 /* wx_recvid_dlg.cpp */,
@@ -1276,9 +1304,13 @@
 				D94823E5222E8BE200FC45C4 /* wxw_timer.cpp in Sources */,
 				D94A741E1B0F571F003DAF01 /* qt_rec_video.mm in Sources */,
 				D94A741F1B0F571F003DAF01 /* rec_video.cpp in Sources */,
+				D94EAF342B7BA125003E835D /* keybind.cpp in Sources */,
 				D94F52E42234DB77008332AF /* cpixfmt.cpp in Sources */,
+				D94F9DF32BD026C800F3DEC0 /* wx_logging_dlg.cpp in Sources */,
 				D95195121BC1630C0032D233 /* mouse.cpp in Sources */,
 				D95239BA1C610F6F00BA9197 /* cchar.cpp in Sources */,
+				D9576A572923562600B1F260 /* parseopt.cpp in Sources */,
+				D967368C2962CD2000DBFEB5 /* ffm_rec_base.cpp in Sources */,
 				D967FC6A2350A177008A021A /* common.cpp in Sources */,
 				D967FC7D2350A196008A021A /* d88_files.cpp in Sources */,
 				D967FC7E2350A196008A021A /* debugger_console.cpp in Sources */,
@@ -1342,6 +1374,8 @@
 				D998C5831FFFDDAF001FDCBC /* curtime.cpp in Sources */,
 				D998C5861FFFDDBF001FDCBC /* msm58321.cpp in Sources */,
 				D998C5891FFFDDD3001FDCBC /* rtc.cpp in Sources */,
+				D9B8B6CA2B7904640061690A /* wx_joyset_dlg.cpp in Sources */,
+				D9B8B6CB2B7904640061690A /* wx_keybind_ctrl.cpp in Sources */,
 				D9BBE16B223D4EEB007D7078 /* wx_dlg.cpp in Sources */,
 				D9CF3D9B2969990C0031915E /* vkeyboardbase.cpp in Sources */,
 				D9D05D72283A2CBF008FED65 /* debugger_base.cpp in Sources */,

@@ -152,7 +152,7 @@ do {
 			break;
 		case 0xeff16:
 			// fm opn
-			if (IOPORT_USE_FMOPN && config.type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_FMOPN && pConfig->type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
 				d_fmopn->WRITE_IO8(3, data);
 
 //				logging->out_debugf("fmopn a:%04x d:%02x",addr,data);
@@ -160,7 +160,7 @@ do {
 			break;
 		case 0xeff17:
 			// fm opn
-			if (IOPORT_USE_FMOPN && config.type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_FMOPN && pConfig->type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
 				d_fmopn->WRITE_IO8(2, data);
 
 //				logging->out_debugf("fmopn a:%04x d:%02x",addr,data);
@@ -202,12 +202,19 @@ do {
 			}
 			// fm opn
 			if (IOPORT_USE_FMOPN) {
-				d_fmopn->WRITE_IO8(0, data & (config.type_of_fmopn >= Config::CHIP_YM2203_2MHZ ? 0xff : 0x0f));
+				d_fmopn->WRITE_IO8(0, data & (pConfig->type_of_fmopn >= Config::CHIP_YM2203_2MHZ ? 0xff : 0x0f));
 
 //				logging->out_debugf("fmopn a:%04x d:%02x",addr,data);
 			}
 			break;
 		case 0xeff20:
+		case 0xeff21:
+		case 0xeff22:
+		case 0xeff23:
+		case 0xeff24:
+		case 0xeff25:
+		case 0xeff26:
+		case 0xeff27:
 			// fdd drive select
 			if (IOPORT_USE_3FDD) {
 				d_fdd->WRITE_IO8(0, data);
@@ -444,7 +451,7 @@ do {
 		case 0xeffe7:
 			// ex psg reg
 			if (IOPORT_USE_EXPSG) {
-				d_psgex->WRITE_IO8(0, data & (config.type_of_expsg >= Config::CHIP_YM2203_2MHZ ? 0xff : 0x0f));
+				d_psgex->WRITE_IO8(0, data & (pConfig->type_of_expsg >= Config::CHIP_YM2203_2MHZ ? 0xff : 0x0f));
 //				logging->out_debugf("psg2w reg:%02x",data);
 			}
 			break;
@@ -467,14 +474,14 @@ do {
 			break;
 		case 0xeffee:
 			// YM2608 mode on ex psg 
-			if (IOPORT_USE_EXPSG && config.type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_EXPSG && pConfig->type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
 				d_psgex->WRITE_IO8(3, data);
 //				logging->out_debugf("psg2w dat:%02x",data);
 			}
 			break;
 		case 0xeffef:
 			// YM2608 mode on ex psg reg
-			if (IOPORT_USE_EXPSG && config.type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_EXPSG && pConfig->type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
 				d_psgex->WRITE_IO8(2, data);
 //				logging->out_debugf("psg2w reg:%02x",data);
 			}

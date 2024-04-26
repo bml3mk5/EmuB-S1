@@ -137,7 +137,7 @@ void MOUSE::update_mouse()
 	reckey->processing_mouse_status(mouse_stat);
 #endif
 
-	if (FLG_USEMOUSE != 0 || config.reckey_playing) {
+	if (FLG_USEMOUSE != 0 || pConfig->reckey_playing) {
 		for(i = 0; i < 2; i++) {
 #ifndef USE_MOUSE_ABSOLUTE
 			mst[i].pos += (mouse_stat[i] * cntdir[i]);
@@ -169,7 +169,7 @@ void MOUSE::update_mouse()
 	}
 
 #if 0
-	if (config.reckey_playing) {
+	if (pConfig->reckey_playing) {
 		memcpy(mst, reckey->get_mouse_recp_stat(), sizeof(mst));
 		for(i = 0; i < 2; i++) {
 			mst[i].prev_btn = (mst[i].btn & MOUSE_BUTTON_ONOFF);
@@ -185,7 +185,7 @@ void MOUSE::update_mouse()
 			}
 		}
 	}
-	if (config.reckey_recording) {
+	if (pConfig->reckey_recording) {
 		reckey->recording_mouse_status(mst);
 	}
 #endif

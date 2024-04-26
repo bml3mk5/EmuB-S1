@@ -167,14 +167,14 @@ do {
 			break;
 		case 0xeff16:
 			// fm opn
-			if (IOPORT_USE_FMOPN && config.type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_FMOPN && pConfig->type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
 				data = d_fmopn->READ_IO8(3);
 //				logging->out_debugf("fmopn a:%04x d:%02x",addr,data);
 			}
 			break;
 		case 0xeff17:
 			// fm opn
-			if (IOPORT_USE_FMOPN && config.type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_FMOPN && pConfig->type_of_fmopn >= Config::CHIP_YM2608_4MHZ) {
 				data = d_fmopn->READ_IO8(2);
 //				logging->out_debugf("fmopn a:%04x d:%02x",addr,data);
 			}
@@ -213,12 +213,19 @@ do {
 //				logging->out_debugf("fdc3r a:%04x d:%02x",addr,data);
 			}
 			// fm opn (cannot read on PSG mode)
-			if (IOPORT_USE_FMOPN && config.type_of_fmopn >= Config::CHIP_YM2203_2MHZ) {
+			if (IOPORT_USE_FMOPN && pConfig->type_of_fmopn >= Config::CHIP_YM2203_2MHZ) {
 				data = d_fmopn->READ_IO8(0);
 //				logging->out_debugf("fmopn a:%04x d:%02x",addr,data);
 			}
 			break;
 		case 0xeff20:
+		case 0xeff21:
+		case 0xeff22:
+		case 0xeff23:
+		case 0xeff24:
+		case 0xeff25:
+		case 0xeff26:
+		case 0xeff27:
 			// fdd drive select
 			if (IOPORT_USE_3FDD) {
 				data = d_fdd->READ_IO8(0);
@@ -348,7 +355,7 @@ do {
 			break;
 		case 0xeffc9:
 			// newon number
-			data = config.dipswitch;
+			data = pConfig->dipswitch;
 			break;
 		case 0xeffca:
 			// timer irq
@@ -453,7 +460,7 @@ do {
 			break;
 		case 0xeffe7:
 			// ex psg reg (cannot read except OPN mode)
-			if (IOPORT_USE_EXPSG && config.type_of_expsg >= Config::CHIP_YM2203_2MHZ) {
+			if (IOPORT_USE_EXPSG && pConfig->type_of_expsg >= Config::CHIP_YM2203_2MHZ) {
 				data = d_psgex->READ_IO8(0);
 			}
 			break;
@@ -476,13 +483,13 @@ do {
 			break;
 		case 0xeffee:
 			// YM2608 mode on ex psg
-			if (IOPORT_USE_EXPSG && config.type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_EXPSG && pConfig->type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
 				data = d_psgex->READ_IO8(3);
 			}
 			break;
 		case 0xeffef:
 			// YM2608 mode on ex psg
-			if (IOPORT_USE_EXPSG && config.type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
+			if (IOPORT_USE_EXPSG && pConfig->type_of_expsg >= Config::CHIP_YM2608_4MHZ) {
 				data = d_psgex->READ_IO8(2);
 			}
 	}

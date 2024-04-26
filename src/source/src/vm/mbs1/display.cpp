@@ -72,8 +72,8 @@
 void DISPLAY::initialize()
 {
 	memset(font, 0, sizeof(font));
-	font_rom_loaded = false;
-	l3font_rom_loaded = false;
+	font_rom_loaded = 0;
+	l3font_rom_loaded = 0;
 	font_rom_loaded_at_first = false;
 
 	vm_pause = emu->get_pause_ptr();
@@ -242,10 +242,10 @@ void DISPLAY::reset()
 
 void DISPLAY::update_config()
 {
-	scanline = config.scan_line;
-	afterimage = config.afterimage;
+	scanline = pConfig->scan_line;
+	afterimage = pConfig->afterimage;
 #ifdef USE_KEEPIMAGE
-	keepimage = config.keepimage;
+	keepimage = pConfig->keepimage;
 #endif
 	buf_stepcols = (scanline <= 2 ? 1 : 2);
 	crt_mon_stepcols = (scanline <= 2 ? 1 : 2);
@@ -262,12 +262,12 @@ void DISPLAY::update_config()
 	} else if (afterimage == 1) {
 		scrnline1_offset = SCREEN_WIDTH;
 
-		Rloss[0] = 24 * (scanline <= 1 ? 1 : scanline);
-		Rloss[1] = 24 * (scanline <= 1 ? 1 : scanline);
-		Gloss[0] = 20 * (scanline <= 1 ? 1 : scanline);
-		Gloss[1] =  8 * (scanline <= 1 ? 1 : scanline);
-		Bloss[0] = 48 * (scanline <= 1 ? 1 : scanline);
-		Bloss[1] = 48 * (scanline <= 1 ? 1 : scanline);
+		Rloss[0] = (uint32_t)pConfig->rloss[0] * (scanline <= 1 ? 1 : scanline);
+		Rloss[1] = (uint32_t)pConfig->rloss[1] * (scanline <= 1 ? 1 : scanline);
+		Gloss[0] = (uint32_t)pConfig->gloss[0] * (scanline <= 1 ? 1 : scanline);
+		Gloss[1] = (uint32_t)pConfig->gloss[1] * (scanline <= 1 ? 1 : scanline);
+		Bloss[0] = (uint32_t)pConfig->bloss[0] * (scanline <= 1 ? 1 : scanline);
+		Bloss[1] = (uint32_t)pConfig->bloss[1] * (scanline <= 1 ? 1 : scanline);
 		Rboad = (128 << Rshift);
 		Gboad = (128 << Gshift);
 		Bboad = (128 << Bshift);
@@ -295,7 +295,7 @@ void DISPLAY::update_config()
 void DISPLAY::update_dws_params()
 {
 //	crt_mon_disptmg_left = (*disptmg_skew) >= 4 ? VRAM_BUF_WIDTH
-//		: crtc_regs[0]-crtc_regs[2]-(crtc_regs[3] & 0x0f)-(crtc_chr_clocks ? 14 : 5) + (*disptmg_skew & 3) - config.disptmg_skew;
+//		: crtc_regs[0]-crtc_regs[2]-(crtc_regs[3] & 0x0f)-(crtc_chr_clocks ? 14 : 5) + (*disptmg_skew & 3) - pConfig->disptmg_skew;
 
 //	crt_mon_top = crtc_regs[4] + crtc_regs[5] - ((crtc_regs[3] & 0xf0) >> 4) - crtc_regs[7];
 
@@ -325,7 +325,7 @@ void DISPLAY::load_font_rom_file()
 {
 	const _TCHAR *app_path, *rom_path[2];
 
-	rom_path[0] = config.rom_path;
+	rom_path[0] = pConfig->rom_path.Get();
 	rom_path[1] = emu->application_path();
 
 	for(int i=0; i<2; i++) {
@@ -353,8 +353,8 @@ void DISPLAY::load_font_rom_file()
 			// convert font data to useful array data
 			set_font_data();
 			conv_to_l3font_data();
-			font_rom_loaded = false;
-			l3font_rom_loaded = true;
+			font_rom_loaded = 0;
+			l3font_rom_loaded = 0;
 		}
 	} else {
 		// convert font data to useful array data
@@ -1223,7 +1223,7 @@ void DISPLAY::update_display(int v, int clock)
 	}
 #endif
 	crt_mon_disptmg_left = (*disptmg_skew) >= 4 ? VRAM_BUF_WIDTH
-		: crtc_regs[0]-crtc_regs[2]-(crtc_regs[3] & 0x0f)-(crtc_chr_clocks ? 14 : 5) + (*disptmg_skew & 3) - config.disptmg_skew;
+		: crtc_regs[0]-crtc_regs[2]-(crtc_regs[3] & 0x0f)-(crtc_chr_clocks ? 14 : 5) + (*disptmg_skew & 3) - pConfig->disptmg_skew;
 
 	if (*crtc_vt_count >= *crtc_vt_disp) {
 		disptmg_left[0] = crt_mon_disptmg_left + dws_left_diff;
@@ -1320,7 +1320,7 @@ void DISPLAY::update_display(int v, int clock)
 			vgaddr = (crt_mon_s1vgaddr + ((gwidth_sel || SCRN_MODE_IS_64COLOR) ? 0 : gpage_no) * (S1_VGRAM_SIZE_ONE >> 1));
 
 			// cursor
-			cursor_addr = (((crtc_regs[14] << 8) | crtc_regs[15]) + (*disptmg_skew & 3) - config.disptmg_skew + (width_sel & crt_mon_col_st));
+			cursor_addr = (((crtc_regs[14] << 8) | crtc_regs[15]) + (*disptmg_skew & 3) - pConfig->disptmg_skew + (width_sel & crt_mon_col_st));
 			cursor_addr >>= (1 - width_sel); 
 			cursor_addr += addr_left;
 			cursor_addr &= 0x3fff;
@@ -1353,7 +1353,7 @@ void DISPLAY::update_display(int v, int clock)
 			}
 
 			// cursor
-			cursor_addr = (((crtc_regs[14] << 8) | crtc_regs[15]) + (*disptmg_skew & 3) - config.disptmg_skew);
+			cursor_addr = (((crtc_regs[14] << 8) | crtc_regs[15]) + (*disptmg_skew & 3) - pConfig->disptmg_skew);
 			cursor_addr += crt_mon_col_st;
 			cursor_addr += addr_offset;
 			cursor_addr += addr_left;
@@ -1364,7 +1364,7 @@ void DISPLAY::update_display(int v, int clock)
 
 			cursor_pos = (int)cursor_addr - crt_mon_l3vaddr;
 			width_sel_n = 0;
-			cursor_skew = (*curdisp_skew) + config.curdisp_skew - 1;
+			cursor_skew = (*curdisp_skew) + pConfig->curdisp_skew - 1;
 
 			if ((*crtc_curdisp) != 0
 			&& cursor_pos >= 0 && disptmg_left[0] + cursor_pos < disptmg_right[0]
@@ -1794,26 +1794,51 @@ bool DISPLAY::load_state(FILEIO *fio)
 
 #ifdef USE_DEBUGGER
 
+enum en_gnames {
+	GN_IG_A = 0,
+	GN_IG_B,
+	GN_IG_R,
+	GN_IG_G,
+	GN_GR_A,
+	GN_GR_B,
+	GN_GR_R,
+	GN_GR_G
+};
+
+const struct st_gnames {
+	const _TCHAR *name;
+} c_gnames[] = {
+	_T("IG RAM"),
+	_T("IG RAM (blue)"),
+	_T("IG RAM (red)"),
+	_T("IG RAM (green)"),
+	_T("GRAPHIC RAM"),
+	_T("GRAPHIC RAM (blue)"),
+	_T("GRAPHIC RAM (red)"),
+	_T("GRAPHIC RAM (green)"),
+	NULL
+};
+
 uint32_t DISPLAY::debug_read_io8(uint32_t addr)
 {
 	return 0xff;
 }
 
-int DISPLAY::get_debug_graphic_memory_size(int type, int *width, int *height)
+int DISPLAY::get_debug_graphic_memory_size(int num, int type, int *width, int *height)
 {
 	switch(type) {
-	case 0:
-	case 1:
-	case 2:
-	case 3:
+	case GN_IG_A:
+	case GN_IG_B:
+	case GN_IG_R:
+	case GN_IG_G:
 		// IG
 		*width = (16 * 8);
 		*height = (16 * 8);
 		break;
-	case 4:
-	case 5:
-	case 6:
-	case 7:
+	case GN_GR_A:
+	case GN_GR_B:
+	case GN_GR_R:
+	case GN_GR_G:
 		{
 			// GVRAM
 			int w = (SCRN_MODE_GRAPHIC_WIDTH ? 80 : 40);
@@ -1829,35 +1854,13 @@ int DISPLAY::get_debug_graphic_memory_size(int type, int *width, int *height)
 
 bool DISPLAY::debug_graphic_type_name(int type, _TCHAR *buffer, size_t buffer_len)
 {
-	switch(type) {
-	case 0:
-		UTILITY::tcscpy(buffer, buffer_len, _T("IG RAM"));
-		break;
-	case 1:
-		UTILITY::tcscpy(buffer, buffer_len, _T("IG RAM (blue)"));
-		break;
-	case 2:
-		UTILITY::tcscpy(buffer, buffer_len, _T("IG RAM (red)"));
-		break;
-	case 3:
-		UTILITY::tcscpy(buffer, buffer_len, _T("IG RAM (green)"));
-		break;
-	case 4:
-		UTILITY::tcscpy(buffer, buffer_len, _T("GRAPHIC RAM"));
-		break;
-	case 5:
-		UTILITY::tcscpy(buffer, buffer_len, _T("GRAPHIC RAM (blue)"));
-		break;
-	case 6:
-		UTILITY::tcscpy(buffer, buffer_len, _T("GRAPHIC RAM (red)"));
-		break;
-	case 7:
-		UTILITY::tcscpy(buffer, buffer_len, _T("GRAPHIC RAM (green)"));
-		break;
-	default:
-		return false;
+	for(int i=0; c_gnames[i].name; i++) {
+		if (type == i) {
+			UTILITY::tcscpy(buffer, buffer_len, c_gnames[i].name);
+			return true;
+		}
 	}
-	return true;
+	return false;
 }
 
 bool DISPLAY::debug_draw_graphic(int type, int width, int height, scrntype *buffer)
@@ -1865,10 +1868,10 @@ bool DISPLAY::debug_draw_graphic(int type, int width, int height, scrntype *buff
 
 	int size = width * height;
 	switch (type) {
-	case 0:
-	case 1:
-	case 2:
-	case 3:
+	case GN_IG_A:
+	case GN_IG_B:
+	case GN_IG_R:
+	case GN_IG_G:
 		// IG
 		for(int x=0; x<16; x++) {
 		for(int y=0; y<16; y++) {
@@ -1889,10 +1892,10 @@ bool DISPLAY::debug_draw_graphic(int type, int width, int height, scrntype *buff
 		}
 		}
 		break;
-	case 4:
-	case 5:
-	case 6:
-	case 7:
+	case GN_GR_A:
+	case GN_GR_B:
+	case GN_GR_R:
+	case GN_GR_G:
 		{
 			// GVRAM
 			int w = (SCRN_MODE_GRAPHIC_WIDTH ? 80 : 40);
@@ -1910,6 +1913,70 @@ bool DISPLAY::debug_draw_graphic(int type, int width, int height, scrntype *buff
 								((type & 3) == 0 || (type & 3) == 2) && (s1vgrram[rampos] & msk) ? 0xff : 0,	// r
 								((type & 3) == 0 || (type & 3) == 3) && (s1vggram[rampos] & msk) ? 0xff : 0,	// g
 								((type & 3) == 0 || (type & 3) == 1) && (s1vgbram[rampos] & msk) ? 0xff : 0	// b
+							);
+					}
+				}
+				}
+			}
+			}
+		}
+		break;
+	default:
+		return false;
+	}
+	return true;
+}
+
+bool DISPLAY::debug_dump_graphic(int type, int width, int height, uint16_t *buffer)
+{
+
+	int size = width * height;
+	switch (type) {
+	case GN_IG_A:
+	case GN_IG_B:
+	case GN_IG_R:
+	case GN_IG_G:
+		// IG
+		for(int x=0; x<16; x++) {
+		for(int y=0; y<16; y++) {
+			for(int li=0; li<8; li++) {
+			for(int bt=0; bt<8; bt++) {
+				int pos = bt + (y + (li + x * 8) * 16) * 8;
+				if (pos < size) {
+					int rampos = (y*16 + x) * 8 + li;
+					uint8_t msk = (0x80 >> bt);
+					buffer[pos]=(
+						  (((type & 3) == 0 || (type & 3) == 2) && (ig_ram[rampos+0x0800] & msk) ? 2 : 0)
+						| (((type & 3) == 0 || (type & 3) == 3) && (ig_ram[rampos+0x1000] & msk) ? 4 : 0)
+						| (((type & 3) == 0 || (type & 3) == 1) && (ig_ram[rampos] & msk) ? 1 : 0)
+						);
+				}
+			}
+			}
+		}
+		}
+		break;
+	case GN_GR_A:
+	case GN_GR_B:
+	case GN_GR_R:
+	case GN_GR_G:
+		{
+			// GVRAM
+			int w = (SCRN_MODE_GRAPHIC_WIDTH ? 80 : 40);
+			int s = (w == 80 ? 0x800 : 0x400);
+			int lim = 8; //(SCRN_MODE_IS_640x400 ? 16 : 8);
+			for(int x=0; x<w; x++) {
+			for(int y=0; y<25; y++) {
+				for(int li=0; li<lim; li++) {
+				for(int bt=0; bt<8; bt++) {
+					int pos = bt + (x + (y * lim + li) * w) * 8;
+					if (pos < size) {
+						int rampos = x + y * w + li * s;
+						uint8_t msk = (0x80 >> bt);
+						buffer[pos]=(
+							  (((type & 3) == 0 || (type & 3) == 2) && (s1vgrram[rampos] & msk) ? 2 : 0)
+							| (((type & 3) == 0 || (type & 3) == 3) && (s1vggram[rampos] & msk) ? 4 : 0)
+							| (((type & 3) == 0 || (type & 3) == 1) && (s1vgbram[rampos] & msk) ? 1 : 0)
 							);
 					}
 				}

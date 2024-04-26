@@ -55,7 +55,7 @@ void Z80B_CARD::reset()
 {
 	SIG_MBC_INTREFKIL = 0;
 	z80_running = false;
-	out_irq_id = config.z80b_card_out_irq == 1 ? SIG_CPU_NMI : SIG_CPU_IRQ;
+	out_irq_id = pConfig->z80b_card_out_irq == 1 ? SIG_CPU_NMI : SIG_CPU_IRQ;
 
 	set_number_of_cpu(IOPORT_USE_Z80BCARD ? 2 : 1);
 	d_z80->enable(IOPORT_USE_Z80BCARD != 0);
@@ -275,7 +275,7 @@ void Z80B_CARD::save_state(FILEIO *fio)
 	vm_state.membank = membank;
 	vm_state.mbc = SIG_MBC_INTREFKIL;
 	vm_state.condition = (z80_running ? 1 : 0) | (busreq_on ? 2 : 0);
-	vm_state.out_irq = (out_irq_id == SIG_CPU_NMI ? 1 : 0) | ((config.z80b_card_out_irq & 4) << 4);
+	vm_state.out_irq = (out_irq_id == SIG_CPU_NMI ? 1 : 0) | ((pConfig->z80b_card_out_irq & 4) << 4);
 
 	fio->Fwrite(&vm_state_ident, sizeof(vm_state_ident), 1);
 	fio->Fwrite(&vm_state, sizeof(vm_state), 1);
@@ -293,7 +293,7 @@ bool Z80B_CARD::load_state(FILEIO *fio)
 	z80_running = ((vm_state.condition & 1) != 0);
 	busreq_on = ((vm_state.condition & 2) != 0);
 	out_irq_id = (vm_state.out_irq & 4) == 1 ? SIG_CPU_NMI : SIG_CPU_IRQ;
-	config.z80b_card_out_irq = (vm_state.out_irq >> 4);
+	pConfig->z80b_card_out_irq = (vm_state.out_irq >> 4);
 
 	set_memory_from_membank();
 
