@@ -35,7 +35,15 @@
         wx_linux/ .......... wxWidgets版 linux用
         wx_win/ ............ wxWidgets版 Pleiades(Eclipse日本語版)用   
       VC++2010/
-        mbs1_wx.vcxproj .... wxWidgets版 VC++2010用プロジェクトファイル
+        mbs1_wx.vcxproj .... wxWidgets版 Visual Studio プロジェクトファイル
+      VC++2013/
+        mbs1_wx.vcxproj .... wxWidgets版 Visual Studio プロジェクトファイル
+      VC++2015/
+        mbs1_wx.vcxproj .... wxWidgets版 Visual Studio プロジェクトファイル
+      VC++2017/
+        mbs1_wx.vcxproj .... wxWidgets版 Visual Studio プロジェクトファイル
+      VC++2019/
+        mbs1_wx.vcxproj .... wxWidgets版 Visual Studio プロジェクトファイル
       Xcode/ ............... Xcode用プロジェクトファイル
       Makefile.xxx ......... 各OSごとのmakeファイル
       README_WX.md ......... このファイル
@@ -378,10 +386,10 @@
 
 ==============================================================================
 
-連絡先：
-  Sasaji (sasaji@s-sasaji.ddo.jp)
-  http://s-sasaji.ddo.jp/bml3mk5/
-  (Twitter: http://twitter.com/bml3mk5)
+連絡先：Sasaji (sasaji@s-sasaji.ddo.jp)
+ * My WebPage: http://s-sasaji.ddo.jp/bml3mk5/
+ * GitHub:     https://github.com/bml3mk5/EmuB-S1
+ * X(Twitter): https://x.com/bml3mk5
 
 ==============================================================================
 

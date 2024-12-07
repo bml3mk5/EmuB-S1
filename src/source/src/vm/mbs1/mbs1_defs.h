@@ -87,9 +87,10 @@
 #define USE_MOUSE
 //#define USE_MOUSE_ABSOLUTE
 #define USE_JOYSTICK
+#ifdef USE_JOYSTICK
 #define USE_PIAJOYSTICK
+#endif
 #define USE_KEY2JOYSTICK
-
 
 #define USE_FD1
 #define USE_FD2

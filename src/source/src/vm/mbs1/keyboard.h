@@ -67,13 +67,13 @@ private:
 	uint8_t	lpen_flg_prev;
 	bool	lpen_bl;
 
-#ifdef USE_JOYSTICK
+#if defined(USE_JOYSTICK) || defined(USE_KEY2JOYSTICK)
 	uint32_t *p_joy_stat[MAX_JOYSTICKS];
 	uint32_t *p_joy_real_stat[MAX_JOYSTICKS];
-#ifdef USE_PIAJOYSTICK
+#endif
+#if defined(USE_PIAJOYSTICK) || defined(USE_KEY2JOYSTICK)
 	int		joy_pia_sel;
 	uint8_t joy_pia[MAX_JOYSTICKS];
-#endif
 #endif
 
 	int	m_counter;	// keyboard counter
@@ -131,6 +131,7 @@ private:
 	void update_light_pen();
 #endif
 	void update_keyboard();
+	void reset_joy_pia();
 	void update_joy_pia();
 
 	inline bool pressing_key(int);
