@@ -80,6 +80,7 @@
 #define HAS_YM2608
 #define USE_FMGEN_OPNA_STEREO
 //#define USE_AUDIO_U8
+#define USE_KANJI_JIS2
 
 #define USE_PRINTER
 #define MAX_PRINTER		3

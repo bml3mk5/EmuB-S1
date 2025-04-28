@@ -1,7 +1,7 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
 
-Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
+Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 ==============================================================================
 
 
@@ -604,6 +604,11 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   コマンドオプションを指定しない場合、現在登録しているポイントの一覧を表示
   します。
 
+  【注意】ブレークポイント、トレースポイントを設定すると自動的にトレースがONに
+          なります。
+  【注意】同じ行をループする場合はこの行に入った一度だけ対象となりループ中は
+          対象になりません。
+
 
   ◆ BAS BC, BAS BD, BAS BE
   ◆ BAS TC, BAS TD, BAS TE
@@ -624,6 +629,10 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
   ◆ BAS TRON  - ブレークポイント、トレースポイントでリストを表示する。
   ◆ BAS TROFF - ブレークポイント、トレースポイントでリストを表示しない。
+
+  ブレークポイント、トレースポイントに一致した時にリストを表示するかどうかを
+  指定します。ブレークポイント、トレースポイントを設定したとき自動的にONに
+  なります。
 
 
   ◆ BAS COMMAND - BASIC予約語の一覧を表示する。

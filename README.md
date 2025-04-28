@@ -8,6 +8,7 @@
 
 ### このソフトは、日立MB-S1のような動きをするエミュレータです。
 
+![screenshot](mbs1_scr05.png)
 
 ### [Downloads ダウンロード](https://github.com/bml3mk5/EmuB-S1/releases)
 

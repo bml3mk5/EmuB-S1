@@ -1,10 +1,10 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         Qt edition
-                                                             Version 0.8.1
-                                                                2024/12/08
+                                                             Version 0.8.5
+                                                                2025/04/29
 
-Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
+Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 ==============================================================================
 
   Qtエディションはβ版です。いくつかの不具合や制限があります。
@@ -64,7 +64,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   プリンタ出力
   RS-232C入出力
   マウス入力
-  漢字ROM: MP-9740またはMPC-KA01Sを想定
+  漢字ROM: MPC-KA01S、MPC-KA02Sを想定
   FDD: 以下を選択して使用可能
        片面単密度(1S) 3インチコンパクトフロッピー
         (MB-S1/10,20 + MP-1805 + MP-3375 x2 を想定)
@@ -123,9 +123,12 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
           S1から抜き出したL3 ROM BASICの場合で、3インチFDから起動する場合必須。
 
   (5) 漢字ROM（漢字BASIC、日本語ワードプロセッサを使用する場合必須）
-    ・KANJI.ROM : (128KB)
+    ・KANJI.ROM  : JIS第一水準(128KB)
+    ・KANJI2.ROM : JIS第二水準(128KB)
                   toolフォルダに擬似漢字ROMイメージを作成するソフトがあります。
     ・S1DIC.ROM : $D0000-$D8000 (32KB) 漢字辞書用ROM
+                  toolフォルダに擬似漢字辞書ROMイメージを作成するソフトが
+                  あります。
 
   (6) FM音源YM2608(OPNA)のリズム音データ(OPNAのリズム音源を使用する場合必須)
     ・2608_BD.WAV  : バスドラム
@@ -202,11 +205,18 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
               ja/
                 LC_MESSAGES/
                   mbs1.mo  ... 日本語用翻訳ファイル
-      tool/
+      tool/           ... ツール
         S1FONT.ROM    ... フォントファイル
-        mkkanji       ... KANJI.ROMファイル作成ソフト
-        kanji.txt     ... 上記ソフトで使用する漢字マッピングファイル
-        readme.txt    ... KANJI.ROMの作り方の説明。
+        kanji/        ... 疑似漢字ROMイメージ作成
+          mkkanji     ... 作成プログラム
+          kanji.txt   ... 上記で使用する漢字マッピングファイル(JIS第一水準)
+          kanji2.txt  ... 上記で使用する漢字マッピングファイル(JIS第二水準)
+          readme.txt  ... 疑似漢字ROMイメージ作り方の説明
+        dict/         ... 疑似漢字辞書ROMイメージ作成
+          mkdic.pl    ... 作成用perlスクリプト
+          mkdic.py    ... 作成用pythonスクリプト
+          readme.txt  ... 疑似漢字辞書ROMイメージ作り方の説明
+          s1dic.txt   ... 上記で使用するマッピングファイル
 
   Linux版:
 
@@ -220,11 +230,18 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
       readme.txt      ... このファイル
       history.txt     ... 変更履歴
       spec.txt        ... 本ソフトの詳細仕様
-    tool/
+    tool/             ... ツール
       S1FONT.ROM      ... フォントファイル
-      mkkanji         ... KANJI.ROMファイル作成ソフト
-      kanji.txt       ... 上記ソフトで使用する漢字マッピングファイル
-      readme.txt      ... KANJI.ROMの作り方の説明。
+      kanji/          ... 疑似漢字ROMイメージ作成
+        mkkanji       ... 作成プログラム
+        kanji.txt     ... 上記で使用する漢字マッピングファイル(JIS第一水準)
+        kanji2.txt    ... 上記で使用する漢字マッピングファイル(JIS第二水準)
+        readme.txt    ... 疑似漢字ROMイメージ作り方の説明
+      dict/           ... 疑似漢字辞書ROMイメージ作成
+        mkdic.pl      ... 作成用perlスクリプト
+        mkdic.py      ... 作成用pythonスクリプト
+        readme.txt    ... 疑似漢字辞書ROMイメージ作り方の説明
+        s1dic.txt     ... 上記で使用するマッピングファイル
 
   Windows版:
 
@@ -238,12 +255,18 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
       readme.txt      ... このファイル
       history.txt     ... 変更履歴
       spec.txt        ... 本ソフトの詳細仕様
-    tool\
+    tool\             ... ツール
       S1FONT.ROM      ... フォントファイル
-      mkkanji.exe     ... KANJI.ROMファイル作成ソフト
-      kanji.txt       ... 上記ソフトで使用する漢字マッピングファイル
-      readme.txt      ... KANJI.ROMの作り方の説明。
-
+      kanji\          ... 疑似漢字ROMイメージ作成
+        mkkanji.exe   ... 作成プログラム
+        kanji.txt     ... 上記で使用する漢字マッピングファイル(JIS第一水準)
+        kanji2.txt    ... 上記で使用する漢字マッピングファイル(JIS第二水準)
+        readme.txt    ... 疑似漢字ROMイメージ作り方の説明
+      dict\           ... 疑似漢字辞書ROMイメージ作成
+        mkdic.pl      ... 作成用perlスクリプト
+        mkdic.py      ... 作成用pythonスクリプト
+        readme.txt    ... 疑似漢字辞書ROMイメージ作り方の説明
+        s1dic.txt     ... 上記で使用するマッピングファイル
 
 ------------------------------------------------------------------------------
 ● インストール
@@ -260,8 +283,10 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
 
    ・キャラクターフォントROMイメージがない場合は、toolフォルダにあるS1FONT.ROM
      ファイルで代用できます。
-   ・漢字のROMイメージがない場合は、toolフォルダにあるkanji.exeを実行して、
-     KANJI.ROMファイルを作成できます。
+   ・漢字のROMイメージがない場合は、toolフォルダにあるmkkanjiを実行して、
+     KANJI.ROM、KANJI2.ROMファイルを作成できます。
+   ・漢字辞書のROMイメージがない場合は、toolフォルダにあるmkdicを実行して、
+     S1DIC.ROMファイルを作成できます。
 
   3. ジョイスティックを使用する場合、予め接続しておいてください。
 
@@ -936,7 +961,10 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
       レベル3用9重和音PSGカード
       ・KANJI ROMとはアドレスが重複するため同時に使用出来ません。
      ◆漢字ROM(KANJI ROM)        $FF75 - $FF76 ...
-      漢字ROMカード
+      漢字ROMカード(JIS第一水準)
+      ・9voice PSGとはアドレスが重複するため同時に使用出来ません。
+     ◆漢字ROM(KANJI ROM) JIS 2  $FF72 - $FF74 ...
+      漢字ROMカード(JIS第二水準)
       ・9voice PSGとはアドレスが重複するため同時に使用出来ません。
      ◆拡張PSG(Ex PSG)           $FFE6 - $FFE7 ($FFEE - $FFEF) ...
       拡張PSGカード(S1用)
@@ -1403,9 +1431,25 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
   --------------------------------------------------------------------------
  ○ 漢字ROM
 
-    toolフォルダにあるmkkanjiは指定したフォントを使用して擬似ROMイメージを
-    作成します。
-    詳細はtoolフォルダにあるreadme.txtを参照してください。
+  ■擬似漢字ROMイメージの作成
+    toolフォルダ内のkanjiフォルダにあるmkkanjiは指定したフォントを使用して
+   擬似漢字ROMイメージを作成します。
+    また、dictフォルダにあるmkdic.pl, mkdic.pyは疑似漢字辞書ROMイメージを
+   作成します。
+    詳細は各フォルダ内のreadme.txtを参照してください。
+
+  ■漢字ROMイメージのフォーマット
+   JIS第一水準の漢字イメージは以下のようになります。
+    1,2バイト目がIOポート$FF75,$FF76に$0000を書き込んだ時の$FF75,$FF76の値
+    3,4バイト目がIOポート$FF75,$FF76に$0001を書き込んだ時の$FF75,$FF76の値
+    5,6バイト目がIOポート$FF75,$FF76に$0002を書き込んだ時の$FF75,$FF76の値
+     ………
+   JIS第二水準の漢字イメージは以下のようになります。
+    1,2バイト目がIOポート$FF72,$FF73に$0000を書き込んだ時の$FF72,$FF73の値
+    3,4バイト目がIOポート$FF72,$FF73に$0001を書き込んだ時の$FF72,$FF73の値
+    5,6バイト目がIOポート$FF72,$FF73に$0002を書き込んだ時の$FF72,$FF73の値
+     ………
+   漢字ROM ICそのものから取り出したものと構成が異なる場合があります。
 
 
   --------------------------------------------------------------------------

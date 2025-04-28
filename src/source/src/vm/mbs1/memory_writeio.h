@@ -266,9 +266,6 @@ do {
 			break;
 		case 0xeff70:
 		case 0xeff71:
-		case 0xeff72:
-		case 0xeff73:
-		case 0xeff74:
 		case 0xeff78:
 		case 0xeff79:
 		case 0xeff7a:
@@ -282,6 +279,20 @@ do {
 //				logging->out_debugf("psg9w a:%04x d:%02x",addr,data);
 			}
 			break;
+		case 0xeff72:
+		case 0xeff73:
+		case 0xeff74:
+			// psg9
+			if (IOPORT_USE_PSG9) {
+				d_psg9->WRITE_IO8(addr - 0xeff70, data);
+//				logging->out_debugf("psg9w a:%04x d:%02x",addr,data);
+			}
+			// kanji rom (JIS2)
+			if (IOPORT_USE_KANJI2) {
+				d_kanji->WRITE_IO8(addr - 0xeff70, data);
+//				logging->out_debugf("kanjiw a:%04x d:%02x",addr,data);
+			}
+			break;
 		case 0xeff75:
 		case 0xeff76:
 			// psg9
@@ -291,7 +302,7 @@ do {
 			}
 			// kanji rom
 			if (IOPORT_USE_KANJI) {
-				d_kanji->WRITE_IO8(addr - 0xeff75, data);
+				d_kanji->WRITE_IO8(addr - 0xeff70, data);
 //				logging->out_debugf("kanjiw a:%04x d:%02x",addr,data);
 			}
 			break;

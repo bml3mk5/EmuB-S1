@@ -1,12 +1,15 @@
 # HITACHI MB-S1 model05 Emulator
 
-#### Copyright(C) Common Source Code Project, Sasaji 2011-2024 All Rights Reserved.
+#### Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 
 ## ファイル構成
 
     docs/ .................. ドキュメント
-    font/ .................. 画面フォント作成perlスクリプト
-      kanji/ ............... 擬似漢字ROM作成プログラム
+    font/ .................. 画面フォント作成スクリプト
+      kanji/ ............... 擬似漢字ROM作成ツール
+        dict/ .............. 擬似漢字辞書ROM作成スクリプト
+        SDL/ ............... 擬似漢字ROM作成プログラム(SDL使用)
+        Win/ ............... 擬似漢字ROM作成プログラム(WinAPI使用)
     source/
       data/ ................ データファイル
       include/ ............. インクルードファイル
