@@ -327,7 +327,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -343,7 +343,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -356,7 +356,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -372,7 +372,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -385,7 +385,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -401,7 +401,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -414,7 +414,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -425,7 +425,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -438,7 +438,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -454,7 +454,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -467,7 +467,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -483,7 +483,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -496,7 +496,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -507,7 +507,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -520,7 +520,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -531,7 +531,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -544,7 +544,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -556,7 +556,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -569,7 +569,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -581,7 +581,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -594,7 +594,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -606,7 +606,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -619,7 +619,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -630,7 +630,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -643,7 +643,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -655,7 +655,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -668,7 +668,7 @@
       <BrowseInformation>true</BrowseInformation>
       <CompileAsManaged>false</CompileAsManaged>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
@@ -680,7 +680,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_DEBUG_LOG;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -693,7 +693,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -704,7 +704,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_Z80B_CARD;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -717,7 +717,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -728,7 +728,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;USE_MPC_68008;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -741,7 +741,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -754,7 +754,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -766,7 +766,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -779,7 +779,7 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -791,7 +791,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -803,7 +803,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -815,7 +815,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -827,7 +827,7 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_MBS1;USE_WIN;GUI_TYPE_WINDOWS;USE_DIRECT2D;USE_DIRECT3D;USE_GETTEXT;USE_DEBUGGER;$(Platform);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Manifest>
       <AdditionalManifestFiles>$(SolutionDir)\..\src\res\windows\style_x86.manifest</AdditionalManifestFiles>
@@ -884,9 +884,11 @@
     <ClCompile Include="..\src\osd\simple_clocale.cpp" />
     <ClCompile Include="..\src\osd\vkeyboardbase.cpp" />
     <ClCompile Include="..\src\osd\windowmode.cpp" />
+    <ClCompile Include="..\src\osd\windows\win_apiex.cpp" />
     <ClCompile Include="..\src\osd\windows\win_cbitmap.cpp" />
     <ClCompile Include="..\src\osd\windows\win_ccolor.cpp" />
     <ClCompile Include="..\src\osd\windows\win_csurface.cpp" />
+    <ClCompile Include="..\src\osd\windows\win_d2d.cpp" />
     <ClCompile Include="..\src\osd\windows\win_d3d.cpp" />
     <ClCompile Include="..\src\osd\windows\win_debugger_console.cpp" />
     <ClCompile Include="..\src\osd\windows\win_emu.cpp" />
@@ -924,7 +926,10 @@
     <ClCompile Include="..\src\vm\debugger_base.cpp" />
     <ClCompile Include="..\src\vm\device.cpp" />
     <ClCompile Include="..\src\vm\disk.cpp" />
+    <ClCompile Include="..\src\vm\disk_image.cpp" />
     <ClCompile Include="..\src\vm\disk_parser.cpp" />
+    <ClCompile Include="..\src\vm\diskd88_image.cpp" />
+    <ClCompile Include="..\src\vm\diskhfe_image.cpp" />
     <ClCompile Include="..\src\vm\event.cpp" />
     <ClCompile Include="..\src\vm\fmgen\fmgen.cpp" />
     <ClCompile Include="..\src\vm\fmgen\fmtimer.cpp" />
@@ -994,12 +999,13 @@
     <ClInclude Include="..\src\cptrlist.h" />
     <ClInclude Include="..\src\csurface.h" />
     <ClInclude Include="..\src\curtime.h" />
-    <ClInclude Include="..\src\d88_defs.h" />
     <ClInclude Include="..\src\debugger_bpoint.h" />
     <ClInclude Include="..\src\debugger_defs.h" />
     <ClInclude Include="..\src\debugger_socket.h" />
     <ClInclude Include="..\src\debugger_symbol.h" />
     <ClInclude Include="..\src\depend.h" />
+    <ClInclude Include="..\src\diskd88_defs.h" />
+    <ClInclude Include="..\src\diskhfe_defs.h" />
     <ClInclude Include="..\src\emu.h" />
     <ClInclude Include="..\src\emu_osd.h" />
     <ClInclude Include="..\src\emumsg.h" />
@@ -1046,10 +1052,12 @@
     <ClInclude Include="..\src\osd\simple_clocale.h" />
     <ClInclude Include="..\src\osd\vkeyboardbase.h" />
     <ClInclude Include="..\src\osd\windowmode.h" />
+    <ClInclude Include="..\src\osd\windows\win_apiex.h" />
     <ClInclude Include="..\src\osd\windows\win_cbitmap.h" />
     <ClInclude Include="..\src\osd\windows\win_ccolor.h" />
     <ClInclude Include="..\src\osd\windows\win_common.h" />
     <ClInclude Include="..\src\osd\windows\win_csurface.h" />
+    <ClInclude Include="..\src\osd\windows\win_d2d.h" />
     <ClInclude Include="..\src\osd\windows\win_d3d.h" />
     <ClInclude Include="..\src\osd\windows\win_debugger_console.h" />
     <ClInclude Include="..\src\osd\windows\win_emu.h" />
@@ -1086,7 +1094,10 @@
     <ClInclude Include="..\src\vm\debugger_base.h" />
     <ClInclude Include="..\src\vm\device.h" />
     <ClInclude Include="..\src\vm\disk.h" />
+    <ClInclude Include="..\src\vm\disk_image.h" />
     <ClInclude Include="..\src\vm\disk_parser.h" />
+    <ClInclude Include="..\src\vm\diskd88_image.h" />
+    <ClInclude Include="..\src\vm\diskhfe_image.h" />
     <ClInclude Include="..\src\vm\event.h" />
     <ClInclude Include="..\src\vm\floppy_defs.h" />
     <ClInclude Include="..\src\vm\fmgen\diag.h" />

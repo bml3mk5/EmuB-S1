@@ -1,8 +1,8 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         SDL2 + Mac Cocoa edition
-                                                             Version 0.8.5
-                                                                2025/04/29
+                                                             Version 0.9.0
+                                                                2025/10/12
 
 Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 ==============================================================================
@@ -80,7 +80,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 ● 動作確認環境
 ------------------------------------------------------------------------------
 
-  MacOS版  : Mac OS Ventura (13.5) / High Sierra (10.13.6)
+  MacOS版  : Mac OS Sequoia (15.6.1) / High Sierra (10.13.6)
              Apple silicon / Intel 64bitでビルドしています。
 
   使用デバイス：キーボード、マウス、ジョイスティック
@@ -228,9 +228,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
    ・キャラクターフォントROMイメージがない場合は、toolフォルダにあるS1FONT.ROM
      ファイルで代用できます。
    ・漢字のROMイメージがない場合は、toolフォルダにあるmkkanjiを実行して、
-     KANJI.ROM、KANJI2.ROMファイルを作成できます。
+     疑似KANJI.ROM、疑似KANJI2.ROMファイルを作成できます。
    ・漢字辞書のROMイメージがない場合は、toolフォルダにあるmkdicを実行して、
-     S1DIC.ROMファイルを作成できます。
+     疑似S1DIC.ROMファイルを作成できます。
 
   3. ジョイスティックを使用する場合、予め接続しておいてください。
 
@@ -401,6 +401,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 
   【注意】d88形式以外のディスクイメージは正しく読み込めない可能性があります。
   【注意】2HDタイプの場合、ドライブ0,1が2HD、ドライブ2,3が2D専用となります。
+          詳細は「ディスクイメージについて」の項を参照ください。
 
   「A/B面に変更(Change Side to A/B)」..【3インチコンパクトFDD使用時のみ】
           ディスクのA面/B面を入れ替えます。
@@ -410,7 +411,8 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
         実際のディスクイメージファイルに保存されます。
 
   【注意】ベタのディスクイメージはデフォルトではd88形式に変換して保存します。
-        これは設定で変更できます。
+          ベタ形式のまま保存もできます。これは設定ダイアログの「テープFDD」
+          タブで変更できます。
 
   「新規(New)」 ................. 新規にディスクイメージを作成し開きます。
     「ブランク2Dを挿入(Insert Blank 2D)」 ... 5インチ2Dのディスクイメージ
@@ -426,6 +428,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 
   【注意】ホストOSの属性で読み込み専用にしている場合、このメニューからライト
           プロテクトを外すことはできません。
+  【注意】hfe形式は読み出し専用のためプロテクトを外すことはできません。
 
   「マルチボリューム(Multi Volume)」 ..........
           複数のディスクイメージが含まれるファイルの場合は、このメニューから
@@ -508,14 +511,25 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
   「デジタルRGB(Digital RGB)」... 画面表示をデジタル16色相当にします。
   「アナログRGB(Analog RGB)」.... 画面表示をアナログ64色相当にします。
 
-  「OpenGLを使用(同期)(Use OpenGL(Sync))」(*)..........
+  「描画方法(Drawing Method)」 .... 描画方法 サブメニュー
+    「デフォルト(同期)(Default(Sync))」..........
+          デフォルト描画。モニタのリフレッシュレートと同期しながら描画。
+    「デフォルト(非同期)(Default(Async))」.......
+          デフォルト描画。モニタのリフレッシュレートと同期せずに描画。
+    「OpenGLを使用(同期)(Use OpenGL(Sync))」..........
           OpenGLを使用してモニタのリフレッシュレートと同期しながら描画。
-  「OpenGLを使用(非同期)(Use OpenGL(Sync))」(*)........
+    「OpenGLを使用(非同期)(Use OpenGL(Sync))」........
           OpenGLを使用してモニタのリフレッシュレートと同期せずに描画。
-  「OpenGLフィルタ(OpenGL Filter)」.......
-          OpenGLを使用して描画する際のフィルタ種類。
 
-  (*)設定を反映させるにはソフトを再起動してください。
+  【注意】ホストOSやグラフィックボードがOpenGLに対応している必要があります。
+          対応していない場合その項目は選択できません。
+
+  「フィルタ種類(Filter Type)」.... フィルタ種類 サブメニュー
+    画面を拡大した時の補間方法を指定します。
+    「ニアレストネイバー(Nearest Neighbor)」.......
+          ギザギザが目立つ画面になります。
+    「バイリニア(Bilinear)」.......
+          滑らかになりますがすこしぼやけた画面になります。
 
 
 「サウンド(Sound)」メニュー
@@ -639,8 +653,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
           キーボードのキーに割り当てて使用します。
   「ジョイパッドを使用(PIA接続)」 .... ジョイスティックをPIA Aポートに接続した
           ものとして使用します。
-  「キーtoジョイパッド有効」 ......... キー入力をジョイスティックとして使用
-          します。
+
+  「キーtoジョイパッド有効(PIA接続)」.. キー入力をPIA Aポートに接続したジョイ
+          スティックとして使用します。
 
   「キー入力を鈍くする(ゲーム用)」 ... BASICで作られたゲームでキャラクタが進み
           すぎるといった場合に、キーの押しすぎを抑制します。
@@ -731,11 +746,8 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
     画面の余白を切る(Cutout Screen)        左option + X (Stretch Screenと切替)
     残像モード1(Afterimage1)               左option + T (Afterimage2と切替)
     残像モード2(Afterimage2)               左option + T (Afterimage1と切替)
-    OpenGLを使用(同期)(Use OpenGL(Sync))
-                                           左option + Y (OpenGL Asyncと切替)
-    OpenGLを使用(非同期)(Use OpenGL(ASync))
-                                           左option + Y (OpenGL Syncと切替)
-    OpenGLフィルタ(OpenGL Filter)」        左option + U
+    描画方法の切り替え                     左option + Y
+    フィルタ種類の切り替え                 左option + U
   サウンド(Sound)
     ボリューム...(Volume...)               左option + V
   オプション(Options)
@@ -770,9 +782,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 
   アナログスティックを十字キーとして使用する場合にその感度を設定します。
 
-  ■ジョイパッド(PIA接続)(Joypad (PIA Type))
+  ■ 1. ジョイパッド(PIA接続)(Joypad (PIA Type))
 
-  ジョイスティックの十字キー、アナログスティックおよびボタン1～28を
+    ジョイスティックの十字キー、アナログスティックおよびボタン1～28を
   PIA Aポート($FE40-$FE41)の信号に対応付けします。
 
   枠内の変更したい部分にマウスカーソルを合わせクリックしてください。
@@ -791,25 +803,30 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
   【注意】このダイアログを開く前にメニューの「ジョイパッドを使用(PIA接続)」に
           チェックを入れて使用する状態にしてください。
 
-  ■キーtoジョイパッド(Key to Joypad)
+    ◆ボタンを押した時に割り込みを発生させない(No interrupt caused by pressing
+      the button)
 
-  キー入力をジョイスティックの方向キーやボタンとして使用します。
+      チェックを入れると、PIAポートの設定にかかわらずボタンを押してもIRQ割込み
+    が発生しなくなります。
+
+  ■ 2. キーtoジョイパッド(PIA接続)(Key to Joypad (PIA Type))
+
+    キー入力をジョイスティックの方向キーやボタンとして使用します。
 
   枠内の変更したい部分にマウスカーソルを合わせクリックしてください。
   割り当てたいキーをキーボードから入力してください。
   割り当てたキーを消去するにはマウスの左ボタンをダブルクリックしてください。
 
-  ■ボタンを押した時に割り込みを発生させない(No interrupt caused by pressing
-    the button)
+    ◆ 1. ジョイパッド(PIA接続)(Joypad (PIA Type))の以下の設定がこちらにも適用
+      されます。
+      ・ボタンを押した時に割り込みを発生させない
 
-  チェックを入れると、PIAポートの設定にかかわらずボタンを押してもIRQ割り込みが
-  発生しなくなります。
-
-  ■Z軸有効、R軸有効、U軸有効、V軸有効
+  ■以下を一時的に無効にする：(Disable temporarily the following:)
+      Z軸(Z-axis)、R軸(R-axis)、U軸(U-axis)、V軸(V-axis)
 
     ジョイスティックによっては、アナログスティックが押しっぱなしになり割当てが
-  できない場合があります。このような場合は該当する軸のチェックをはずすことで
-  一時的にその軸の入力を無効にすることができます。
+  できない場合があります。このような場合は該当する軸のチェックを入れることで
+  このダイアログ内で一時的にその軸の入力を無効にすることができます。
 
 
   --------------------------------------------------------------------------
@@ -858,11 +875,12 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
   【注意】このダイアログを開く前にメニューの「ジョイパッドを使用(キー割当)」に
           チェックを入れて使用する状態にしてください。
 
-  ■Z軸有効、R軸有効、U軸有効、V軸有効
+  ■以下を一時的に無効にする：(Disable temporarily the following:)
+      Z軸(Z-axis)、R軸(R-axis)、U軸(U-axis)、V軸(V-axis)
 
     ジョイスティックによっては、アナログスティックが押しっぱなしになり割当てが
-  できない場合があります。このような場合は該当する軸のチェックをはずすことで
-  一時的にその軸の入力を無効にすることができます。
+  できない場合があります。このような場合は該当する軸のチェックを入れることで
+  このダイアログ内で一時的にその軸の入力を無効にすることができます。
 
 
   --------------------------------------------------------------------------
@@ -895,10 +913,15 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
     設定を反映させるには、このソフトを再起動するか、
     メニューの操作(Control) -> パワーオン(PowerOn) を行なってください。
 
-   ●パワーオフの状態を有効(Enable the state of power off)
-      チェックを入れると、メニューの操作(Control) -> パワーオン(PowerOn) で
-    パワーオン/オフの状態を切り替えることができるようになります。
-      チェックを外すと、常にパワーオン状態となります。
+   ●パワーオン/オフのふるまい(Behavior of Power On/Off)
+     ◆パワーオフの状態を有効(Enable the state of power off)
+       チェックを入れるとメニューの操作(Control) -> パワーオン(PowerOn) で
+     パワーオン/オフの状態を切り替えることができるようになります。
+       チェックを外すと、常にパワーオン状態となります。
+
+     ◆起動時の電源状態(Power State When Start Up)
+       このソフト起動時にパワーオンするかオフするかを選択します。
+     ※パワーオフの状態を有効にしていない場合は常にパワーオンになります。
 
    ●I/Oポートアドレス(I/O Port Address)
     どの周辺機器を有効にするかを指定します。
@@ -949,17 +972,23 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 
    ●描画(Drawing)
     方法(Method) : 画面描画方法を指定します。
-                   設定を反映させるにはこのソフトを再起動する必要があります。
-     デフォルト(Default)
-      ...... アプリケーションに任せる
-     OpenGLを使用(同期)(Use OpenGL(sync))
-      ...... OpenGLを使用する（リフレッシュレートと同期）
-     OpenGLを使用(非同期)(Use OpenGL(async))
-      ...... OpenGLを使用する（リフレッシュレートと非同期）
+     デフォルト(同期)(Default(Sync)) ..........
+          デフォルト描画。モニタのリフレッシュレートと同期しながら描画。
+     デフォルト(非同期)(Default(Async)) .......
+          デフォルト描画。モニタのリフレッシュレートと同期せずに描画。
+     OpenGLを使用(同期)(Use OpenGL(Sync)) ..........
+          OpenGLを使用してモニタのリフレッシュレートと同期しながら描画。
+     OpenGLを使用(非同期)(Use OpenGL(Sync)) ........
+          OpenGLを使用してモニタのリフレッシュレートと同期せずに描画。
+
+  【注意】ホストOSやグラフィックボードがOpenGLに対応している必要があります。
+          対応していない場合その項目は選択できません。
+
     フィルタ種類(Filter Type) : 画面を拡大した時の補間方法を指定します。
-                               (OpenGLを使用するにした時のみ有効)
-     ニアレストネイバー(Nearest Neighbour) .. 最近傍補間
-     リニア(Linear) ......................... バイリニア補間
+     ニアレストネイバー(Nearest Neighbor) .......
+          ギザギザが目立つ画面になります。
+     バイリニア(Bilinear) .......
+          滑らかになりますがすこしぼやけた画面になります。
 
    ●LED
     LEDインジケータを表示するか、画面内か画面外かを指定します。
@@ -1188,9 +1217,9 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
    方法1: Homebrewを使用してインストール。
      Homebrewのページ: http://brew.sh/index_ja.html
    ターミナルより以下のコマンドでインストールする。
-     $ sudo brew install ffmpeg@4
+     $ sudo brew install ffmpeg@6
 
-   方法2: ソースファイルからビルドします。ffmpeg-4.xを入手してください。
+   方法2: ソースファイルからビルドします。ffmpeg-6.1.1を入手してください。
      FFMpegのページ： http://www.ffmpeg.org/
    ビルド方法は以下を参考：
      CompilationGuide/MacOSX – FFmpeg:
@@ -1234,8 +1263,21 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
   --------------------------------------------------------------------------
  ○ ディスクイメージについて
 
+  読み込み可能なディスクイメージ形式：
+    d88(M88 Emulator)
+    hfe(HxC Floppy Emulator)
+    dsk(CPC DISK) ※未確認
+    fdi(Anex86 FDI) ※未確認
+    td0(Teledisk) ※未確認
+    ベタ
+  書込み可能なディスクイメージ形式：
+    d88(M88 Emulator)
+    ベタ
+
   d88形式での使用を前提にしています。
   ベタ形式はDISK BASIC標準のフォーマット以外は動作確認していません。
+
+  HxCフロッピーエミュレータで使用するhfe形式は読み出しのみ対応しています。
 
   【3インチコンパクトフロッピーディスク】
   ディスクイメージは片面単密度(1S) x 2となりますが、両面倍密度(2D)であれば
@@ -1261,6 +1303,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
      2ヘッド
     26セクタ/1トラック片面
    256バイト/セクタ
+   ※起動ディスクはトラック0サイド0が単密度になります。
   (8インチ2Dと同じパラメータ)
 
 
@@ -1389,8 +1432,8 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
 ------------------------------------------------------------------------------
 
   MacOS版: (Mac Mini CPU: M2 / Mem: 8GB)
-    Mac OS Ventura (13.5 Apple silicon)
-    Xcode 14.3
+    Mac OS Sequoia (15.6.1 Apple silicon)
+    Xcode 16
       SDL2-2.28.5, SDL2_ttf-2.20.2
 
 

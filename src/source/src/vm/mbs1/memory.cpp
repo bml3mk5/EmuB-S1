@@ -1971,14 +1971,15 @@ uint32_t MEMORY::debug_latch_address(uint32_t addr)
 void MEMORY::debug_write_data8(int type, uint32_t addr, uint32_t data)
 {
 	uint32_t addr_bank;
-	uint32_t addr_seg04, addr_seg16, addr_seg32;
+	uint32_t addr_seg04;
+//	uint32_t addr_seg16, addr_seg32;
 	uint32_t addr_comio;
 	int wait;
 	switch(type) {
 	case 0:
 		addr_seg04 = (addr & 0xff000); // 4KB  block
-		addr_seg16 = (addr & 0xfc000); // 16KB block
-		addr_seg32 = (addr & 0xf8000); // 32KB block
+//		addr_seg16 = (addr & 0xfc000); // 16KB block
+//		addr_seg32 = (addr & 0xf8000); // 32KB block
 		addr_comio = (addr & 0xeffff);
 
 		if (addr < 0xf0000) {
@@ -2065,15 +2066,16 @@ void MEMORY::debug_write_data8(int type, uint32_t addr, uint32_t data)
 uint32_t MEMORY::debug_read_data8(int type, uint32_t addr)
 {
 	uint32_t addr_bank;
-	uint32_t addr_seg04, addr_seg16, addr_seg32;
+	uint32_t addr_seg04;
+//	uint32_t addr_seg16, addr_seg32;
 	uint32_t addr_comio;
 	uint32_t data;
 
 	switch(type) {
 	case 0:
 		addr_seg04 = (addr & 0xff000); // 4KB  block
-		addr_seg16 = (addr & 0xfc000); // 16KB block
-		addr_seg32 = (addr & 0xf8000); // 32KB block
+//		addr_seg16 = (addr & 0xfc000); // 16KB block
+//		addr_seg32 = (addr & 0xf8000); // 32KB block
 		addr_comio = (addr & 0xeffff);
 
 		if (addr < 0xf0000) {
@@ -2147,8 +2149,8 @@ uint32_t MEMORY::debug_read_data8(int type, uint32_t addr)
 	default:
 		addr = address_mapping(addr & 0xffff);
 		addr_seg04 = (addr & 0xff000); // 4KB  block
-		addr_seg16 = (addr & 0xfc000); // 16KB block
-		addr_seg32 = (addr & 0xf8000); // 32KB block
+//		addr_seg16 = (addr & 0xfc000); // 16KB block
+//		addr_seg32 = (addr & 0xf8000); // 32KB block
 		addr_comio = (addr & 0xeffff);
 
 		if (addr < 0xf0000) {

@@ -1302,7 +1302,7 @@ void DISPLAY::update_display(int v, int clock)
 		cursor_st_ras = 255;
 		cursor_ed_ras = 0;
 
-		// calcrate address
+		// calculate address
 		if (NOW_S1_MODE) {
 			// S1
 			if (SCRN_MODE_IS_640x400) {
@@ -1808,15 +1808,15 @@ enum en_gnames {
 const struct st_gnames {
 	const _TCHAR *name;
 } c_gnames[] = {
-	_T("IG RAM"),
-	_T("IG RAM (blue)"),
-	_T("IG RAM (red)"),
-	_T("IG RAM (green)"),
-	_T("GRAPHIC RAM"),
-	_T("GRAPHIC RAM (blue)"),
-	_T("GRAPHIC RAM (red)"),
-	_T("GRAPHIC RAM (green)"),
-	NULL
+	{ _T("IG RAM") },
+	{ _T("IG RAM (blue)") },
+	{ _T("IG RAM (red)") },
+	{ _T("IG RAM (green)") },
+	{ _T("GRAPHIC RAM") },
+	{ _T("GRAPHIC RAM (blue)") },
+	{ _T("GRAPHIC RAM (red)") },
+	{ _T("GRAPHIC RAM (green)") },
+	{ NULL }
 };
 
 uint32_t DISPLAY::debug_read_io8(uint32_t addr)

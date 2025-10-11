@@ -94,6 +94,9 @@ add_executable(${PROJECT_NAME}
 	${SRCVM}/ay38910.cpp
 	${SRCVM}/disk.cpp
 	${SRCVM}/disk_parser.cpp
+	${SRCVM}/disk_image.cpp
+	${SRCVM}/diskd88_image.cpp
+	${SRCVM}/diskhfe_image.cpp
 	${SRCVM}/mb8866.cpp
 	${SRCVM}/mc6809.cpp
 	${SRCVM}/mc6809dasm.cpp
@@ -359,6 +362,8 @@ elseif(MSVC)
 	${SRCOSDSDL}/sdl_screen.cpp
 
 	${SRCOSDWIN}/win_uart.cpp
+	${SRCOSDWIN}/win_apiex.cpp
+	${SRCOSDWIN}/win_d2d.cpp
 
 	${SRCGUIWIN}/win_dialogbox.cpp
 	${SRCGUIWIN}/win_aboutbox.cpp
@@ -431,6 +436,8 @@ else()
 	${SRCOSDSDL}/sdl_screen.cpp
 
 	${SRCOSDWIN}/win_uart.cpp
+	${SRCOSDWIN}/win_apiex.cpp
+	${SRCOSDWIN}/win_d2d.cpp
 
 	${SRCGUIWIN}/win_dialogbox.cpp
 	${SRCGUIWIN}/win_aboutbox.cpp

@@ -453,6 +453,21 @@ uint32_t Z80B_CARD::debug_read_memory_mapped_io8(uint32_t addr)
 {
 	return read_memory_mapped_io8(addr);
 }
+
+void Z80B_CARD::debug_regs_info(const _TCHAR *title, _TCHAR *buffer, size_t buffer_len)
+{
+	UTILITY::tcscpy(buffer, buffer_len, title);
+	UTILITY::tcscat(buffer, buffer_len, _T(" Register:\n"));
+	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(FF7F):%02X ("), 0, z80_running ? 0xff : 0x7f);
+	UTILITY::tcscat(buffer, buffer_len, z80_running ? _T("Running") : _T("Sleep"));
+	UTILITY::tcscat(buffer, buffer_len, _T(")\n"));
+	UTILITY::tcscat(buffer, buffer_len, _T("Status:\n"));
+	UTILITY::sntprintf(buffer, buffer_len, _T(" Z80 BUSREQ:%d\n"), busreq_on ? 1 : 0);
+	UTILITY::sntprintf(buffer, buffer_len, _T(" Z80 IO:%02X\n"), membank);
+	UTILITY::sntprintf(buffer, buffer_len, _T("  Mapping: $0000 - $DFFF => $%d0000 - $%dDFFF\n"), membank & 7, membank & 7);
+	UTILITY::sntprintf(buffer, buffer_len, _T("           $E000 - $FFFF => $%dE000 - $%dFFFF\n"), (membank >> 4) & 7, (membank >> 4) & 7);
+	UTILITY::sntprintf(buffer, buffer_len, _T("  Interrupt:%d\n"), (membank >> 7) & 1);
+}
 #endif
 
 #endif /* USE_Z80B_CARD */

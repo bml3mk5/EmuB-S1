@@ -542,10 +542,10 @@ bool MPC_68008::debug_write_reg(const _TCHAR *reg, uint32_t data)
 	return debug_write_reg(num, data);
 }
 
-void MPC_68008::debug_regs_info(_TCHAR *buffer, size_t buffer_len)
+void MPC_68008::debug_regs_info(const _TCHAR *title, _TCHAR *buffer, size_t buffer_len)
 {
-	buffer[0] = _T('\0');
-
+	UTILITY::tcscpy(buffer, buffer_len, title);
+	UTILITY::tcscat(buffer, buffer_len, _T(" Registers:\n"));
 	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE19:%s):rdata:%02X\n"), 0, c_reg_names[0], REG_BUSCTRL);
 	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE1A:%s):wdata:%02X\n"), 1, c_reg_names[1], m_pro_reg & PRO_REG_MASK);
 	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE1B:%s):wdata:%02X\n"), 2, c_reg_names[2], m_acc_reg);

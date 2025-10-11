@@ -117,6 +117,8 @@ public:
 	uint32_t debug_read_io8(uint32_t addr);
 	void debug_write_memory_mapped_io8(uint32_t addr, uint32_t data);
 	uint32_t debug_read_memory_mapped_io8(uint32_t addr);
+
+	void debug_regs_info(const _TCHAR *title, _TCHAR *buffer, size_t buffer_len);
 #endif
 };
 

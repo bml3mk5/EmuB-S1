@@ -6,16 +6,16 @@
 				<macros>
 					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
 					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
-					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\include\ffmpeg611"/>
 					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
 					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
 					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
 					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
 					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
 					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
-					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.2.4"/>
 					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
-					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.2"/>
 					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
 				</macros>
 				<externalSettings/>
@@ -27,7 +27,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605" name="DebugS1" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605" name="DebugS1" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.dockerdpath=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.659679357" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.552117834" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
@@ -43,7 +43,7 @@
 									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1298991499" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1298991499" name="定義済みシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="_UNICODE"/>
 									<listOptionValue builtIn="false" value="USE_OPENGL"/>
@@ -63,7 +63,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1035337092" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.24557555" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.495193188" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1142128897" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1142128897" name="定義済みシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="__WXMSW__"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
@@ -102,7 +102,7 @@
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
-									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+									<listOptionValue builtIn="false" value="${ProjName}.res"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1513667325" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
@@ -114,13 +114,16 @@
 									<listOptionValue builtIn="false" value="rpcrt4"/>
 									<listOptionValue builtIn="false" value="oleaut32"/>
 									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="uxtheme"/>
 									<listOptionValue builtIn="false" value="winspool"/>
 									<listOptionValue builtIn="false" value="winmm"/>
 									<listOptionValue builtIn="false" value="shell32"/>
 									<listOptionValue builtIn="false" value="shlwapi"/>
 									<listOptionValue builtIn="false" value="advapi32"/>
-									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="ws2_32"/>
 									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="oleacc"/>
+									<listOptionValue builtIn="false" value="winhttp"/>
 									<listOptionValue builtIn="false" value="opengl32"/>
 									<listOptionValue builtIn="false" value="glu32"/>
 									<listOptionValue builtIn="false" value="vfw32"/>
@@ -163,16 +166,16 @@
 				<macros>
 					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
 					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
-					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\include\ffmpeg611"/>
 					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
 					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
 					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
 					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
 					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
 					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
-					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.2.4"/>
 					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_release_static_unicode_x64"/>
-					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.2"/>
 					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
 				</macros>
 				<externalSettings/>
@@ -184,7 +187,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053" name="ReleaseS1" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053" name="ReleaseS1" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.dockerdpath=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.2018179053." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.126424289" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.1603280670" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
@@ -200,7 +203,7 @@
 									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1941844679" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1941844679" name="定義済みシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="WINVER=0x0500"/>
 									<listOptionValue builtIn="false" value="_UNICODE"/>
@@ -222,7 +225,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.578724935" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1632137163" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.more" valueType="enumerated"/>
 								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.274305340" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.137567945" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.137567945" name="定義済みシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="WINVER=0x0500"/>
 									<listOptionValue builtIn="false" value="_UNICODE"/>
@@ -249,7 +252,6 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1605900017" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.userobjs.1462484212" name="その他のオブジェクト" superClass="gnu.cpp.link.option.userobjs" useByScannerDiscovery="false" valueType="userObjs">
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_xrc-${WX_VER}.a&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_webview-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_stc-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_richtext-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_ribbon-${WX_VER}.a&quot;"/>
@@ -263,7 +265,7 @@
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
-									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+									<listOptionValue builtIn="false" value="${ProjName}.res"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1387264864" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
@@ -275,13 +277,16 @@
 									<listOptionValue builtIn="false" value="rpcrt4"/>
 									<listOptionValue builtIn="false" value="oleaut32"/>
 									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="uxtheme"/>
 									<listOptionValue builtIn="false" value="winspool"/>
 									<listOptionValue builtIn="false" value="winmm"/>
 									<listOptionValue builtIn="false" value="shell32"/>
 									<listOptionValue builtIn="false" value="shlwapi"/>
 									<listOptionValue builtIn="false" value="advapi32"/>
-									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="ws2_32"/>
 									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="oleacc"/>
+									<listOptionValue builtIn="false" value="winhttp"/>
 									<listOptionValue builtIn="false" value="opengl32"/>
 									<listOptionValue builtIn="false" value="glu32"/>
 									<listOptionValue builtIn="false" value="vfw32"/>
@@ -324,16 +329,16 @@
 				<macros>
 					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
 					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
-					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\include\ffmpeg611"/>
 					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
 					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
 					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
 					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
 					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
 					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
-					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.2.4"/>
 					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
-					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.2"/>
 					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
 				</macros>
 				<externalSettings/>
@@ -345,7 +350,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX with Z80B Card and Debugger" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514" name="DebugS1_Z80B_Dbgr" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX with Z80B Card and Debugger" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514" name="DebugS1_Z80B_Dbgr" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.dockerdpath=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.1113595220" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.284383627" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
@@ -361,7 +366,7 @@
 									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.569941886" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.569941886" name="定義済みシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="_UNICODE"/>
 									<listOptionValue builtIn="false" value="USE_OPENGL"/>
@@ -383,7 +388,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1026652832" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1859868925" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.296989350" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.2039778837" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.2039778837" name="定義済みシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="__WXMSW__"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
@@ -424,7 +429,7 @@
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
-									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+									<listOptionValue builtIn="false" value="${ProjName}.res"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.956914269" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
@@ -436,13 +441,16 @@
 									<listOptionValue builtIn="false" value="rpcrt4"/>
 									<listOptionValue builtIn="false" value="oleaut32"/>
 									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="uxtheme"/>
 									<listOptionValue builtIn="false" value="winspool"/>
 									<listOptionValue builtIn="false" value="winmm"/>
 									<listOptionValue builtIn="false" value="shell32"/>
 									<listOptionValue builtIn="false" value="shlwapi"/>
 									<listOptionValue builtIn="false" value="advapi32"/>
-									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="ws2_32"/>
 									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="oleacc"/>
+									<listOptionValue builtIn="false" value="winhttp"/>
 									<listOptionValue builtIn="false" value="opengl32"/>
 									<listOptionValue builtIn="false" value="glu32"/>
 									<listOptionValue builtIn="false" value="vfw32"/>
@@ -485,16 +493,16 @@
 				<macros>
 					<stringMacro name="SDLINCLUDE" type="VALUE_PATH_DIR" value="${SDLDIR}/include/SDL"/>
 					<stringMacro name="SDLLIBDIR" type="VALUE_PATH_DIR" value="${SDLDIR}/lib"/>
-					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\include\ffmpeg611"/>
 					<stringMacro name="SDLDIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
 					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
 					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
 					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
 					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
 					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
-					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.2.4"/>
 					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
-					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.2"/>
 				</macros>
 				<externalSettings/>
 				<extensions>
@@ -505,7 +513,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX with Debugger" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322" name="DebugS1_Dbgr" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL and WX with Debugger" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322" name="DebugS1_Dbgr" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.dockerdpath=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.288763514.950684322." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.1827308676" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.2143859860" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
@@ -521,7 +529,7 @@
 									<listOptionValue builtIn="false" value="&quot;${SDLINCLUDE}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1102693592" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1102693592" name="定義済みシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="_UNICODE"/>
 									<listOptionValue builtIn="false" value="USE_OPENGL"/>
@@ -542,7 +550,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.391994759" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1629893431" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.1138949379" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1047341140" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1047341140" name="定義済みシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="__WXMSW__"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
@@ -582,7 +590,7 @@
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
-									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+									<listOptionValue builtIn="false" value="${ProjName}.res"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1404360342" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
@@ -594,13 +602,16 @@
 									<listOptionValue builtIn="false" value="rpcrt4"/>
 									<listOptionValue builtIn="false" value="oleaut32"/>
 									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="uxtheme"/>
 									<listOptionValue builtIn="false" value="winspool"/>
 									<listOptionValue builtIn="false" value="winmm"/>
 									<listOptionValue builtIn="false" value="shell32"/>
 									<listOptionValue builtIn="false" value="shlwapi"/>
 									<listOptionValue builtIn="false" value="advapi32"/>
-									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="ws2_32"/>
 									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="oleacc"/>
+									<listOptionValue builtIn="false" value="winhttp"/>
 									<listOptionValue builtIn="false" value="opengl32"/>
 									<listOptionValue builtIn="false" value="glu32"/>
 									<listOptionValue builtIn="false" value="vfw32"/>
@@ -642,7 +653,7 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368" moduleId="org.eclipse.cdt.core.settings" name="DebugS2">
 				<macros>
 					<stringMacro name="SDL2DIR" type="VALUE_PATH_DIR" value="${MSYS_HOME}/local"/>
-					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\vc\ffmpeg-3.4.1-win64-dev\include"/>
+					<stringMacro name="FFMPEGDIR" type="VALUE_PATH_DIR" value="D:\Devel\include\ffmpeg611"/>
 					<stringMacro name="WXBUILDINCLUDE" type="VALUE_PATH_DIR" value="${WXLIBDIR}/wx/include/msw-unicode-static-${WX_VER}"/>
 					<stringMacro name="WXLIBDIR" type="VALUE_PATH_DIR" value="${WXBUILD}/lib"/>
 					<stringMacro name="WXINCLUDE" type="VALUE_PATH_DIR" value="${WXDIR}/include"/>
@@ -650,9 +661,9 @@
 					<stringMacro name="WXLIBGUIPRE" type="VALUE_TEXT" value="libwx_mswu"/>
 					<stringMacro name="SDL2LIBDIR" type="VALUE_PATH_DIR" value="${SDL2DIR}/lib"/>
 					<stringMacro name="WXCONFIG" type="VALUE_TEXT" value="${WXBUILD}/wx-config"/>
-					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.1.0"/>
+					<stringMacro name="WXDIR" type="VALUE_PATH_DIR" value="d:/Devel/sources/wxWidgets-3.2.4"/>
 					<stringMacro name="WXBUILD" type="VALUE_PATH_DIR" value="${WXDIR}/build_debug_static_unicode_x64"/>
-					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.1"/>
+					<stringMacro name="WX_VER" type="VALUE_TEXT" value="3.2"/>
 					<stringMacro name="PROJPREFIX" type="VALUE_TEXT" value="mbs1"/>
 				</macros>
 				<externalSettings/>
@@ -664,7 +675,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL2 and WX" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368" name="DebugS2" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.enablement=null,org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.image=null,org.eclipse.cdt.docker.launcher.containerbuild.property.connection=null" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="using SDL2 and WX" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368" name="DebugS2" optionalBuildProperties="org.eclipse.cdt.docker.launcher.containerbuild.property.enablement=null,org.eclipse.cdt.docker.launcher.containerbuild.property.dockerdpath=,org.eclipse.cdt.docker.launcher.containerbuild.property.selectedvolumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.volumes=,org.eclipse.cdt.docker.launcher.containerbuild.property.image=null,org.eclipse.cdt.docker.launcher.containerbuild.property.connection=null" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="sh ${ProjDirPath}/post_build.sh &quot;${ProjDirPath}&quot; &quot;${ConfigName}&quot;" prebuildStep="sh ${ProjDirPath}/pre_build.sh &quot;${ProjName}&quot; &quot;${ConfigName}&quot; &quot;${WXBUILDINCLUDE}&quot; &quot;${WXINCLUDE}&quot;">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.2014723605.410497368." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.275864925" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.1778567520" name="デバッグ・プラットフォーム" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
@@ -680,7 +691,7 @@
 									<listOptionValue builtIn="false" value="&quot;${SDL2INCLUDE}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${FFMPEGDIR}&quot;"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1246603617" name="定義済みのシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.preprocessor.def.1246603617" name="定義済みシンボル (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
 									<listOptionValue builtIn="false" value="USE_WX2"/>
@@ -701,7 +712,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.1855693454" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2124312049" name="最適化レベル" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option defaultValue="gnu.c.debugging.level.max" id="gnu.c.compiler.option.debugging.level.1800326364" name="デバッグ・レベル" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.911108429" name="定義済みのシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.911108429" name="定義済みシンボル (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="_MBS1"/>
 									<listOptionValue builtIn="false" value="_DEBUG"/>
 									<listOptionValue builtIn="false" value="USE_WX2"/>
@@ -740,7 +751,7 @@
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/${WXLIBGUIPRE}_core-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu_xml-${WX_VER}.a&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${WXLIBDIR}/libwx_baseu-${WX_VER}.a&quot;"/>
-									<listOptionValue builtIn="false" value="${ConfigName}/${ProjName}.res"/>
+									<listOptionValue builtIn="false" value="${ProjName}.res"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1072944480" name="ライブラリー検索パス (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${WXLIBDIR}"/>
@@ -752,13 +763,16 @@
 									<listOptionValue builtIn="false" value="rpcrt4"/>
 									<listOptionValue builtIn="false" value="oleaut32"/>
 									<listOptionValue builtIn="false" value="uuid"/>
+									<listOptionValue builtIn="false" value="uxtheme"/>
 									<listOptionValue builtIn="false" value="winspool"/>
 									<listOptionValue builtIn="false" value="winmm"/>
 									<listOptionValue builtIn="false" value="shell32"/>
 									<listOptionValue builtIn="false" value="shlwapi"/>
 									<listOptionValue builtIn="false" value="advapi32"/>
-									<listOptionValue builtIn="false" value="wsock32"/>
+									<listOptionValue builtIn="false" value="ws2_32"/>
 									<listOptionValue builtIn="false" value="gdi32"/>
+									<listOptionValue builtIn="false" value="oleacc"/>
+									<listOptionValue builtIn="false" value="winhttp"/>
 									<listOptionValue builtIn="false" value="opengl32"/>
 									<listOptionValue builtIn="false" value="glu32"/>
 									<listOptionValue builtIn="false" value="vfw32"/>

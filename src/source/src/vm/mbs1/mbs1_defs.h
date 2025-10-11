@@ -17,7 +17,7 @@
 #define DEVICE_NAME		"HITACHI MB-S1 model05"
 #define CONFIG_NAME		"mbs1"
 #define CLASS_NAME      "MBS1"
-#define CONFIG_VERSION		10
+#define CONFIG_VERSION		11
 
 // device informations for virtual machine
 #define USE_EMU_INHERENT_SPEC
@@ -58,6 +58,8 @@
 #define MIN_WINDOW_HEIGHT		480
 #define MAX_WINDOW_WIDTH		768
 #define MAX_WINDOW_HEIGHT		512
+#define SCREEN_DEST_X		((SCREEN_WIDTH  - MIN_WINDOW_WIDTH ) / 2)
+#define SCREEN_DEST_Y		((SCREEN_HEIGHT - MIN_WINDOW_HEIGHT) / 2)
 
 // max devices connected to the output port
 #if defined(USE_Z80B_CARD) || defined(USE_MPC_68008)
@@ -89,9 +91,12 @@
 //#define USE_MOUSE_ABSOLUTE
 #define USE_JOYSTICK
 #ifdef USE_JOYSTICK
-#define USE_PIAJOYSTICK
+# define USE_PIAJOYSTICK
 #endif
 #define USE_KEY2JOYSTICK
+#ifdef USE_KEY2JOYSTICK
+# define USE_KEY2PIAJOYSTICK
+#endif
 
 #define USE_FD1
 #define USE_FD2
@@ -114,12 +119,38 @@
 #define USE_MESSAGE_BOARD
 #define USE_VKEYBOARD
 
-#ifdef USE_WIN
-//#define USE_SCREEN_D3D_TEXTURE
-#define USE_SCREEN_D3D_MIX_SURFACE
+#if defined(USE_WIN)
+#define USE_SCREEN_MIX_SURFACE
+
+#define USE_SCREEN_D3D_TEXTURE
+//#define USE_SCREEN_D3D_MIX_SURFACE
 
 #define USE_DIRECTINPUT
+
+#elif defined(USE_SDL)
+#define USE_SCREEN_MIX_SURFACE
+
+#define USE_SCREEN_OPENGL_MIX_ON_RENDERER
+
+#elif defined(USE_SDL2)
+#define USE_SCREEN_MIX_SURFACE
+
+#define USE_SCREEN_SDL2_MIX_ON_RENDERER
+#define USE_SCREEN_OPENGL_MIX_ON_RENDERER
+
+#elif defined(USE_WX) || defined(USE_WX2)
+#define USE_SCREEN_MIX_SURFACE
+
+#define USE_SCREEN_OPENGL_MIX_ON_RENDERER
+
+#elif defined(USE_QT)
+#define USE_SCREEN_MIX_SURFACE
+
+#define USE_SCREEN_OPENGL_MIX_ON_RENDERER
+
 #endif
+/// @brief use the surface for recording video
+#define USE_RECORDING_SURFACE
 
 //#define USE_PERFORMANCE_METER
 
