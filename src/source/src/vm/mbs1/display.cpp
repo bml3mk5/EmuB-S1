@@ -340,25 +340,23 @@ void DISPLAY::load_font_rom_file()
 		if (font_rom_loaded || l3font_rom_loaded) break;
 	}
 
-	if (!l3font_rom_loaded) {
-		if (!font_rom_loaded_at_first) {
-			logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("FONT.ROM"));
-		}
-		if (!font_rom_loaded) {
+	if (l3font_rom_loaded == 0) {
+		if (font_rom_loaded == 0) {
 			if (!font_rom_loaded_at_first) {
+				logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("FONT.ROM"));
 				logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("S1FONT.ROM"));
 			}
 			memset(chrfont, 0x10, sizeof(chrfont));
-		} else {
+		} else if (font_rom_loaded < 128){
 			// convert font data to useful array data
 			set_font_data();
 			conv_to_l3font_data();
-			font_rom_loaded = 0;
-			l3font_rom_loaded = 0;
+			font_rom_loaded += 128;
 		}
-	} else {
+	} else if (l3font_rom_loaded < 128) {
 		// convert font data to useful array data
 		set_l3font_data();
+		l3font_rom_loaded += 128;
 	}
 	font_rom_loaded_at_first = true;
 }

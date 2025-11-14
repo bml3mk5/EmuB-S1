@@ -20,7 +20,7 @@
 	<key>CFBundleExecutable</key>
 	<string>mbs1</string>
 	<key>CFBundleGetInfoString</key>
-	<string>HITACHI MB-S1 model05 Emulator Version 0.9.0.1266, (c) 2012-2025 Common Source Code Project, Sasaji</string>
+	<string>HITACHI MB-S1 model05 Emulator Version 0.9.1.1279, (c) 2012-2025 Common Source Code Project, Sasaji</string>
 	<key>CFBundleIconFile</key>
 	<string>mbs1</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -30,17 +30,17 @@
 		<string>jp</string>
 	</array>
 	<key>CFBundleLongVersionString</key>
-	<string>0.9.0.1266, (c) 2012-2025 Common Source Code Project, Sasaji</string>
+	<string>0.9.1.1279, (c) 2012-2025 Common Source Code Project, Sasaji</string>
 	<key>CFBundleName</key>
 	<string>mbs1</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.9.0.1266</string>
+	<string>0.9.1.1279</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.9.0.1266</string>
+	<string>0.9.1.1279</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.entertainment</string>
 	<key>LSUIPresentationMode</key>

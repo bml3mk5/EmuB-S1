@@ -37,7 +37,7 @@ m68k {
 }
 
 INCLUDEPATH += include
-win32:INCLUDEPATH += /Devel/include/ffmpeg441
+win32:INCLUDEPATH += /Devel/include/ffmpeg611
 win32:INCLUDEPATH += /Devel/include
 !win32:INCLUDEPATH += /usr/local/include
 !win32:INCLUDEPATH += $(HOME)/Devel/ffmpeg
@@ -63,6 +63,7 @@ SOURCES +=\
 	../src/simple_ini.cpp \
 	../src/utility.cpp \
 	../src/labels.cpp \
+	../src/loadlibrary.cpp \
 	../src/msgs.cpp \
 	../src/osd/qt/qt_clocale.cpp \
 	../src/osd/qt/qt_cbitmap.cpp \

@@ -163,6 +163,7 @@
 		D9E35D591C11BFAB00BCB7FE /* fifo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E35D581C11BFAB00BCB7FE /* fifo.cpp */; };
 		D9E42CA02646AA5A00C6E06F /* mac_uart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E42C9E2646AA5A00C6E06F /* mac_uart.cpp */; };
 		D9E42CA22646AFF300C6E06F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E42CA12646AFF300C6E06F /* IOKit.framework */; };
+		D9ECED7F2EA4DC5B00BCE690 /* loadlibrary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9ECED7E2EA4DC5B00BCE690 /* loadlibrary.cpp */; };
 		D9E4E8B728B64C5800B672FB /* mc68000.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E4E8AC28B64C5800B672FB /* mc68000.cpp */; };
 		D9E4E8B828B64C5800B672FB /* mc68000cycs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E4E8AE28B64C5800B672FB /* mc68000cycs.cpp */; };
 		D9E4E8B928B64C5800B672FB /* mc68000dasm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9E4E8AF28B64C5800B672FB /* mc68000dasm.cpp */; };
@@ -531,6 +532,7 @@
 		D9E42C9E2646AA5A00C6E06F /* mac_uart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mac_uart.cpp; sourceTree = "<group>"; };
 		D9E42C9F2646AA5A00C6E06F /* mac_uart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mac_uart.h; sourceTree = "<group>"; };
 		D9E42CA12646AFF300C6E06F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D9ECED7E2EA4DC5B00BCE690 /* loadlibrary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = loadlibrary.cpp; sourceTree = "<group>"; };
 		D9E4E8AB28B64C5800B672FB /* mc68000_consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mc68000_consts.h; sourceTree = "<group>"; };
 		D9E4E8AC28B64C5800B672FB /* mc68000.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mc68000.cpp; sourceTree = "<group>"; };
 		D9E4E8AD28B64C5800B672FB /* mc68000.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mc68000.h; sourceTree = "<group>"; };
@@ -961,6 +963,7 @@
 				D9F18DB426564BFD00765805 /* labels.cpp */,
 				D9F18DB526564BFD00765805 /* labels.h */,
 				D9388AC91DEEC63C00222B43 /* loadlibrary.h */,
+				D9ECED7E2EA4DC5B00BCE690 /* loadlibrary.cpp */,
 				D971DA271AF0A6EE00896525 /* logging.h */,
 				D9FDD1EE223A4B020055E9C7 /* main.h */,
 				D971DA291AF0A6EE00896525 /* msgboard.h */,
@@ -1280,6 +1283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9ECED7F2EA4DC5B00BCE690 /* loadlibrary.cpp in Sources */,
 				D902B8481FB331CB00EC8622 /* sdl_sound.cpp in Sources */,
 				D904D83C2E657A5500687034 /* disk_image.cpp in Sources */,
 				D904D83D2E657A5500687034 /* diskd88_image.cpp in Sources */,
