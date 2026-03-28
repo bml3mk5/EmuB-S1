@@ -1,10 +1,10 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         Qt edition
-                                                             Version 0.9.2
-                                                                2025/12/27
+                                                             Version 0.9.3
+                                                                2026/03/29
 
-Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
+Copyright(C) Common Source Code Project, Sasaji 2011-2026 All Rights Reserved.
 ==============================================================================
 
   Qtエディションはβ版です。いくつかの不具合や制限があります。
@@ -1017,6 +1017,11 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
     左側の「>」は現在有効なボードを表しています。
     設定を反映させるには、このソフトを再起動するか、
     メニューの操作(Control) -> パワーオン(PowerOn) を行なってください。
+
+     ※来夢来人(MB-S1互換機)に近い構成にするには、
+       FDDタイプに「5.25インチミニFDD(2Dタイプ)」を選択し、
+       I/Oポートアドレスの「ROM BASIC無効」「IG無効」にチェックを入れて
+       パワーオンしてください。
 
   ■画面(Screen)タブ
 

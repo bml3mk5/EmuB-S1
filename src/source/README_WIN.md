@@ -1,6 +1,6 @@
 # HITACHI MB-S1 model05 Emulator Windows(VC++) Edition
 
-#### Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
+#### Copyright(C) Common Source Code Project, Sasaji 2011-2026 All Rights Reserved.
 
 ## ファイル構成
 

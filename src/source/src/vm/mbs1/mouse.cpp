@@ -15,6 +15,16 @@
 #define MOUSE_BUTTON_ONOFF		0x40
 #define MOUSE_BUTTON_TRIGGER	0x80
 
+MOUSE::MOUSE(VM* parent_vm, EMU* parent_emu, const char* identifier)
+ : DEVICE(parent_vm, parent_emu, identifier)
+{
+	set_class_name("MOUSE");
+}
+
+MOUSE::~MOUSE()
+{
+}
+
 void MOUSE::initialize()
 {
 	mouse_stat = emu->mouse_buffer();

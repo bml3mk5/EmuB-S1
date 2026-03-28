@@ -56,11 +56,8 @@ private:
 	void update_mouse();
 
 public:
-	MOUSE(VM* parent_vm, EMU* parent_emu, const char* identifier) : DEVICE(parent_vm, parent_emu, identifier)
-	{
-		set_class_name("MOUSE");
-	}
-	~MOUSE() {}
+	MOUSE(VM* parent_vm, EMU* parent_emu, const char* identifier);
+	~MOUSE();
 
 	void initialize();
 	void reset();

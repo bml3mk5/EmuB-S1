@@ -1,7 +1,7 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
 
-Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
+Copyright(C) Common Source Code Project, Sasaji 2011-2026 All Rights Reserved.
 ==============================================================================
 
 
@@ -62,7 +62,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
     5インチ2HD                  ○対応
     8インチ2D                   不明
   マウス                        ○対応
-  ジョイパッド                  ○対応 サウンドカードの汎用I/Oポートにつなぐタイプには未対応
+  ジョイパッド                  ○対応 (PIA Aポート接続)
   拡張メモリ(64KB～512KB)       ○対応
   漢字辞書                      ○対応
   プリンタ                      ○対応
@@ -146,7 +146,7 @@ Copyright(C) Common Source Code Project, Sasaji 2011-2025 All Rights Reserved.
   $FFCA         TIMER           ○対応
   $FFCB         LPFLG           0固定
   $FFCC         来夢来人CAS制御 ×未対応
-  $FFCD         来夢来人CAS状態 ×未対応
+  $FFCD         来夢来人CAS状態 ROMBASIC起動を無効にした時は$BFを返す
   $FFCE         来夢来人判定    ○対応 ROMBASIC起動を無効にする
   $FFD0         MODE-SEL        ○対応
   $FFD1         TRACE           ○対応

@@ -376,6 +376,10 @@ do {
 			// light pen flag 
 			data = d_key->READ_IO8(addr);
 			break;
+		case 0xeffcd:
+			// casette tape status (Limelight)
+			data = IOPORT_USE_DISROMB ? 0xbf : 0xff;
+			break;
 		case 0xeffce:
 			// disable booting from rom basic (Limelight)
 			data = IOPORT_USE_DISROMB ? 0x7f : 0xff;

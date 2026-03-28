@@ -69,6 +69,16 @@
 #define INIT_BRG_2(data,out) \
 	out[0].i = out[1].i = data;
 
+DISPLAY::DISPLAY(VM* parent_vm, EMU* parent_emu, const char* identifier)
+ : DEVICE(parent_vm, parent_emu, identifier)
+{
+	set_class_name("DISPLAY");
+}
+
+DISPLAY::~DISPLAY()
+{
+}
+
 void DISPLAY::initialize()
 {
 	memset(font, 0, sizeof(font));

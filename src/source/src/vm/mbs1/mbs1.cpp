@@ -628,15 +628,16 @@ const struct VM::st_device_name_list VM::c_device_name_list[] = {
 	{ _T("BOARD"), DEVTYPE_REG },
 	{ _T("PSG0"), DEVTYPE_REG },
 	{ _T("PSG1"), DEVTYPE_REG },
+	{ _T("PIAPSG"), DEVTYPE_REG },
 	{ _T("PSG60"), DEVTYPE_REG },
 	{ _T("PSG61"), DEVTYPE_REG },
+	{ _T("VIAPSG"), DEVTYPE_REG },
 	{ _T("PSG90"), DEVTYPE_REG },
 	{ _T("PSG91"), DEVTYPE_REG },
 	{ _T("PSG92"), DEVTYPE_REG },
 	{ _T("FMOPN"), DEVTYPE_REG },
 	{ _T("PIAEX"), DEVTYPE_REG },
 	{ _T("ACIAEX"), DEVTYPE_REG },
-	{ _T("VIA"), DEVTYPE_REG },
 	{ _T("RTC"), DEVTYPE_REG },
 	{ _T("MSM58321"), DEVTYPE_REG },
 #if defined(USE_Z80B_CARD)
@@ -747,10 +748,18 @@ bool VM::debug_write_reg(uint32_t num, uint32_t reg_num, uint32_t data)
 		// psgex
 		if (psgex) valid = psgex->debug_write_reg(reg_num, data);
 		break;
+	case DNM_PIAPSG:
+		// pia on psg board
+		if (psg3_pia) valid = psg3_pia->debug_write_reg(reg_num, data);
+		break;
 	case DNM_PSG60:
 	case DNM_PSG61:
 		// psg6x
 		if (psg3[num-DNM_PSG60]) valid = psg3[num-DNM_PSG60]->debug_write_reg(reg_num, data);
+		break;
+	case DNM_VIAPSG:
+		// via on psg board
+		if (psg9_via) valid = psg9_via->debug_write_reg(reg_num, data);
 		break;
 	case DNM_PSG90:
 	case DNM_PSG91:
@@ -765,10 +774,6 @@ bool VM::debug_write_reg(uint32_t num, uint32_t reg_num, uint32_t data)
 	case DNM_ACIAEX:
 		// acia ex
 		if (acia_ex) valid = acia_ex->debug_write_reg(reg_num, data);
-		break;
-	case DNM_VIA:
-		// via
-		if (psg9_via) valid = psg9_via->debug_write_reg(reg_num, data);
 		break;
 	case DNM_FMOPN:
 		// fm opn
@@ -857,10 +862,18 @@ bool VM::debug_write_reg(uint32_t num, const _TCHAR *reg, uint32_t data)
 		// psgex
 		if (psgex) valid = psgex->debug_write_reg(reg, data);
 		break;
+	case DNM_PIAPSG:
+		// pia on psg board
+		if (psg3_pia) valid = psg3_pia->debug_write_reg(reg, data);
+		break;
 	case DNM_PSG60:
 	case DNM_PSG61:
 		// psg6x
 		if (psg3[num-DNM_PSG60]) valid = psg3[num-DNM_PSG60]->debug_write_reg(reg, data);
+		break;
+	case DNM_VIAPSG:
+		// via on psg board
+		if (psg9_via) valid = psg9_via->debug_write_reg(reg, data);
 		break;
 	case DNM_PSG90:
 	case DNM_PSG91:
@@ -875,10 +888,6 @@ bool VM::debug_write_reg(uint32_t num, const _TCHAR *reg, uint32_t data)
 	case DNM_ACIAEX:
 		// acia ex
 		if (acia_ex) valid = acia_ex->debug_write_reg(reg, data);
-		break;
-	case DNM_VIA:
-		// via
-		if (psg9_via) valid = psg9_via->debug_write_reg(reg, data);
 		break;
 	case DNM_FMOPN:
 		// fm opn
@@ -974,10 +983,18 @@ void VM::debug_regs_info(uint32_t num, _TCHAR *buffer, size_t buffer_len)
 		// psgex
 		if (psgex) psgex->debug_regs_info(c_device_name_list[num].name, buffer, buffer_len);
 		break;
+	case DNM_PIAPSG:
+		// pia on psg board
+		if (psg3_pia) psg3_pia->debug_regs_info(c_device_name_list[num].name, buffer, buffer_len);
+		break;
 	case DNM_PSG60:
 	case DNM_PSG61:
 		// psg6x
 		if (psg3[num-DNM_PSG60]) psg3[num-DNM_PSG60]->debug_regs_info(c_device_name_list[num].name, buffer, buffer_len);
+		break;
+	case DNM_VIAPSG:
+		// via on psg board
+		if (psg9_via) psg9_via->debug_regs_info(c_device_name_list[num].name, buffer, buffer_len);
 		break;
 	case DNM_PSG90:
 	case DNM_PSG91:
@@ -992,10 +1009,6 @@ void VM::debug_regs_info(uint32_t num, _TCHAR *buffer, size_t buffer_len)
 	case DNM_ACIAEX:
 		// acia_ex
 		if (acia_ex) acia_ex->debug_regs_info(c_device_name_list[num].name, buffer, buffer_len);
-		break;
-	case DNM_VIA:
-		// via
-		if (psg9_via) psg9_via->debug_regs_info(c_device_name_list[num].name, buffer, buffer_len);
 		break;
 	case DNM_FMOPN:
 		// fm opn
