@@ -120,6 +120,13 @@ static NSWindow *get_main_window()
 	NSString *new_title = [[NSString alloc] initWithUTF8String:gMessages.Get(new_titleid)];
 	[self setTitle:new_title];
 }
+- (void)setTitleByIdWithMsg:(CMsg::Id)new_titleid :(const char *)msg :(const char *)tail
+{
+	NSMutableString *new_title = [[NSMutableString alloc] initWithUTF8String:gMessages.Get(new_titleid)];
+	if (msg) [new_title appendString:[[NSString alloc] initWithUTF8String:msg]];
+	if (tail) [new_title appendString:[[NSString alloc] initWithUTF8String:tail]];
+	[self setTitle:new_title];
+}
 
 @end
 
@@ -230,6 +237,14 @@ static NSWindow *get_main_window()
 
 @implementation CocoaController
 @synthesize gui;
+
+- (void)UpdatePathInMenu:(CocoaMenuItem *)menuItem :(CMsg::Id)msgid :(const char *)path :(int)num
+{
+	char str[_MAX_PATH];
+	if (gui->GetRecentFileStr(path, num, str, 64)) {
+		[menuItem setTitleByIdWithMsg:msgid:str:"]"];
+	}
+}
 
 - (void)UpdateRecentFiles:(CocoaMenuItem *)menuItem :(CRecentPathList &)list :(int)drv :(SEL)action
 {
@@ -456,6 +471,17 @@ static NSWindow *get_main_window()
 	int num = [sender num];
 
 	gui->ShowOpenBlankHardDiskDialog(drv, (uint8_t)num);
+}
+- (void)ToggleWriteProtectHardDisk:(id)sender
+{
+	int drv = [sender drv];
+	gui->PostEtToggleWriteProtectHardDisk(drv);
+}
+- (void)ShowSelectHardDiskDeviceTypeDialog:(id)sender
+{
+	int drv = [sender drv];
+
+	gui->ShowSelectHardDiskDeviceTypeDialog(drv);
 }
 - (void)OpenRecentHardDisk:(id)sender
 {
@@ -840,10 +866,18 @@ static NSWindow *get_main_window()
 	} else if (act == @selector(ShowLoadDataRecDialog:)) {
 		if (gui->IsOpenedLoadDataRecFile()) {
 			state = NSControlStateValueOn;
+			[self UpdatePathInMenu:menuItem:CMsg::Play_LB
+				:pConfig->GetOpenedDataRecPathString():-1];
+		} else {
+			[menuItem setTitleById:CMsg::Play_];
 		}
 	} else if (act == @selector(ShowSaveDataRecDialog:)) {
 		if (gui->IsOpenedSaveDataRecFile()) {
 			state = NSControlStateValueOn;
+			[self UpdatePathInMenu:menuItem:CMsg::Rec_LB
+				:pConfig->GetOpenedDataRecPathString():-1];
+		} else {
+			[menuItem setTitleById:CMsg::Rec_];
 		}
 	} else if (act == @selector(ToggleRealModeDataRec:)) {
 		if (pConfig->NowRealModeDataRec()) {
@@ -863,6 +897,11 @@ static NSWindow *get_main_window()
 	} else if (act == @selector(ShowOpenFloppyDiskDialog:)) {
 		if (gui->InsertedFloppyDisk(drv)) {
 			state = NSControlStateValueOn;
+			[self UpdatePathInMenu:menuItem:CMsg::Insert_LB
+				:pConfig->GetOpenedFloppyDiskPathString(drv)
+				:pConfig->GetOpenedFloppyDiskPathNumber(drv)];
+		} else {
+			[menuItem setTitleById:CMsg::Insert_];
 		}
 	} else if (act == @selector(ChangeSideFloppyDisk:)) {
 		CMsg::Id new_id;
@@ -919,11 +958,28 @@ static NSWindow *get_main_window()
 	} else if (act == @selector(ShowOpenHardDiskDialog:)) {
 		if (gui->MountedHardDisk(drv)) {
 			state = NSControlStateValueOn;
+			[self UpdatePathInMenu:menuItem:CMsg::Mount_LB
+				:pConfig->GetOpenedHardDiskPathString(drv)
+				:pConfig->GetOpenedHardDiskPathNumber(drv)];
+		} else {
+			[menuItem setTitleById:CMsg::Mount_];
 		}
 	} else if (act == @selector(CloseHardDisk:)) {
 		if (!gui->MountedHardDisk(drv)) {
 			enable = FALSE;
 		}
+	} else if (act == @selector(ToggleWriteProtectHardDisk:)) {
+		if (gui->WriteProtectedHardDisk(drv)) {
+			state = NSControlStateValueOn;
+		}
+	} else if (act == @selector(ShowSelectHardDiskDeviceTypeDialog:)) {
+		char label[64];
+		int num = gui->GetCurrentHardDiskDeviceType(drv);
+		UTILITY::strcpy(label, sizeof(label), CMSG(Device_Type));
+		UTILITY::strcat(label, sizeof(label), CMSG(LB_Now_SP));
+		UTILITY::strcat(label, sizeof(label), LABELS::hd_device_type[num]);
+		UTILITY::strcat(label, sizeof(label), ")...");
+		[menuItem setTitle:[NSString stringWithUTF8String:label]];
 	} else if (act == @selector(UpdateRecentHardDiskList:)) {
 		[self UpdateRecentFiles:menuItem:pConfig->GetRecentHardDiskPathList(drv):drv:@selector(OpenRecentHardDisk:)];
 #endif
@@ -2084,6 +2140,32 @@ bool GUI::ShowOpenBlankHardDiskDialog(int drv, uint8_t type)
 	}
 	SetFocusToMainWindow();
 	return rc;
+}
+
+bool GUI::ShowSelectHardDiskDeviceTypeDialog(int drv)
+{
+	NSInteger	result;
+
+	CocoaHDTypePanel *panel;
+
+	PostEtSystemPause(true);
+	GoWindowMode();
+
+	int num = GetHardDiskDeviceType(drv);
+	panel = [[CocoaHDTypePanel alloc] initWithType:drv type:num];
+
+	// Display modal dialog
+	result = [panel runModal];
+	if (result == NSModalResponseOK) {
+		num = [panel deviceType];
+		ChangeHardDiskDeviceType(drv, num);
+	}
+
+	[panel release];
+
+	PostEtSystemPause(false);
+	SetFocusToMainWindow();
+	return (result == NSModalResponseOK);
 }
 #endif	// USE_HD1
 

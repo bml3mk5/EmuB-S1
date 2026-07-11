@@ -922,6 +922,12 @@ void MEMORY::write_data8_68kw(uint32_t addr, uint32_t data, int *wait)
 		l3wbank[addr_bank][addr & ((1 << L3_BANK_SIZE) - 1)] = data;
 	}
 
+#ifdef _DEBUG_MPC_68008
+	if ((addr >= 0xefe10 && addr <= 0xefe1b) || (addr >= 0xeffd0 && addr <= 0xeffd7)) {
+		logging->out_debugf(_T("write_data8_68kw:%05X %02X"), addr, data);
+	}
+#endif
+
 #undef DEBUG_WRITE_OK
 #define WRITE_IO8 write_io8
 #define WRITE_MEMORY_MAPPED_IO8 write_memory_mapped_io8

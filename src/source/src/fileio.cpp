@@ -59,6 +59,7 @@ int FILEIO::GetAttribute(const _TCHAR *filename, int *flags)
 	// convert UTF-8 to MBCS string
 	_TCHAR tfilename[_MAX_PATH];
 	UTILITY::conv_to_native_path(filename, tfilename, _MAX_PATH);
+	UTILITY::trim_path_separator(tfilename, _MAX_PATH);
 #else
 	const _TCHAR *tfilename = filename;
 #endif
@@ -78,12 +79,13 @@ int FILEIO::GetAttribute(const _TCHAR *filename, int *flags)
 	return (int)fs.st_mode;
 #endif
 #else
+	char tfilename[_MAX_PATH];
 #if defined(_UNICODE)
 	// convert wchar_t to char
-	char tfilename[_MAX_PATH];
 	UTILITY::cconv_from_native_path(filename, tfilename, _MAX_PATH);
 #else
-	const char *tfilename = filename;
+	UTILITY::strcpy(tfilename, _MAX_PATH, filename);
+	UTILITY::trim_path_separator(tfilename, _MAX_PATH);
 #endif
 
 	struct stat fs;
@@ -158,6 +160,16 @@ bool FILEIO::IsDirExists(const _TCHAR *dirname)
 #else
 	return (attr >= 0 && (attr & S_IFDIR) != 0);
 #endif
+}
+
+/// @brief Does the specified entry exist?
+///
+/// @param[in] filename: file path
+/// @return true/false
+bool FILEIO::IsEntryExists(const _TCHAR *filename)
+{
+	int attr = GetAttribute(filename, NULL);
+	return (attr >= 0);
 }
 
 /// @brief Remove the specified file

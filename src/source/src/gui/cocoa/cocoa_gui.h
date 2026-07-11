@@ -50,6 +50,7 @@ class GUI;
 - (id)initWithTitle:(NSString *)new_title action:(SEL)new_action drv:(int)new_drv num:(int)new_num keyEquivalent:(NSString *)new_accl;
 - (id)initWithTitleById:(CMsg::Id)new_titleid action:(SEL)new_action drv:(int)new_drv num:(int)new_num keyEquivalent:(NSString *)new_accl;
 - (void)setTitleById:(CMsg::Id)new_titleid;
+- (void)setTitleByIdWithMsg:(CMsg::Id)new_titleid :(const char *)msg :(const char *)tail;
 @end
 
 /**
@@ -152,6 +153,8 @@ class GUI;
 - (void)ShowOpenHardDiskDialog:(id)sender;
 - (void)CloseHardDisk:(id)sender;
 - (void)ShowOpenBlankHardDiskDialog:(id)sender;
+- (void)ToggleWriteProtectHardDisk:(id)sender;
+- (void)ShowSelectHardDiskDeviceTypeDialog:(id)sender;
 - (void)OpenRecentHardDisk:(id)sender;
 
 - (void)UpdateRecentHardDiskList:(id)sender;
@@ -340,6 +343,7 @@ public:
 #ifdef USE_HD1
 	virtual bool ShowOpenHardDiskDialog(int drv);
 	virtual bool ShowOpenBlankHardDiskDialog(int drv, uint8_t type);
+	virtual bool ShowSelectHardDiskDeviceTypeDialog(int drv);
 #endif
 
 	virtual bool ShowLoadStateDialog(void);

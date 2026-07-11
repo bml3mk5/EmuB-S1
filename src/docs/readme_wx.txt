@@ -1,8 +1,8 @@
 ==============================================================================
     HITACHI MB-S1 model05 Emulator
         wxWidgets edition
-                                                             Version 0.9.3
-                                                                2026/03/29
+                                                             Version 0.9.4
+                                                                2026/07/12
 
 Copyright(C) Common Source Code Project, Sasaji 2011-2026 All Rights Reserved.
 ==============================================================================

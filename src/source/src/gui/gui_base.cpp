@@ -3027,7 +3027,7 @@ bool GUI_BASE::GetRecentFileStr(const _TCHAR *file, int num, _TCHAR *str, int tr
 #else
 	UTILITY::tcscpy(str, _MAX_PATH, file);
 #endif
-	UTILITY::tcscpy(str, _MAX_PATH, UTILITY::trim_center(str, trimlen));
+	UTILITY::trim_center(str, _MAX_PATH, str, trimlen);
 	if (num > 0) {
 		size_t len = _tcslen(str);
 		UTILITY::stprintf(&str[len], _MAX_PATH - len, _T(" : %d"), num + 1);

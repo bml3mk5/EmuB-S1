@@ -52,6 +52,7 @@ public:
 	static bool IsFileExists(const _TCHAR *filename);
 	static bool IsFileProtected(const _TCHAR *filename);
 	static bool IsDirExists(const _TCHAR *dirname);
+	static bool IsEntryExists(const _TCHAR *filename);
 	static void RemoveFile(const _TCHAR *filename);
 
 	bool Fopen(const _TCHAR *filename, FILEIO_MODES mode);

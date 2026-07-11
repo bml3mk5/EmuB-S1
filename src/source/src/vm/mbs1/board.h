@@ -33,9 +33,10 @@ public:
 
 private:
 	outputs_t outputs_reset;
-	outputs_t outputs_nmi;
-	outputs_t outputs_irq;
-	outputs_t outputs_firq;
+	outputs_t outputs_nmi;		///< NMI(masked by FUSE)
+	outputs_t outputs_nmi_nf;	///< NMI(not masked by FUSE)
+	outputs_t outputs_irq;		///< IRQ(masked by FUSE)
+	outputs_t outputs_firq;		///< FIRQ(masked by FUSE)
 	outputs_t outputs_halt;
 
 	uint16_t now_halt;
@@ -44,8 +45,8 @@ private:
 	uint16_t now_firq;
 	uint16_t now_wreset;
 
-	int wreset_register_id;	// normal reset
-	int preset_register_id;	// power on reset
+	int wreset_register_id;	///< normal reset
+	int preset_register_id;	///< power on reset
 
 	DEVICE *d_cpu;
 
@@ -95,6 +96,9 @@ public:
 	}
 	void set_context_nmi(DEVICE* device, int id, uint32_t mask) {
 		register_output_signal(&outputs_nmi, device, id, mask);
+	}
+	void set_context_nmi_nofuse(DEVICE* device, int id, uint32_t mask) {
+		register_output_signal(&outputs_nmi_nf, device, id, mask);
 	}
 	void set_context_irq(DEVICE* device, int id, uint32_t mask) {
 		register_output_signal(&outputs_irq, device, id, mask);

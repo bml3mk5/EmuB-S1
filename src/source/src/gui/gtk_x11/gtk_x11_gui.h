@@ -342,6 +342,7 @@ private:
 	void add_accelerator(GtkWidget *menu_item, guint key);
 
 	void modify_menu_open_flag(GtkWidget *menu, bool val);
+	void set_file_name_in_menu_item(GtkWidget *menu_item, bool opened, CMsg::Id openmsgid, CMsg::Id closemsgid, const char *path, int num);
 
 public:
 	GUI(int argc, char **argv, EMU *new_emu);

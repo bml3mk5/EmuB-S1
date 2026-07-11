@@ -808,9 +808,13 @@ extern GUI *gui;
 
 	if(result == NSModalResponseOK) {
 		// get file path (use NSURL)
-		NSURL *filePath = [panel URL];
-
-		[text setStringValue:[filePath path]];
+		NSURL *url = [panel URL];
+		NSMutableString *filePath = [NSMutableString stringWithString:[url path]];
+		unichar tail = [filePath characterAtIndex:[filePath length] - 1];
+		if (tail != '/') {
+			[filePath appendString:@"/"];
+		}
+		[text setStringValue:filePath];
 	}
 }
 

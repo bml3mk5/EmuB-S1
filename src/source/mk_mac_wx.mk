@@ -181,6 +181,7 @@ DEPOBJS:=$(SRCDEP)/mbs1.o \
 	$(SRCDEP)/keyrecord.o \
 	$(SRCDEP)/rtc.o \
 	$(SRCDEP)/z80b_card.o \
+	$(SRCDEP)/mpc_68008.o \
 	$(SRCDEP)/l3basic.o \
 	$(SRCDEP)/timer.o 
 
@@ -196,8 +197,8 @@ GUIOBJSWX:=$(SRCGUIWX)/wx_dlg.o \
 	$(SRCGUIWX)/wx_ledbox.o \
 	$(SRCGUIWX)/wx_vkeyboard.o \
 	$(SRCGUIWX)/wx_joyset_dlg.o \
-	$(SRCGUIWX)/wx_about_dlg.o \
 	$(SRCGUIWX)/wx_logging_dlg.o \
+	$(SRCGUIWX)/wx_about_dlg.o \
 	$(SRCGUIWX)/wx_gui.o
 
 

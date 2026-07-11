@@ -413,14 +413,11 @@ void GUI::CreateLedBoxSub()
 
 bool GUI::GetRecentFileStr(const _TCHAR *file, int num, _TCHAR *str, int trimlen)
 {
-	if (file == nullptr || file[0] == '\0') return false;
-
-	UTILITY::tcscpy(str, _MAX_PATH, UTILITY::trim_center(file, trimlen));
-	if (num > 0) {
-		size_t len = _tcslen(str);
-		UTILITY::stprintf(&str[len], _MAX_PATH - len, _T(" : %d"), num + 1);
-	}
-	return true;
+	bool rc = GUI_BASE::GetRecentFileStr(file, num, str, trimlen);
+#if defined(USE_UTF8_ON_MBCS)
+	UTILITY::conv_mbs_to_utf8(str, _MAX_PATH, str, _MAX_PATH);
+#endif
+	return rc;
 }
 
 /// input text automatically from clipboard

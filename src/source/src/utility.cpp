@@ -14,6 +14,7 @@
 #include "curtime.h"
 #if !defined(_WIN32)
 #include "ConvertUTF.h"
+#include <iconv.h>
 #endif
 #include <wchar.h>
 
@@ -23,31 +24,37 @@
 #include <Windows.h>
 #include <Shlwapi.h>
 
-#define PATH_SEP_CHAR1	_T('\\')
-#define PATH_SEP_STR1	_T("\\")
-#define PATH_GPARENT_STR1	_T("...\\")
-#define PATH_PARENT_STR1	_T("..\\")
-#define PATH_CURRENT_STR1	_T(".\\")
+#define PATH_SEP_CHAR1	'\\'
+#define PATH_SEP_WCHAR1	L'\\'
+#define PATH_SEP_TCHAR1	_T('\\')
+#define PATH_SEP_TSTR1	_T("\\")
+#define PATH_GPARENT_TSTR1	_T("...\\")
+#define PATH_PARENT_TSTR1	_T("..\\")
+#define PATH_CURRENT_TSTR1	_T(".\\")
 
-#define PATH_SEP_CHAR2	_T('/')
-#define PATH_SEP_STR2	_T("/")
-#define PATH_GPARENT_STR2	_T(".../")
-#define PATH_PARENT_STR2	_T("../")
-#define PATH_CURRENT_STR2	_T("./")
+#define PATH_SEP_CHAR2	'/'
+#define PATH_SEP_WCHAR2	L'/'
+#define PATH_SEP_TCHAR2	_T('/')
+#define PATH_SEP_TSTR2	_T("/")
+#define PATH_GPARENT_TSTR2	_T(".../")
+#define PATH_PARENT_TSTR2	_T("../")
+#define PATH_CURRENT_TSTR2	_T("./")
 
 #else	/* !_WIN32 */
 
-#define PATH_SEP_CHAR1	_T('/')
-#define PATH_SEP_STR1	_T("/")
-#define PATH_GPARENT_STR1	_T(".../")
-#define PATH_PARENT_STR1	_T("../")
-#define PATH_CURRENT_STR1	_T("./")
+#define PATH_SEP_CHAR1	'/'
+#define PATH_SEP_TCHAR1	_T('/')
+#define PATH_SEP_TSTR1	_T("/")
+#define PATH_GPARENT_TSTR1	_T(".../")
+#define PATH_PARENT_TSTR1	_T("../")
+#define PATH_CURRENT_TSTR1	_T("./")
 
-#define PATH_SEP_CHAR2	_T('\\')
-#define PATH_SEP_STR2	_T("\\")
-#define PATH_GPARENT_STR2	_T("...\\")
-#define PATH_PARENT_STR2	_T("..\\")
-#define PATH_CURRENT_STR2	_T(".\\")
+#define PATH_SEP_CHAR2	'\\'
+#define PATH_SEP_TCHAR2	_T('\\')
+#define PATH_SEP_TSTR2	_T("\\")
+#define PATH_GPARENT_TSTR2	_T("...\\")
+#define PATH_PARENT_TSTR2	_T("..\\")
+#define PATH_CURRENT_TSTR2	_T(".\\")
 
 #endif
 
@@ -147,8 +154,8 @@ void convert_path_separator(_TCHAR *path)
 	size_t len = _tcslen(path);
 
 	for(size_t i=0; i<len; i++) {
-		if (path[i] == PATH_SEP_CHAR2) {
-			path[i]=PATH_SEP_CHAR1;
+		if (path[i] == PATH_SEP_TCHAR2) {
+			path[i]=PATH_SEP_TCHAR1;
 		}
 	}
 }
@@ -161,12 +168,39 @@ void convert_path_separator(_TCHAR *path)
  */
 void add_path_separator(_TCHAR *path, size_t maxlen)
 {
+	if (maxlen == 0) return;
 	size_t len = _tcslen(path);
+	if (len == 0) return;
 
-	if (len > 0 && len < (maxlen - 1)) {
-		if (path[len-1] != PATH_SEP_CHAR1) {
-			path[len]=PATH_SEP_CHAR1;
+	if (len < (maxlen - 1)) {
+		// Some kanji Shift JIS character contain a backslash character code.
+		// strrchr() will find a backslash character except a kanji character on Windows MBCS environment.
+		const _TCHAR *p = _tcsrchr(path, PATH_SEP_TCHAR1);
+		if (p < &path[len-1]) {
+			path[len]=PATH_SEP_TCHAR1;
 			path[len+1]=_T('\0');
+		}
+	}
+}
+
+/**
+ * @brief triming a separator char in the end of path
+ *
+ * @param [in,out] path
+ * @param [in]     maxlen : buffer size of path
+ */
+void trim_path_separator(_TCHAR *path, size_t maxlen)
+{
+	if (maxlen == 0) return;
+	size_t len = _tcslen(path);
+	if (len == 0) return;
+
+	if (len < maxlen) {
+		// Some kanji Shift JIS character contain a backslash character code.
+		// strrchr() will find a backslash character except a kanji character on Windows MBCS environment.
+		const _TCHAR *p = _tcsrchr(path, PATH_SEP_TCHAR1);
+		if (p == &path[len-1]) {
+			path[len-1]=_T('\0');
 		}
 	}
 }
@@ -178,30 +212,50 @@ void add_path_separator(_TCHAR *path, size_t maxlen)
  */
 void get_parent_dir(_TCHAR *path)
 {
-	int pt = (int)_tcslen(path);
-	while(pt >= 0 && path[pt] != PATH_SEP_CHAR1) {
-		pt--;
+	size_t len = _tcslen(path);
+	if (len == 0) return;
+	_TCHAR *p = _tcsrchr(path, PATH_SEP_TCHAR1);
+	if (p && p < &path[len]) {
+		*(p + 1) = _T('\0');
 	}
-	path[pt + 1] = _T('\0');
 }
 
 /**
- * @brief leave ancestor dir (end of path must be sep char)
+ * @brief leave ancestor dir
+ * @attention the character at the end of path must be a separator.
  *
  * @param [in,out] path
  * @param [in]     ancestor_num : ancestor number
  */
 void get_ancestor_dir(_TCHAR *path, int ancestor_num)
 {
-	int pt = (int)_tcslen(path);
-	int num = 0;
-
-	ancestor_num++;
-	while(pt > 0 && num < ancestor_num) {
-		pt--;
-		if (path[pt] == PATH_SEP_CHAR1) num++;
+	size_t len = _tcslen(path);
+	if (len == 0) return;
+	_TCHAR *p = path;
+	int count = 0;
+	// count of separator
+	while(p && p < &path[len]) {
+		p = _tcschr(p, PATH_SEP_TCHAR1);
+		if (p) {
+			count++;
+			p++;
+		}
 	}
-	if (num == ancestor_num) path[pt + 1] = _T('\0');
+	if (count < ancestor_num) {
+		// empty
+		path[0] = _T('\0');
+		return;
+	}
+	// re-count 
+	p = path;
+	while(p && p < &path[len] && count > ancestor_num) {
+		p = _tcschr(p, PATH_SEP_TCHAR1);
+		if (p) {
+			count--;
+			p++;
+		}
+	}
+	if (p && count == ancestor_num) *p = _T('\0');
 }
 
 /**
@@ -217,26 +271,27 @@ void get_dir_and_basename(const _TCHAR *path, _TCHAR *dir, _TCHAR *name, size_t 
 {
 	const _TCHAR *p = NULL;
 
-	if (dir != NULL)  {
+	if (dir)  {
 		*dir = _T('\0');
 	}
-	if (name != NULL) {
+	if (name) {
 		*name = _T('\0');
 	}
-	p = _tcsrchr(path, PATH_SEP_CHAR1);
-	if (p != NULL) {
-		if (dir  != NULL) {
+	// Some kanji Shift JIS character contain a backslash character code.
+	// strrchr() will find a backslash character except a kanji character on Windows MBCS environment.
+	p = _tcsrchr(path, PATH_SEP_TCHAR1);
+	if (p) {
+		if (dir) {
 			UTILITY::tcsncpy(dir, dir_size, path, p-path+1);
 		}
-		if (name != NULL) {
+		if (name) {
 			UTILITY::tcscpy(name, name_size, p+1);
 		}
 	} else {
-		if (name != NULL) {
+		if (name) {
 			UTILITY::tcscpy(name, name_size, path);
 		}
 	}
-	return;
 }
 
 /**
@@ -253,7 +308,9 @@ void get_dir_and_basename(_TCHAR *path, _TCHAR *name, size_t name_size)
 	if (name != NULL) {
 		*name = _T('\0');
 	}
-	p = _tcsrchr(path, PATH_SEP_CHAR1);
+	// Some kanji Shift JIS character contain a backslash character code.
+	// strrchr() will find a backslash character except a kanji character on Windows.
+	p = _tcsrchr(path, PATH_SEP_TCHAR1);
 	if (p != NULL) {
 		if (name != NULL) {
 			UTILITY::tcscpy(name, name_size, p+1);
@@ -280,24 +337,47 @@ void get_dir_and_basename(_TCHAR *path, _TCHAR *name, size_t name_size)
 _TCHAR *trim_center(const _TCHAR *str, int maxlen)
 {
 	static _TCHAR buff[_MAX_PATH];
-
-	int srclen = (int)_tcslen(str);
-	if (srclen > maxlen + 4) {
-		int len = maxlen / 2 - 2;
-#if !defined(_UNICODE) && !defined(USE_WIN)
-		len += utf8firstpos(&str[len-1]);
-#endif
-		UTILITY::tcsncpy(buff, _MAX_PATH, str, len);
-		UTILITY::tcscat(buff, _MAX_PATH, _T("..."));
-		int pos = srclen - len;
-#if !defined(_UNICODE) && !defined(USE_WIN)
-		pos += utf8firstpos(&str[pos]);
-#endif
-		UTILITY::tcscat(buff, _MAX_PATH, &str[pos]);
-	} else {
-		UTILITY::tcscpy(buff, _MAX_PATH, str);
-	}
+	trim_center(buff, _MAX_PATH, str, maxlen);
 	return buff;
+}
+
+/**
+ * @brief trim center of long string
+ *
+ * @param [out] dst : destination (possible to set the pointer of src)
+ * @param [in] size : size of dst
+ * @param [in] src : source string
+ * @param [in] maxlen : maximum length of trimmed string
+ */
+void trim_center(_TCHAR *dst, size_t size, const _TCHAR *src, int maxlen)
+{
+	wchar_t wstr[_MAX_PATH];
+#if !defined(_UNICODE)
+	conv_mbs_to_wcs(src, (int)strlen(src) + 1, wstr, _MAX_PATH);
+#else
+	UTILITY::wcscpy(wstr, _MAX_PATH, src);
+#endif
+	int srclen = (int)wcslen(wstr);
+	if (srclen >= maxlen + 3) {
+		int len = maxlen / 2;
+		int nlen = srclen - len;
+		wstr[len++] = L'.';
+		wstr[len++] = L'.';
+		wstr[len++] = L'.';
+		if (len < nlen) {
+			while(nlen < srclen) {
+				wstr[len] = wstr[nlen];
+				len++;
+				nlen++;
+			}
+			wstr[len] = L'\0';
+		}
+	}
+#if !defined(_UNICODE)
+	conv_wcs_to_mbs(wstr, (int)wcslen(wstr) + 1, dst, (int)size);
+#else
+	UTILITY::wcscpy(dst, size, wstr);
+#endif
 }
 
 /**
@@ -341,7 +421,7 @@ bool make_relative_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size)
 	_TCHAR *p2st = s_path;
 	int parent = 0;
 
-	while (p1st < s_base_path + len1 && (p1ed = _tcschr(p1st, PATH_SEP_CHAR1)) != NULL) {
+	while (p1st < s_base_path + len1 && (p1ed = _tcschr(p1st, PATH_SEP_TCHAR1)) != NULL) {
 		int len_part = (int)(p1ed - s_base_path + 1);
 		if (_tcsncmp(s_path, s_base_path, len_part) == 0) {
 			// same
@@ -356,7 +436,7 @@ bool make_relative_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size)
 	// add relative path
 	memset(new_path, 0, sizeof(new_path));
 	for(; parent > 0; parent--) {
-		UTILITY::tcscat(new_path, _MAX_PATH, PATH_PARENT_STR1);
+		UTILITY::tcscat(new_path, _MAX_PATH, PATH_PARENT_TSTR1);
 	}
 	UTILITY::tcscat(new_path, _MAX_PATH, p2st);
 
@@ -396,10 +476,10 @@ bool make_absolute_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size)
 
 #ifdef _WIN32
 	// drive letter or root
-	if ((_istalpha(path[0]) && path[1] == _T(':')) || path[0] == PATH_SEP_CHAR1) {
+	if ((_istalpha(path[0]) && path[1] == _T(':')) || path[0] == PATH_SEP_TCHAR1) {
 #else
 	// root
-	if (path[0] == PATH_SEP_CHAR1) {
+	if (path[0] == PATH_SEP_TCHAR1) {
 #endif
 		return true;
 	}
@@ -412,7 +492,7 @@ bool make_absolute_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size)
 	// trim base path
 	_TCHAR *p1st = NULL;
 	for(; parent >= 0; parent--) {
-		p1st = _tcsrchr(new_path, PATH_SEP_CHAR1);
+		p1st = _tcsrchr(new_path, PATH_SEP_TCHAR1);
 		if (p1st == NULL) {
 			break;
 		}
@@ -429,7 +509,7 @@ bool make_absolute_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size)
 		}
 #endif
 	}
-	*p1st = PATH_SEP_CHAR1;
+	*p1st = PATH_SEP_TCHAR1;
 	p1st++;
 	*p1st = _T('\0');
 
@@ -513,7 +593,7 @@ void slim_path(const _TCHAR *path, _TCHAR *new_path, size_t maxlen, int *parent_
 	memset(new_path, 0, maxlen * sizeof(_TCHAR));
 
 	// if root
-	if (_tcsncmp(p2st, PATH_SEP_STR1, 1) == 0) {
+	if (_tcsncmp(p2st, PATH_SEP_TSTR1, 1) == 0) {
 		// push path
 		if (child < 64) {
 			child_stack[child].pos = 0;
@@ -526,7 +606,7 @@ void slim_path(const _TCHAR *path, _TCHAR *new_path, size_t maxlen, int *parent_
 
 	// parse parent path
 	while (p2st < path + len2) {
-		if (_tcsncmp(p2st, PATH_GPARENT_STR1, 4) == 0) {
+		if (_tcsncmp(p2st, PATH_GPARENT_TSTR1, 4) == 0) {
 			child-=2;
 			if (child < 0) {
 				parent-=child;
@@ -534,7 +614,7 @@ void slim_path(const _TCHAR *path, _TCHAR *new_path, size_t maxlen, int *parent_
 			}
 			p2st += 4;
 //			p2ed = p2st;
-		} else if (_tcsncmp(p2st, PATH_PARENT_STR1, 3) == 0) {
+		} else if (_tcsncmp(p2st, PATH_PARENT_TSTR1, 3) == 0) {
 			child--;
 			if (child < 0) {
 				parent-=child;
@@ -542,13 +622,13 @@ void slim_path(const _TCHAR *path, _TCHAR *new_path, size_t maxlen, int *parent_
 			}
 			p2st += 3;
 //			p2ed = p2st;
-		} else if (_tcsncmp(p2st, PATH_CURRENT_STR1, 2) == 0) {
+		} else if (_tcsncmp(p2st, PATH_CURRENT_TSTR1, 2) == 0) {
 			p2st += 2;
 //			p2ed = p2st;
-		} else if (_tcsncmp(p2st, PATH_SEP_STR1, 1) == 0) {
+		} else if (_tcsncmp(p2st, PATH_SEP_TSTR1, 1) == 0) {
 			p2st += 1;
 //			p2ed = p2st;
-		} else if ((p2sep = _tcschr(p2st, PATH_SEP_CHAR1)) != NULL) {
+		} else if ((p2sep = _tcschr(p2st, PATH_SEP_TCHAR1)) != NULL) {
 			if (p2st < p2sep) {
 				// push path
 				if (child < 64) {
@@ -566,7 +646,7 @@ void slim_path(const _TCHAR *path, _TCHAR *new_path, size_t maxlen, int *parent_
 	}
 	if (parent_num == NULL) {
 		for(; parent > 0; parent--) {
-			UTILITY::tcsncat(new_path, maxlen, PATH_PARENT_STR1, 3);
+			UTILITY::tcsncat(new_path, maxlen, PATH_PARENT_TSTR1, 3);
 		}
 	} else {
 		*parent_num = parent;
@@ -1240,6 +1320,44 @@ void wcsncat(wchar_t *dst, size_t max_len, const wchar_t *src, size_t src_count)
 #endif
 }
 
+/// @brief insert source string in the front of destination string
+///
+/// @param[in, out] dst : destination string
+/// @param[in] max_len : string size of dst
+/// @param[in] src : source string
+/// @param[in] ins_pos : position of destination to insert source string
+void wcsins(wchar_t *dst, size_t max_len, const wchar_t *src, size_t ins_pos) {
+	if (max_len == 0 || !src) return;
+	size_t src_len = wcslen(src);
+	if (src_len == 0) return;
+	size_t dst_len = wcslen(dst);
+	if (ins_pos > dst_len) {
+		ins_pos = dst_len;
+	}
+
+	size_t sp = dst_len;
+	size_t np = src_len + dst_len;
+	if (np > max_len) {
+		sp -= (np - max_len);
+		np = max_len;
+		dst[sp] = 0;
+	}
+	while(src_len <= np) {
+		dst[np] = dst[sp];
+		np--;
+		sp--;
+	}
+	sp = 0;
+	np = ins_pos;
+	while(sp < src_len) {
+		dst[np] = src[sp];
+		sp++;
+		np++;
+	}
+}
+
+// -----
+
 /// @brief concatenate words
 ///
 /// @param[in] src : 1st word
@@ -1296,14 +1414,18 @@ void concat(char *dst, size_t max_len, const char *src, ...) {
 /// @param[in] src : source string
 void strcpy(char *dst, size_t max_len, const char *src) {
 	if (max_len == 0) return;
+#if defined(__APPLE__) && defined(__MACH__)
+	::strlcpy(dst, src, max_len);
+#else
 	size_t src_len = strlen(src);
 	if (max_len <= src_len) src_len = max_len - 1;
-#if defined(_WIN32) && defined(_MSC_VER)
+# if defined(_WIN32) && defined(_MSC_VER)
 	::strncpy_s(dst, max_len, src, src_len);
-#else
+# else
 	::strncpy(dst, src, src_len);
-#endif
+# endif
 	dst[src_len] = '\0';
+#endif
 }
 
 /// @brief concatenate string with specified string size
@@ -1313,14 +1435,18 @@ void strcpy(char *dst, size_t max_len, const char *src) {
 /// @param[in] src : source string
 void strcat(char *dst, size_t max_len, const char *src) {
 	if (max_len == 0) return;
+#if defined(__APPLE__) && defined(__MACH__)
+	::strlcat(dst, src, max_len);
+#else
 	size_t dst_len = strlen(dst);
 	if (max_len <= dst_len) return;
 	size_t src_len = strlen(src);
 	if (max_len <= src_len + dst_len) src_len = max_len - dst_len - 1;
-#if defined(_WIN32) && defined(_MSC_VER)
+# if defined(_WIN32) && defined(_MSC_VER)
 	::strncat_s(dst, max_len, src, src_len);
-#else
+# else
 	::strncat(dst, src, src_len);
+# endif
 #endif
 }
 
@@ -1357,6 +1483,42 @@ void strncat(char *dst, size_t max_len, const char *src, size_t src_count) {
 #else
 	::strncat(dst, src, src_count);
 #endif
+}
+
+/// @brief insert source string in the front of destination string
+///
+/// @param[in, out] dst : destination string
+/// @param[in] max_len : string size of dst
+/// @param[in] src : source string
+/// @param[in] ins_pos : position of destination to insert source string
+void strins(char *dst, size_t max_len, const char *src, size_t ins_pos) {
+	if (max_len == 0 || !src) return;
+	size_t src_len = strlen(src);
+	if (src_len == 0) return;
+	size_t dst_len = strlen(dst);
+	if (ins_pos > dst_len) {
+		ins_pos = dst_len;
+	}
+	
+	size_t sp = dst_len;
+	size_t np = src_len + dst_len;
+	if (np > max_len) {
+		sp -= (np - max_len);
+		np = max_len;
+		dst[sp] = 0;
+	}
+	while(src_len + ins_pos <= np) {
+		dst[np] = dst[sp];
+		np--;
+		sp--;
+	}
+	sp = 0;
+	np = ins_pos;
+	while(sp < src_len) {
+		dst[np] = src[sp];
+		sp++;
+		np++;
+	}
 }
 
 // -----

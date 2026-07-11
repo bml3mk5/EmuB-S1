@@ -49,7 +49,29 @@ void KANJI::initialize()
 	font2_enable = 0;
 	en_jis2 = 0;
 #endif
+	rom_loaded_at_first = false;
 
+	// read rom image from file
+	load_rom_files();
+
+	code = 0;
+	offset = 0;
+}
+
+void KANJI::reset()
+{
+	code = 0;
+	offset = 0;
+#ifdef USE_KANJI_JIS2
+	en_jis2 = 0;
+#endif
+
+	// read rom image from file
+	load_rom_files();
+}
+
+void KANJI::load_rom_files()
+{
 	// load rom images
 	const _TCHAR *app_path, *rom_path[2];
 
@@ -69,26 +91,18 @@ void KANJI::initialize()
 #endif
 	}
 
-	if (!font_enable) {
-		logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("KANJI.ROM"));
-	}
+	if (!rom_loaded_at_first) {
+		if (!font_enable) {
+			logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("KANJI.ROM"));
+		}
 #ifdef USE_KANJI_JIS2
-	if (!font2_enable) {
-		logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("KANJI2.ROM"));
+		if (!font2_enable) {
+			logging->out_logf_x(LOG_WARN, CMsg::VSTR_couldn_t_be_loaded, _T("KANJI2.ROM"));
+		}
+#endif
 	}
-#endif
 
-	code = 0;
-	offset = 0;
-}
-
-void KANJI::reset()
-{
-	code = 0;
-	offset = 0;
-#ifdef USE_KANJI_JIS2
-	en_jis2 = 0;
-#endif
+	rom_loaded_at_first = true;
 }
 
 void KANJI::write_signal(int id, uint32_t data, uint32_t mask)

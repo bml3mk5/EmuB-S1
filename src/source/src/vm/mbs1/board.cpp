@@ -16,12 +16,20 @@
 #include "../../fileio.h"
 #include "../../utility.h"
 
+#ifdef _DEBUG
+//#define OUT_DEBUG_NMI(...) logging->out_debugf(__VA_ARGS__)
+#define OUT_DEBUG_NMI(...)
+#else
+#define OUT_DEBUG_NMI(...)
+#endif
+
 BOARD::BOARD(VM* parent_vm, EMU* parent_emu, const char* identifier)
  : DEVICE(parent_vm, parent_emu, identifier)
 {
 	set_class_name("BOARD");
 	init_output_signals(&outputs_reset);
 	init_output_signals(&outputs_nmi);
+	init_output_signals(&outputs_nmi_nf);
 	init_output_signals(&outputs_irq);
 	init_output_signals(&outputs_firq);
 	init_output_signals(&outputs_halt);
@@ -81,6 +89,12 @@ void BOARD::write_signal(int id, uint32_t data, uint32_t mask)
 		case SIG_CPU_NMI:
 			prev = now_nmi;
 			now_nmi = ((data & mask) ? (now_nmi | mask) : (now_nmi & ~mask));
+			OUT_DEBUG_NMI(_T("BOARD: NMI: prev:%X => now:%X FUSE:%d"), prev, now_nmi, FUSE_INTR_MASK ? 1 : 0);
+			if (prev == 0 && now_nmi != 0) {
+				write_signals(&outputs_nmi_nf, now_nmi);
+			} else if (prev != 0 && now_nmi == 0) {
+				write_signals(&outputs_nmi_nf, now_nmi);
+			}
 			if (!FUSE_INTR_MASK) {
 				if (prev == 0 && now_nmi != 0) {
 					write_signals(&outputs_nmi, now_nmi);
@@ -293,8 +307,10 @@ bool BOARD::debug_write_reg(uint32_t reg_num, uint32_t data)
 			now_nmi = data;
 			if (prev == 0 && now_nmi != 0) {
 				write_signals(&outputs_nmi, now_nmi);
+				write_signals(&outputs_nmi_nf, now_nmi);
 			} else if (prev != 0 && now_nmi == 0) {
 				write_signals(&outputs_nmi, now_nmi);
+				write_signals(&outputs_nmi_nf, now_nmi);
 			}
 			return true;
 		case 2:
@@ -422,6 +438,11 @@ void BOARD::debug_regs_info(const _TCHAR *title, _TCHAR *buffer, size_t buffer_l
 	get_debug_signal_names(c_firq_device_names, now_firq, buffer, buffer_len);
 	UTILITY::sntprintf(buffer, buffer_len, _T("\n %X(%-4s):%04X"), 4, c_reg_names[4], now_halt);
 	get_debug_signal_names(c_halt_device_names, now_halt, buffer, buffer_len);
+	UTILITY::tcscat(buffer, buffer_len, _T("\nStatus:"));
+	UTILITY::sntprintf(buffer, buffer_len, _T("\n FUSE-IMK:%02X"), REG_FUSE & FUSE_INTR_BIT);
+	if (REG_FUSE & FUSE_INTR_BIT) {
+		UTILITY::tcscat(buffer, buffer_len, _T(" Masking NMI, IRQ and FIRQ into 6809"));
+	}
 	UTILITY::tcscat(buffer, buffer_len, _T("\n"));
 }
 #endif

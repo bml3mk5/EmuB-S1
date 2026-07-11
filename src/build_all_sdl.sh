@@ -36,6 +36,8 @@ if [ "$UNAMEU" = "MINGW" ]; then
 #	make_all win_gui st $1
 	make_all win_gui2 st $1
 	make_all win_gui2_dbgr st $1
+	make_all win_gui2_z80b_dbgr st $1
+	make_all win_gui2_m68k_dbgr st $1
 #	make_all win_agar st $1
 fi
 

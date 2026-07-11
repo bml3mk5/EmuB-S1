@@ -28,6 +28,7 @@ namespace UTILITY
 
 	void convert_path_separator(_TCHAR *path);
 	void add_path_separator(_TCHAR *path, size_t maxlen = _MAX_PATH);
+	void trim_path_separator(_TCHAR *path, size_t maxlen = _MAX_PATH);
 	void get_parent_dir(_TCHAR *path);
 	void get_ancestor_dir(_TCHAR *path, int ancestor_num);
 
@@ -35,6 +36,7 @@ namespace UTILITY
 	void get_dir_and_basename(_TCHAR *path, _TCHAR *name, size_t name_size = _MAX_PATH);
 
 	_TCHAR *trim_center(const _TCHAR *str, int maxlen);
+	void trim_center(_TCHAR *dst, size_t size, const _TCHAR *src, int maxlen);
 
 	bool make_relative_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size = _MAX_PATH);
 	bool make_absolute_path(const _TCHAR *base_path, _TCHAR *path, size_t path_size = _MAX_PATH);
@@ -109,6 +111,8 @@ namespace UTILITY
 	void wcsncpy(wchar_t *dst, size_t max_len, const wchar_t *src, size_t src_count);
 	void wcsncat(wchar_t *dst, size_t max_len, const wchar_t *src, size_t src_count);
 
+	void wcsins(wchar_t *dst, size_t max_len, const wchar_t *src, size_t ins_pos = 0);
+
 	const char *concat(const char *src, ...);
 	void concatv(char *dst, size_t max_len, const char *src, va_list ap);
 	void concat(char *dst, size_t max_len, const char *src, ...);
@@ -118,16 +122,20 @@ namespace UTILITY
 	void strncpy(char *dst, size_t max_len, const char *src, size_t src_count);
 	void strncat(char *dst, size_t max_len, const char *src, size_t src_count);
 
+	void strins(char *dst, size_t max_len, const char *src, size_t ins_pos = 0);
+
 #ifdef _UNICODE
 #define tcscpy(dst, max_len, src) wcscpy(dst, max_len, src)
 #define tcscat(dst, max_len, src) wcscat(dst, max_len, src)
 #define tcsncpy(dst, max_len, src, src_count) wcsncpy(dst, max_len, src, src_count)
 #define tcsncat(dst, max_len, src, src_count) wcsncat(dst, max_len, src, src_count)
+#define tcsins(dst, max_len, src, ins_pos) wcsins(dst, max_len, src, ins_pos)
 #else
 #define tcscpy(dst, max_len, src) strcpy(dst, max_len, src)
 #define tcscat(dst, max_len, src) strcat(dst, max_len, src)
 #define tcsncpy(dst, max_len, src, src_count) strncpy(dst, max_len, src, src_count)
 #define tcsncat(dst, max_len, src, src_count) strncat(dst, max_len, src, src_count)
+#define tcsins(dst, max_len, src, ins_pos) strins(dst, max_len, src, ins_pos)
 #endif
 
 	void conv_format(const _TCHAR *format, _TCHAR *wformat, size_t wsize);

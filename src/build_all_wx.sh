@@ -16,15 +16,22 @@ if [ "$UNAME" = "Darwin" ]; then
 #	make_all mac_wx_dbgr st $1
 	make_all mac_wx2 st $1
 	make_all mac_wx2_dbgr st $1
+	make_all mac_wx2_z80b_dbgr st $1
+	make_all mac_wx2_m68k_dbgr st $1
 fi
 if [ "$UNAME" = "Linux" ]; then
 #	make_all linux_wx sh $1
 #	make_all linux_wx_dbgr sh $1
 	make_all linux_wx2 sh $1
 	make_all linux_wx2_dbgr sh $1
+	make_all linux_wx2_z80b_dbgr sh $1
+	make_all linux_wx2_m68k_dbgr sh $1
 fi
 if [ "$UNAMEU" = "MINGW" ]; then
 #	make_all win_wx st $1
 	make_all win_wx2 st $1
+	make_all win_wx2_dbgr st $1
+	make_all win_wx2_z80b_dbgr st $1
+	make_all win_wx2_m68k_dbgr st $1
 fi
 

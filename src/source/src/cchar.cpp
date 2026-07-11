@@ -168,7 +168,7 @@ const wchar_t *CNchar::GetW()
 {
 	delete m_wbuf;
 	m_wbuf = new CWchar(Length());
-	UTILITY::conv_mbs_to_wcs(Get(), Length(), m_wbuf->Ptr(), Length());
+	UTILITY::conv_mbs_to_wcs(Get(), Length() + 1, m_wbuf->Ptr(), Length());
 	return m_wbuf->Get();
 }
 /// @brief MBCS->ワイド文字に変換してコピー
@@ -176,7 +176,7 @@ const wchar_t *CNchar::GetW()
 /// @param[in]  dst_len コピー先バッファサイズ
 void CNchar::GetW(wchar_t *dst_str, int dst_len) const
 {
-	UTILITY::conv_mbs_to_wcs(Get(), Length(), dst_str, dst_len);
+	UTILITY::conv_mbs_to_wcs(Get(), Length() + 1, dst_str, dst_len);
 }
 
 /// @brief UTF-8文字をMBCSに変換して渡す
@@ -216,10 +216,10 @@ const wchar_t *CNchar::GetWM()
 	m_wbuf = new CWchar(Length());
 #if defined(USE_WIN)
 	// MBCS -> WideChar
-	UTILITY::conv_mbs_to_wcs(Get(), Length(), m_wbuf->Ptr(), Length());
+	UTILITY::conv_mbs_to_wcs(Get(), Length() + 1, m_wbuf->Ptr(), Length());
 #else
 	// UTF-8 -> WideChar
-	UTILITY::conv_utf8_to_wcs(Get(), Length(), m_wbuf->Ptr(), Length());
+	UTILITY::conv_utf8_to_wcs(Get(), Length() + 1, m_wbuf->Ptr(), Length());
 #endif
 	return m_wbuf->Get();
 }

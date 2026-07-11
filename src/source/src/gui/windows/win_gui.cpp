@@ -819,20 +819,8 @@ void GUI::set_hard_disk_file_menu(HMENU hMenu, UINT uItem, int drv)
 
 void GUI::set_file_name_for_menu(bool ok, CMsg::Id ok_prefix, CMsg::Id ng_prefix, const _TCHAR *path, int num, _TCHAR *str)
 {
-	if (ok) {
-#if defined(USE_UTF8_ON_MBCS)
-		// convert UTF-8 to MBCS string
-		_TCHAR tpath[_MAX_PATH];
-		UTILITY::conv_to_native_path(path, tpath, _MAX_PATH);
-#else
-		const _TCHAR *tpath = path;
-#endif
-		UTILITY::tcscpy(str, _MAX_PATH, CMSGVM(ok_prefix));
-		UTILITY::tcscat(str, _MAX_PATH, UTILITY::trim_center(tpath, TRIM_STRING_SIZE));
-		if (num > 0) {
-			size_t len = _tcslen(str);
-			UTILITY::stprintf(&str[len], _MAX_PATH - len, _T(" : %d"), num + 1);
-		}
+	if (ok && GetRecentFileStr(path, num, str, TRIM_STRING_SIZE)) {
+		UTILITY::tcsins(str, _MAX_PATH, CMSGVM(ok_prefix), 0);
 		UTILITY::tcscat(str, _MAX_PATH, _T("]"));
 	} else {
 		UTILITY::tcscpy(str, _MAX_PATH, CMSGVM(ng_prefix));

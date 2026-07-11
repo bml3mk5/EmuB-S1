@@ -428,7 +428,7 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	// nmi signal
 	board->set_context_nmi(cpu, SIG_CPU_NMI, 0xffffffff);
 #if defined(USE_MPC_68008)
-	board->set_context_nmi(mpc_68008, SIG_CPU_NMI, 0xffffffff);
+	board->set_context_nmi_nofuse(mpc_68008, SIG_CPU_NMI, 0xffffffff);
 #endif
 	// irq signal
 	board->set_context_irq(cpu, SIG_CPU_IRQ, 0xffffffff);

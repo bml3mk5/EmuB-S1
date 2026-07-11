@@ -1782,7 +1782,21 @@ void GUI::OnModifyMenuOpenFlag(GtkWidget *item, gpointer user_data)
 	bool val = (bool)user_data;
 	g_object_set_data(G_OBJECT(item), "menu-open", val ? (gpointer)1 : NULL);
 }
-
+void GUI::set_file_name_in_menu_item(GtkWidget *menu_item, bool opened, CMsg::Id openmsgid, CMsg::Id closemsgid, const char *path, int num)
+{
+	char str[_MAX_PATH];
+	const char *label;
+	if (opened) {
+		char file[_MAX_PATH];
+		label = gMessages.Get(openmsgid);
+		GetRecentFileStr(path, num, file, 64);
+		UTILITY::concat(str, _MAX_PATH, label, file, "]", NULL);
+	} else {
+		label = gMessages.Get(closemsgid);
+		UTILITY::strcpy(str, _MAX_PATH, label);
+	}
+	gtk_menu_item_set_label(GTK_MENU_ITEM(menu_item), str);
+}
 //
 //
 //
@@ -1893,11 +1907,12 @@ void GUI::OnUpdateRecentFile(GtkWidget *widget, gpointer user_data)
 		}
 		if (file == NULL || file[0] == '\0') break;
 
-		UTILITY::conv_from_native_path(file, path, _MAX_PATH);
-		strcpy(path, UTILITY::trim_center(path, 64));
-		if (bank_num > 0) {
-			sprintf(&path[strlen(path)], " : %d", bank_num + 1);
-		}
+		gui->GetRecentFileStr(file, bank_num, path, 64);
+//		UTILITY::conv_from_native_path(file, path, _MAX_PATH);
+//		strcpy(path, UTILITY::trim_center(path, 64));
+//		if (bank_num > 0) {
+//			sprintf(&path[strlen(path)], " : %d", bank_num + 1);
+//		}
 		item = gui->create_recent_menu_item(submenu, path, type, drv, num);
 		gtk_widget_show(item);
 
@@ -2220,8 +2235,13 @@ void GUI::OnUpdateLoadDataRec(GtkWidget *widget, gpointer user_data)
 {
 	GUI *gui = (GUI *)user_data;
 	GtkCheckMenuItem *item = (GtkCheckMenuItem *)widget;
-
-	gtk_check_menu_item_set_active(item, gui->IsOpenedLoadDataRecFile());
+	bool opened = gui->IsOpenedLoadDataRecFile();
+	gui->set_file_name_in_menu_item(GTK_WIDGET(item), opened,
+		CMsg::Play_LB, CMsg::Play_,
+		pConfig->GetOpenedDataRecPathString(),
+		-1
+	);
+	gtk_check_menu_item_set_active(item, opened);
 }
 void GUI::OnSelectSaveDataRec(GtkWidget *widget, gpointer user_data)
 {
@@ -2234,8 +2254,13 @@ void GUI::OnUpdateSaveDataRec(GtkWidget *widget, gpointer user_data)
 {
 	GUI *gui = (GUI *)user_data;
 	GtkCheckMenuItem *item = (GtkCheckMenuItem *)widget;
-
-	gtk_check_menu_item_set_active(item, gui->IsOpenedSaveDataRecFile());
+	bool opened = gui->IsOpenedSaveDataRecFile();
+	gui->set_file_name_in_menu_item(GTK_WIDGET(item), opened,
+		CMsg::Rec_LB, CMsg::Rec_,
+		pConfig->GetOpenedDataRecPathString(),
+		-1
+	);
+	gtk_check_menu_item_set_active(item, opened);
 }
 void GUI::OnSelectRewindDataRec(GtkWidget *widget, gpointer user_data)
 {
@@ -2296,8 +2321,13 @@ void GUI::OnUpdateOpenFloppyDisk(GtkWidget *widget, gpointer user_data)
 	GUI *gui = (GUI *)user_data;
 	int drv = (int)(intptr_t)g_object_get_data(G_OBJECT(widget),"drv");
 	GtkCheckMenuItem *item = (GtkCheckMenuItem *)widget;
-
-	gtk_check_menu_item_set_active(item, gui->InsertedFloppyDisk(drv));
+	bool opened = gui->InsertedFloppyDisk(drv);
+	gui->set_file_name_in_menu_item(GTK_WIDGET(item), opened,
+		CMsg::Insert_LB, CMsg::Insert_,
+		pConfig->GetOpenedFloppyDiskPathString(drv),
+		pConfig->GetOpenedFloppyDiskPathNumber(drv)
+	);
+	gtk_check_menu_item_set_active(item, opened);
 }
 void GUI::OnSelectChangeSideFloppyDisk(GtkWidget *widget, gpointer user_data)
 {
@@ -2371,8 +2401,13 @@ void GUI::OnUpdateOpenHardDisk(GtkWidget *widget, gpointer user_data)
 	GUI *gui = (GUI *)user_data;
 	int drv = (int)(intptr_t)g_object_get_data(G_OBJECT(widget),"drv");
 	GtkCheckMenuItem *item = (GtkCheckMenuItem *)widget;
-
-	gtk_check_menu_item_set_active(item, gui->MountedHardDisk(drv));
+	bool opened = gui->MountedHardDisk(drv);
+	gui->set_file_name_in_menu_item(GTK_WIDGET(item), opened,
+		CMsg::Mount_LB, CMsg::Mount_,
+		pConfig->GetOpenedHardDiskPathString(drv),
+		pConfig->GetOpenedHardDiskPathNumber(drv)
+	);
+	gtk_check_menu_item_set_active(item, opened);
 }
 void GUI::OnSelectCloseHardDisk(GtkWidget *widget, gpointer user_data)
 {

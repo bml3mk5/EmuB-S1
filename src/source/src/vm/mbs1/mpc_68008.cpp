@@ -25,6 +25,21 @@
 #include "../../utility.h"
 #include "../../osd/debugger_console.h"
 
+#ifdef _DEBUG
+#define OUT_DEBUG(...) logging->out_debugf(__VA_ARGS__)
+#define OUT_DEBUG_BUSREQ(...)
+#define OUT_DEBUG_MBC(...)
+#define OUT_DEBUG_HALT(...)
+#define OUT_DEBUG_INTR(...)
+#define OUT_DEBUG_ACC(...)
+#else
+#define OUT_DEBUG(...)
+#define OUT_DEBUG_BUSREQ(...)
+#define OUT_DEBUG_MBC(...)
+#define OUT_DEBUG_HALT(...)
+#define OUT_DEBUG_INTR(...)
+#define OUT_DEBUG_ACC(...)
+#endif
 
 MPC_68008::MPC_68008(VM* parent_vm, EMU* parent_emu, const char* identifier) : DEVICE(parent_vm, parent_emu, identifier)
 {
@@ -167,7 +182,7 @@ uint32_t MPC_68008::read_data8w(uint32_t addr, int *wait)
 /// degate interrupt
 void MPC_68008::update_intr_condition()
 {
-	if (m_assert_intr & 0x05) {
+	if (m_now_fc == 7 && (m_assert_intr & 0x05) != 0) {
 		// degate interrupt
 		m_assert_intr &= ~0x05;
 		update_intr();
@@ -192,6 +207,7 @@ void MPC_68008::write_signal(int id, uint32_t data, uint32_t mask)
 			set_multibus((data & mask) == 0);
 			break;
 		case SIG_CPU_NMI:
+			OUT_DEBUG_INTR(_T("MPC_68008: 6809NMI:%02X %02X"), data, mask);
 			if ((data & mask) != 0 && (data & SIG_NMI_TRAP_MASK) == 0) {
 				// assert interrupt level 2
 				m_assert_intr |= 0x02;
@@ -255,9 +271,11 @@ void MPC_68008::write_memory_mapped_io8(uint32_t addr, uint32_t data)
 		// ACC CONTROL
 		if ((m_acc_reg & ACC_REG_BS) == 0 && (data & ACC_REG_BS) != 0) {
 			// assert HALT signal to 6809
+			OUT_DEBUG_ACC(_T("MPC_68008: Go burst mode"));
 			m_acc_reg = (data & ACC_REG_MASK);
 			assert_halt_to_6809();
 		} else if ((m_acc_reg & ACC_REG_BS) != 0 && (data & ACC_REG_BS) == 0) { 
+			OUT_DEBUG_ACC(_T("MPC_68008: Go steel mode"));
 			m_acc_reg = (data & ACC_REG_MASK);
 			if ((REG_BUSCTRL & BUSCTRL_SIGNAL) == 0) {
 				// degate HALT signal to 6809 if MC68008 is stopping by busreq
@@ -312,7 +330,16 @@ void MPC_68008::update_reset_signal()
 /// bus request to MC68008
 void MPC_68008::update_busreq()
 {
-	d_mc68k->write_signal(SIG_CPU_BUSREQ, (m_pro_reg & (PRO_REG_NOBQ | PRO_REG_R68)) == (PRO_REG_NOBQ | PRO_REG_R68) ? 0 : 1, 1);
+	uint32_t data = (m_pro_reg & (PRO_REG_NOBQ | PRO_REG_R68)) == (PRO_REG_NOBQ | PRO_REG_R68) ? 0 : 1;
+	OUT_DEBUG_BUSREQ(_T("MPC_68008: BUSREQ:%d"), data);
+	d_mc68k->write_signal(SIG_CPU_BUSREQ, data, 1);
+	if (data) {
+		// now steel mode
+		if ((m_acc_reg & ACC_REG_BS) == 0) {
+			// degate HALT signal to 6809 if MC68008 is stopping by busreq
+			degate_halt_to_6809();
+		}
+	}
 }
 
 /// send interruput to MC68008
@@ -320,12 +347,14 @@ void MPC_68008::update_intr()
 {
 	uint32_t intr = m_assert_intr;
 	if ((intr & 0x05) == 0x05) intr = 0x05;
+	OUT_DEBUG_INTR(_T("MPC_68008: INTR:%d"), intr);
 	d_mc68k->write_signal(SIG_CPU_IRQ, 1 << intr, 0xfe);
 }
 
 /// Multi Bus Control
 void MPC_68008::set_multibus(bool onoff)
 {
+	OUT_DEBUG_MBC(_T("MPC_68008: MBC:%d"), onoff ? 1 : 0);
 	BIT_ONOFF(SIG_MBC_INTREFKIL, SIG_MBC_ALL_MASK, onoff);
 }
 
@@ -333,6 +362,7 @@ void MPC_68008::set_multibus(bool onoff)
 void MPC_68008::assert_halt_to_6809()
 {
 	if (m_6809_halt == 0) {
+		OUT_DEBUG_HALT(_T("MPC_68008: 6809HALT: 0 -> 1"));
 		d_board->write_signal(SIG_CPU_HALT, SIG_HALT_MPC68008_MASK, SIG_HALT_MPC68008_MASK);
 		set_multibus(false);
 		m_6809_halt = 1;
@@ -343,6 +373,7 @@ void MPC_68008::assert_halt_to_6809()
 void MPC_68008::degate_halt_to_6809()
 {
 	if (m_6809_halt != 0 && (m_acc_reg & ACC_REG_BS) == 0) {
+		OUT_DEBUG_HALT(_T("MPC_68008: 6809HALT: 1 -> 0"));
 		int mainclk = (int)(get_current_clock() % CLOCKS_CYCLE);
 		int subclk = (int)(d_mc68k->get_current_clock() >> MAIN_SUB_CLOCK_RATIO);
 		int sum = subclk - mainclk;
@@ -549,6 +580,8 @@ void MPC_68008::debug_regs_info(const _TCHAR *title, _TCHAR *buffer, size_t buff
 	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE19:%s):rdata:%02X\n"), 0, c_reg_names[0], REG_BUSCTRL);
 	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE1A:%s):wdata:%02X\n"), 1, c_reg_names[1], m_pro_reg & PRO_REG_MASK);
 	UTILITY::sntprintf(buffer, buffer_len, _T(" %d(EFE1B:%s):wdata:%02X\n"), 2, c_reg_names[2], m_acc_reg);
+	UTILITY::tcscat(buffer, buffer_len, _T(" Status:\n"));
+	UTILITY::sntprintf(buffer, buffer_len, _T(" MBC:%d 6809HALT:%d"), SIG_MBC_INTREFKIL, m_6809_halt);
 }
 
 #endif

@@ -28,6 +28,7 @@ private:
 
 	uint8_t font[0x20000];	// 128KB
 
+	bool rom_loaded_at_first;
 	int  font_enable;
 
 #ifdef USE_KANJI_JIS2
@@ -53,6 +54,7 @@ private:
 #pragma pack()
 
 	void init_kanji_rom(uint8_t *rom, size_t size);
+	void load_rom_files();
 
 	static const uint8_t krom[32];
 

@@ -189,8 +189,8 @@ GUIOBJSWX:=$(SRCGUIWX)/wx_dlg.o \
 	$(SRCGUIWX)/wx_ledbox.o \
 	$(SRCGUIWX)/wx_vkeyboard.o \
 	$(SRCGUIWX)/wx_joyset_dlg.o \
-	$(SRCGUIWX)/wx_about_dlg.o \
 	$(SRCGUIWX)/wx_logging_dlg.o \
+	$(SRCGUIWX)/wx_about_dlg.o \
 	$(SRCGUIWX)/wx_gui.o
 
 

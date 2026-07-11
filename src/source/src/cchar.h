@@ -85,6 +85,7 @@ public:
 		if (c == 0) c = (m_len - src_len);
 		return c;
 	}
+	TYPE *Ptr() { return m_str; }
 
 protected:
 	CCharTemp(int size) {
@@ -105,7 +106,6 @@ protected:
 		if (src_str == NULL || m_str == NULL || src_len != m_len) return false;
 		return (memcmp(src_str, m_str, src_len * sizeof(TYPE)) == 0);
 	}
-	TYPE *Ptr() { return m_str; }
 
 private:
 	CCharTemp(const TYPE *src_str) {

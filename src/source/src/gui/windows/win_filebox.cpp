@@ -20,14 +20,24 @@ namespace GUI_WIN
 FileBox::FileBox(HWND parent_window)
 {
 	hWnd = parent_window;
-	memset(selected_file, 0, sizeof(selected_file));
+	memset(m_selected_file, 0, sizeof(m_selected_file));
 }
 
 FileBox::~FileBox()
 {
 }
 
-bool FileBox::Show(const CMsg::Id *filter, const _TCHAR *title, const _TCHAR *dir, const _TCHAR *ext, bool save, _TCHAR *path)
+/// Show the file dialog
+///
+/// @param[in] filter : extension string separeted by ";"  ex. "foo;bar;baz"
+/// @param[in] title : dialog title
+/// @param[in] dir : default directory
+/// @param[in] ext : default extension
+/// @param[in] save : true if save a file
+/// @param[out] selected : selected file (nullable)
+/// @param[in] len : buffer length of selected
+/// @return true if selected the file
+bool FileBox::Show(const CMsg::Id *filter, const _TCHAR *title, const _TCHAR *dir, const _TCHAR *ext, bool save, _TCHAR *selected, size_t len)
 {
 	_TCHAR fil[_MAX_PATH];
 
@@ -35,10 +45,19 @@ bool FileBox::Show(const CMsg::Id *filter, const _TCHAR *title, const _TCHAR *di
 	if (filter) {
 		set_file_filter(filter, fil);
 	}
-	return show_main(fil, title, dir, ext, save, path);
+	return show_main(fil, title, dir, ext, save, selected, len);
 }
 
-bool FileBox::Show(const char *filter, const _TCHAR *title, const _TCHAR *dir, bool save, _TCHAR *path)
+/// Show the file dialog
+///
+/// @param[in] filter : extension string separeted by ";"  ex. "foo;bar;baz"
+/// @param[in] title : dialog title
+/// @param[in] dir : default directory
+/// @param[in] save : true if save a file
+/// @param[out] selected : selected file (nullable)
+/// @param[in] len : buffer length of selected
+/// @return true if selected the file
+bool FileBox::Show(const char *filter, const _TCHAR *title, const _TCHAR *dir, bool save, _TCHAR *selected, size_t len)
 {
 	_TCHAR fil[_MAX_PATH];
 	_TCHAR ext[16];
@@ -47,10 +66,20 @@ bool FileBox::Show(const char *filter, const _TCHAR *title, const _TCHAR *dir, b
 	if (filter) {
 		set_file_filter(filter, save, fil, ext);
 	}
-	return show_main(fil, title, dir, ext, save, path);
+	return show_main(fil, title, dir, ext, save, selected, len);
 }
 
-bool FileBox::show_main(const _TCHAR *filter, const _TCHAR *title, const _TCHAR *dir, const _TCHAR *ext, bool save, _TCHAR *path)
+/// Show the file dialog
+///
+/// @param[in] filter : extension string separeted by ";"  ex. "foo;bar;baz"
+/// @param[in] title : dialog title
+/// @param[in] dir : default directory
+/// @param[in] ext : default extension
+/// @param[in] save : true if save a file
+/// @param[out] selected : selected file (nullable)
+/// @param[in] len : buffer length of selected
+/// @return true if selected the file
+bool FileBox::show_main(const _TCHAR *filter, const _TCHAR *title, const _TCHAR *dir, const _TCHAR *ext, bool save, _TCHAR *selected, size_t len)
 {
 	_TCHAR fle[_MAX_PATH] = _T("");
 	_TCHAR app[_MAX_PATH];
@@ -72,8 +101,8 @@ bool FileBox::show_main(const _TCHAR *filter, const _TCHAR *title, const _TCHAR 
 	if(dir != NULL && dir[0]) {
 		UTILITY::tcscpy(app, _MAX_PATH, dir);
 		OpenFileName.lpstrInitialDir = app;
-	} else if (path != NULL && path[0]) {
-		UTILITY::get_dir_and_basename(path, app, fle);
+	} else if (selected != NULL && selected[0]) {
+		UTILITY::get_dir_and_basename(selected, app, fle);
 		OpenFileName.lpstrInitialDir = app;
 	} else {
 		GetModuleFileName(NULL, app, _MAX_PATH);
@@ -93,26 +122,30 @@ bool FileBox::show_main(const _TCHAR *filter, const _TCHAR *title, const _TCHAR 
 	flags = OpenFileName.Flags;
 
 	if (rc) {
-		UTILITY::tcsncpy(selected_file, _MAX_PATH, OpenFileName.lpstrFile, _MAX_PATH);
-		if (path) {
-			UTILITY::tcscpy(path, _MAX_PATH, selected_file);
+		UTILITY::tcsncpy(m_selected_file, _MAX_PATH, OpenFileName.lpstrFile, _MAX_PATH);
+		if (selected && len > 0) {
+			UTILITY::tcscpy(selected, len, m_selected_file);
 		}
 		return true;
 	}
 	return false;
 }
 
+/// get the selected file path
+/// @return path
 const _TCHAR *FileBox::GetPathM() const
 {
 #if defined(USE_UTF8_ON_MBCS)
 	static _TCHAR tfile[_MAX_PATH];
-	UTILITY::conv_from_native_path(selected_file, tfile, _MAX_PATH);
+	UTILITY::conv_from_native_path(m_selected_file, tfile, _MAX_PATH);
 #else
-	const _TCHAR *tfile = selected_file;
+	const _TCHAR *tfile = m_selected_file;
 #endif
 	return tfile;
 }
 
+/// @param[in] filter : extension string separeted by ";"  ex. "foo;bar;baz"
+/// @param[out] fil_str : filter string
 void FileBox::set_file_filter(const CMsg::Id *filter, _TCHAR *fil_str)
 {
 	if (filter) {
@@ -139,7 +172,7 @@ void FileBox::set_file_filter(const CMsg::Id *filter, _TCHAR *fil_str)
 }
 
 /// @param[in] filter : extension string separeted by ";"  ex. "foo;bar;baz"
-/// @param[in] save
+/// @param[in] save : true if save a file
 /// @param[out] fil_str : filter string
 /// @param[out] ext : first extension
 void FileBox::set_file_filter(const char *filter, bool save, _TCHAR *fil_str, _TCHAR *ext)

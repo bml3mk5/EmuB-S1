@@ -736,7 +736,7 @@ INT_PTR ConfigBox::onCommand(UINT message, WPARAM wParam, LPARAM lParam)
 			UTILITY::tcscpy(buf, _MAX_PATH, tbuf);
 #endif
 		}
-		if (fbox.Show(CMSGM(Select_a_folder_to_save_snapshot_images), buf, _MAX_PATH)) {
+		if (fbox.Show(CMSGM(Select_a_folder_to_save_snapshot_images), buf, buf, _MAX_PATH)) {
 			SetDlgItemText(hDlg, IDC_SNAP_PATH, buf);
 		}
 		return (INT_PTR)FALSE;
@@ -771,7 +771,7 @@ INT_PTR ConfigBox::onCommand(UINT message, WPARAM wParam, LPARAM lParam)
 			UTILITY::tcscpy(buf, _MAX_PATH, tbuf);
 #endif
 		}
-		if (fbox.Show(CMSGM(Select_a_font_folder_for_showing_messages), buf, _MAX_PATH)) {
+		if (fbox.Show(CMSGM(Select_a_font_folder_for_showing_messages), buf, buf, _MAX_PATH)) {
 			SetDlgItemText(hDlg, IDC_FONT_FILE, buf);
 		}
 #endif
@@ -822,7 +822,7 @@ INT_PTR ConfigBox::onCommand(UINT message, WPARAM wParam, LPARAM lParam)
 			UTILITY::tcscpy(buf, _MAX_PATH, tbuf);
 #endif
 		}
-		if (fbox.Show(CMSGM(Select_a_folder_containing_the_rom_images), buf, _MAX_PATH)) {
+		if (fbox.Show(CMSGM(Select_a_folder_containing_the_rom_images), buf, buf, _MAX_PATH)) {
 			SetDlgItemText(hDlg, IDC_ROM_PATH, buf);
 		}
 		return (INT_PTR)FALSE;
